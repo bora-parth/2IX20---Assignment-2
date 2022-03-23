@@ -1,117 +1,5 @@
-<<<<<<< Updated upstream
-  0:	proc  - (:root:) creates proc  0 (:init:)
-Starting main_control with pid 1
-  1:	proc  0 (:init::1) creates proc  1 (main_control)
-  1:	proc  0 (:init::1) lock_env.pml:266 (state 1)	[(run main_control())]
 
-  2:	proc  0 (:init::1) lock_env.pml:270 (state 2)	[proc = 0]
-		:init:(0):proc = 0
-
-  3:	proc  0 (:init::1) lock_env.pml:272 (state 3)	[((proc<1))]
-
-  4:	proc  0 (:init::1) lock_env.pml:273 (state 4)	[doors_status.lower = 2]
-
-  5:	proc  0 (:init::1) lock_env.pml:274 (state 5)	[doors_status.higher = 2]
-
-  6:	proc  0 (:init::1) lock_env.pml:275 (state 6)	[slide_status.lower = 2]
-
-  7:	proc  0 (:init::1) lock_env.pml:276 (state 7)	[slide_status.higher = 2]
-
-  8:	proc  0 (:init::1) lock_env.pml:277 (state 8)	[lock_water_level = 1]
-		lock_water_level = high_level
-
-  9:	proc  0 (:init::1) lock_env.pml:278 (state 9)	[lock_is_occupied = 0]
-
-Starting lock with pid 2
- 10:	proc  0 (:init::1) creates proc  2 (lock)
- 10:	proc  0 (:init::1) lock_env.pml:279 (state 10)	[(run lock(proc))]
-
- 11:	proc  0 (:init::1) lock_env.pml:280 (state 11)	[proc = (proc+1)]
-		:init:(0):proc = 1
-
- 12:	proc  0 (:init::1) lock_env.pml:281 (state 12)	[((proc==1))]
-
- 13:	proc  0 (:init::1) lock_env.pml:271 (state 16)	[break]
-
- 14:	proc  0 (:init::1) lock_env.pml:285 (state 17)	[proc = 0]
-		:init:(0):proc = 0
-
- 15:	proc  0 (:init::1) lock_env.pml:287 (state 18)	[((proc==0))]
-
- 16:	proc  0 (:init::1) lock_env.pml:287 (state 19)	[ship_status[proc] = 3]
-		ship_status[0] = go_up
-
- 17:	proc  0 (:init::1) lock_env.pml:287 (state 20)	[ship_pos[proc] = 0]
-
-Starting ship with pid 3
- 18:	proc  0 (:init::1) creates proc  3 (ship)
- 18:	proc  0 (:init::1) lock_env.pml:288 (state 21)	[(run ship(proc))]
-
- 19:	proc  0 (:init::1) lock_env.pml:288 (state 22)	[proc = (proc+1)]
-		:init:(0):proc = 1
-
- 20:	proc  0 (:init::1) lock_env.pml:290 (state 25)	[((proc==1))]
-
- 21:	proc  0 (:init::1) lock_env.pml:286 (state 29)	[break]
-
- 22:	proc  0 (:init::1) lock_env.pml:294 (state 30)	[proc = 0]
-		:init:(0):proc = 0
-
- 23:	proc  0 (:init::1) lock_env.pml:296 (state 31)	[((proc<1))]
-
- 24:	proc  0 (:init::1) lock_env.pml:296 (state 32)	[nr_of_ships_at_pos[ship_pos[proc]] = (nr_of_ships_at_pos[ship_pos[proc]]+1)]
-		nr_of_ships_at_pos[0] = 1
-		nr_of_ships_at_pos[1] = 0
-
- 25:	proc  0 (:init::1) lock_env.pml:296 (state 33)	[proc = (proc+1)]
-		:init:(0):proc = 1
-
- 26:	proc  0 (:init::1) lock_env.pml:297 (state 34)	[else]
-
- 27:	proc  0 (:init::1) lock_env.pml:295 (state 38)	[break]
-
- 28:	proc  3 (ship:1) lock_env.pml:168 (state 51)	[(((ship_status[shipid]==3)&&(ship_pos[shipid]!=1)))]
-
- 29:	proc  3 (ship:1) lock_env.pml:190 (state 73)	[.(goto)]
-		queue 4 (request_low): 
-		queue 3 (request_high): 
-
- 30:	proc  3 (ship:1) lock_env.pml:170 (state 52)	[((doors_status.lower==2))]
-
- 31:	proc  3 (ship:1) lock_env.pml:171 (state -)	[values: 4!1]
- 31:	proc  3 (ship:1) lock_env.pml:171 (state 53)	[request_low!1]
-		queue 4 (request_low): [1]
-		queue 3 (request_high): 
-
- 32:	proc  1 (main_control:1) lock_env.pml:228 (state -)	[values: 4?1]
- 32:	proc  1 (main_control:1) lock_env.pml:228 (state 1)	[request_low?1]
-		queue 4 (request_low): 
-
-timeout
-#processes: 4
-		queue 4 (request_low): 
-		queue 3 (request_high): 
-		lock_water_level = high_level
-		lock_is_occupied = 0
-		ship_status[0] = go_up
-		ship_pos[0] = 0
-		nr_of_ships_at_pos[0] = 1
-		nr_of_ships_at_pos[1] = 0
-		doors_status.lower = closed
-		doors_status.higher = closed
-		slide_status.lower = closed
-		slide_status.higher = closed
- 32:	proc  3 (ship:1) lock_env.pml:172 (state 65)
-		ship(3):shipid = 0
- 32:	proc  2 (lock:1) lock_env.pml:75 (state 47)
-		lock(2):lockid = 0
- 32:	proc  1 (main_control:1) lock_env.pml:229 (state 5)
- 32:	proc  0 (:init::1) lock_env.pml:300 (state 40)
-		:init:(0):proc = 1
-4 processes created
-=======
-
-(Spin Version 6.5.1 -- 31 July 2020)
+(Spin Version 6.5.1 -- 3 June 2021)
 
 Full statespace search for:
 	never claim         	- (none specified)
@@ -120,14 +8,14 @@ Full statespace search for:
 	invalid end states	+
 
 State-vector 116 byte, depth reached 79, errors: 0
-       60 states, stored
+       56 states, stored
         6 states, matched
-       66 transitions (= stored+matched)
-       27 atomic steps
+       62 transitions (= stored+matched)
+       33 atomic steps
 hash conflicts:         0 (resolved)
 
 Stats on memory usage (in Megabytes):
-    0.008	equivalent memory usage for states (stored*(State-vector + overhead))
+    0.007	equivalent memory usage for states (stored*(State-vector + overhead))
     0.266	actual memory usage for states
   128.000	memory used for hash table (-w24)
    45.777	memory used for DFS stack (-m1000000)
@@ -166,19 +54,19 @@ unreached in proctype ship
 	lock_env.pml:222, state 110, "-end-"
 	(18 of 110 states)
 unreached in proctype main_control
-	lock_env.pml:234, state 9, "change_doors_pos!2"
-	lock_env.pml:234, state 10, "doors_pos_changed?1"
-	lock_env.pml:245, state 26, "change_doors_pos!1"
-	lock_env.pml:245, state 27, "doors_pos_changed?1"
-	lock_env.pml:251, state 38, "-end-"
-	(5 of 38 states)
+	lock_env.pml:240, state 9, "change_doors_pos!2"
+	lock_env.pml:240, state 10, "doors_pos_changed?1"
+	lock_env.pml:242, state 14, "(1)"
+	lock_env.pml:251, state 27, "change_doors_pos!1"
+	lock_env.pml:251, state 28, "doors_pos_changed?1"
+	lock_env.pml:257, state 39, "-end-"
+	(6 of 39 states)
 unreached in proctype monitor
-	lock_env.pml:255, state 1, "assert(((0<=ship_pos[0])&&(ship_pos[0]<=1)))"
-	lock_env.pml:256, state 2, "-end-"
+	lock_env.pml:261, state 1, "assert(((0<=ship_pos[0])&&(ship_pos[0]<=1)))"
+	lock_env.pml:262, state 2, "-end-"
 	(2 of 2 states)
 unreached in init
 	(0 of 40 states)
 
 pan: elapsed time 0 seconds
->>>>>>> Stashed changes
 null

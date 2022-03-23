@@ -1,7 +1,7 @@
 #ifndef PAN_H
 #define PAN_H
 
-#define SpinVersion	"Spin Version 6.5.1 -- 31 July 2020"
+#define SpinVersion	"Spin Version 6.5.1 -- 3 June 2021"
 #define PanSource	"lock_env.pml"
 
 #define G_long	8
@@ -133,19 +133,19 @@ typedef struct S_F_MAP {
 } S_F_MAP;
 
 #define _nstates4	41	/* :init: */
-#define minseq4	200
-#define maxseq4	239
+#define minseq4	201
+#define maxseq4	240
 #define _endstate4	40
 
 #define _nstates3	3	/* monitor */
-#define minseq3	198
-#define maxseq3	199
+#define minseq3	199
+#define maxseq3	200
 #define _endstate3	2
 
-#define _nstates2	39	/* main_control */
+#define _nstates2	40	/* main_control */
 #define minseq2	160
-#define maxseq2	197
-#define _endstate2	38
+#define maxseq2	198
+#define _endstate2	39
 
 #define _nstates1	111	/* ship */
 #define minseq1	50
@@ -169,8 +169,8 @@ extern S_F_MAP src_file1[];
 extern S_F_MAP src_file0[];
 
 #define T_ID	unsigned char
-#define _T5	121
-#define _T2	122
+#define _T5	123
+#define _T2	124
 #define WS		8 /* word size in bytes */
 #define SYNC	6
 #define ASYNC	2
@@ -497,7 +497,7 @@ typedef struct TRIX_v6 {
 #define _start5	0 /* np_ */
 #define _start4	39
 #define _start3	1
-#define _start2	35
+#define _start2	36
 #define _start1	107
 #define _start0	47
 #ifdef NP
@@ -915,7 +915,7 @@ void qsend(int, int, int, int);
 #define GLOBAL	7
 #define BAD	8
 #define ALPHA_F	9
-#define NTRANS	123
+#define NTRANS	125
 #if defined(BFS_PAR) || NCORE>1
 	void e_critical(int);
 	void x_critical(int);

@@ -19,6 +19,10 @@
 // Formula p1 holds if the first ship can always eventually enter the lock when going up.
 //ltl p1 { []<> (ship_status[0] == go_up_in_lock) } /*  */
 
+//ltl b1 {[] (doors_status.lower == open -> slide_status.higher == closed)}
+//ltl c1 {[] (doors_status.lower == open -> lock_water_level == low_level)}
+//ltl d1 {[] (request_low?true && ship_status[0] == go_up -> <> (lock_water_level == low_level))}
+
 // Type for direction of ship.
 mtype:direction = { go_down, go_down_in_lock, go_up, go_up_in_lock, goal_reached };
 
@@ -225,13 +229,13 @@ proctype ship(byte shipid) {
 // requests of ships!
 proctype main_control() {
 	do
-	:: request_low?true ->
-		if
-		:: doors_status.higher == open -> change_doors_pos!high; doors_pos_changed?true;
-		fi;
-		if
-		:: slide_status.higher == open -> change_slide_pos!high; slide_pos_changed?true;
-		fi;
+	::  atomic {request_low?true ->
+		//if
+		//:: doors_status.higher == open -> change_doors_pos!high; doors_pos_changed?true;
+		//fi;
+		//if
+		//:: slide_status.higher == open -> change_slide_pos!high; slide_pos_changed?true;
+		//fi;
 		if
 		:: doors_status.lower == closed ->
 			if
@@ -241,7 +245,7 @@ proctype main_control() {
 			fi;
 		:: doors_status.lower == open -> skip;
 		fi;
-		observed_low[0]?true;
+		observed_low[0]?true;}
 	:: request_high?true ->
 		if
 		:: doors_status.higher == closed ->
