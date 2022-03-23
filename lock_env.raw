@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
   0:	proc  - (:root:) creates proc  0 (:init:)
 Starting main_control with pid 1
   1:	proc  0 (:init::1) creates proc  1 (main_control)
@@ -108,4 +109,76 @@ timeout
  32:	proc  0 (:init::1) lock_env.pml:300 (state 40)
 		:init:(0):proc = 1
 4 processes created
+=======
+
+(Spin Version 6.5.1 -- 31 July 2020)
+
+Full statespace search for:
+	never claim         	- (none specified)
+	assertion violations	+
+	cycle checks       	- (disabled by -DSAFETY)
+	invalid end states	+
+
+State-vector 116 byte, depth reached 79, errors: 0
+       60 states, stored
+        6 states, matched
+       66 transitions (= stored+matched)
+       27 atomic steps
+hash conflicts:         0 (resolved)
+
+Stats on memory usage (in Megabytes):
+    0.008	equivalent memory usage for states (stored*(State-vector + overhead))
+    0.266	actual memory usage for states
+  128.000	memory used for hash table (-w24)
+   45.777	memory used for DFS stack (-m1000000)
+  173.972	total actual memory usage
+
+
+unreached in proctype lock
+	lock_env.pml:80, state 6, "doors_status.lower = 2"
+	lock_env.pml:88, state 14, "lock_water_level = 1"
+	lock_env.pml:91, state 20, "doors_status.higher = 2"
+	lock_env.pml:98, state 29, "slide_status.lower = 2"
+	lock_env.pml:106, state 37, "lock_water_level = 1"
+	lock_env.pml:109, state 43, "slide_status.higher = 2"
+	lock_env.pml:113, state 50, "-end-"
+	(7 of 50 states)
+unreached in proctype ship
+	lock_env.pml:122, state 3, "request_high!1"
+	lock_env.pml:127, state 7, "lock_is_occupied = 1"
+	lock_env.pml:128, state 8, "nr_of_ships_at_pos[ship_pos[shipid]] = (nr_of_ships_at_pos[ship_pos[shipid]]-1)"
+	lock_env.pml:129, state 9, "observed_high[0]!1"
+	lock_env.pml:132, state 12, "observed_high[0]!1"
+	lock_env.pml:125, state 13, "(!(lock_is_occupied))"
+	lock_env.pml:125, state 13, "(lock_is_occupied)"
+	lock_env.pml:123, state 15, "((doors_status.higher==1))"
+	lock_env.pml:144, state 27, "request_low!1"
+	lock_env.pml:150, state 31, "lock_is_occupied = 0"
+	lock_env.pml:151, state 32, "ship_pos[shipid] = (ship_pos[shipid]-1)"
+	lock_env.pml:152, state 33, "nr_of_ships_at_pos[ship_pos[shipid]] = (nr_of_ships_at_pos[ship_pos[shipid]]+1)"
+	lock_env.pml:153, state 34, "observed_low[0]!1"
+	lock_env.pml:157, state 37, "observed_low[0]!1"
+	lock_env.pml:148, state 38, "(((nr_of_ships_at_pos[(ship_pos[shipid]-1)]<2)||((ship_pos[shipid]-1)==0)))"
+	lock_env.pml:148, state 38, "(((nr_of_ships_at_pos[(ship_pos[shipid]-1)]==2)&&((ship_pos[shipid]-1)!=0)))"
+	lock_env.pml:145, state 40, "((doors_status.lower==1))"
+	lock_env.pml:181, state 62, "observed_low[0]!1"
+	lock_env.pml:206, state 87, "observed_high[0]!1"
+	lock_env.pml:222, state 110, "-end-"
+	(18 of 110 states)
+unreached in proctype main_control
+	lock_env.pml:234, state 9, "change_doors_pos!2"
+	lock_env.pml:234, state 10, "doors_pos_changed?1"
+	lock_env.pml:245, state 26, "change_doors_pos!1"
+	lock_env.pml:245, state 27, "doors_pos_changed?1"
+	lock_env.pml:251, state 38, "-end-"
+	(5 of 38 states)
+unreached in proctype monitor
+	lock_env.pml:255, state 1, "assert(((0<=ship_pos[0])&&(ship_pos[0]<=1)))"
+	lock_env.pml:256, state 2, "-end-"
+	(2 of 2 states)
+unreached in init
+	(0 of 40 states)
+
+pan: elapsed time 0 seconds
+>>>>>>> Stashed changes
 null
