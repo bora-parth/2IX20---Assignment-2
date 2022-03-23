@@ -228,7 +228,11 @@ proctype main_control() {
 	:: request_low?true ->
 		if
 		:: doors_status.lower == closed ->
-			change_doors_pos!low; doors_pos_changed?true;
+			if
+			:: lock_water_level != low_level && slide_status.lower == closed-> change_slide_pos!low; slide_pos_changed?true; change_doors_pos!low; doors_pos_changed?true;
+	
+			:: lock_water_level == low_level -> change_doors_pos!low; doors_pos_changed?true;
+			fi;
 		:: doors_status.lower == open -> skip;
 		fi;
 		observed_low[0]?true;
