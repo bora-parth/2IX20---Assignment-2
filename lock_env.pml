@@ -263,6 +263,17 @@ proctype main_control() {
 proctype monitor() {
 	// an example assertion.
 	assert(0 <= ship_pos[0] && ship_pos[0] <= N);
+	// property a
+	//assert(!(doors_status.lower == open && doors_status.higher == open));
+	// peoperty b1
+	//assert(!(doors_status.lower == open && slide_status.higher == open));
+	// peoperty b2
+	//assert(!(doors_status.higher == open && slide_status.lower == open));
+	//property c1
+	//assert(!(doors_status.lower == open && lock_water_level != low_level));
+	//property c2
+	assert(!(doors_status.higher == open && lock_water_level != high_level));
+	
 }
 
 // Initial process that instantiates all other processes and creates
@@ -270,7 +281,7 @@ proctype monitor() {
 init {
 	byte proc;
 	atomic {
-		//run monitor();
+		run monitor();
 		run main_control();
 		// In the code below, the individual locks are initialised.
 		// The assumption here is that N == 1. When generalising the model for
