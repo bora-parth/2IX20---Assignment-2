@@ -230,12 +230,12 @@ proctype ship(byte shipid) {
 proctype main_control() {
 	do
 	::  atomic {request_low?true ->
-		//if
-		//:: doors_status.higher == open -> change_doors_pos!high; doors_pos_changed?true;
-		//fi;
-		//if
-		//:: slide_status.higher == open -> change_slide_pos!high; slide_pos_changed?true;
-		//fi;
+		if
+		:: doors_status.higher == open -> change_doors_pos!high; doors_pos_changed?true;
+		fi;
+		if
+		:: slide_status.higher == open -> change_slide_pos!high; slide_pos_changed?true;
+		fi;
 		if
 		:: doors_status.lower == closed ->
 			if
@@ -246,7 +246,13 @@ proctype main_control() {
 		:: doors_status.lower == open -> skip;
 		fi;
 		observed_low[0]?true;}
-	:: request_high?true ->
+	:: atomic {request_high?true ->
+		if
+		:: doors_status.lower == open -> change_doors_pos!low; doors_pos_changed?true;
+		fi;
+		if
+		:: slide_status.lower == open -> change_slide_pos!low; slide_pos_changed?true;
+		fi;
 		if
 		:: doors_status.higher == closed ->
 			if
@@ -256,7 +262,7 @@ proctype main_control() {
 			fi;
 		:: doors_status.higher == open -> skip;
 		fi;
-		observed_high[0]?true;
+		observed_high[0]?true;}
 	od;
 }
 
@@ -272,7 +278,7 @@ proctype monitor() {
 	//property c1
 	//assert(!(doors_status.lower == open && lock_water_level != low_level));
 	//property c2
-	assert(!(doors_status.higher == open && lock_water_level != high_level));
+	//assert(!(doors_status.higher == open && lock_water_level != high_level));
 	
 }
 

@@ -1,4 +1,4 @@
-pan:1: assertion violated  !(((doors_status.higher==1)&&(lock_water_level!=1))) (at depth 94)
+pan:1: invalid end state (at depth 19)
 pan: wrote lock_env.pml.trail
 
 (Spin Version 6.5.1 -- 3 June 2021)
@@ -10,16 +10,16 @@ Full statespace search for:
 	cycle checks       	- (disabled by -DSAFETY)
 	invalid end states	+
 
-State-vector 124 byte, depth reached 94, errors: 1
-       65 states, stored
-        2 states, matched
-       67 transitions (= stored+matched)
-       23 atomic steps
+State-vector 124 byte, depth reached 20, errors: 1
+        7 states, stored
+        0 states, matched
+        7 transitions (= stored+matched)
+       15 atomic steps
 hash conflicts:         0 (resolved)
 
 Stats on memory usage (in Megabytes):
-    0.009	equivalent memory usage for states (stored*(State-vector + overhead))
-    0.266	actual memory usage for states
+    0.001	equivalent memory usage for states (stored*(State-vector + overhead))
+    0.264	actual memory usage for states
   128.000	memory used for hash table (-w24)
    45.777	memory used for DFS stack (-m1000000)
   173.972	total actual memory usage
