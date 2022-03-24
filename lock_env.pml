@@ -21,7 +21,7 @@
 
 //ltl b1 {[] (doors_status.lower == open -> slide_status.higher == closed)}
 //ltl c1 {[] (doors_status.lower == open -> lock_water_level == low_level)}
-//ltl d1 {[] (request_low?true && ship_status[0] == go_up -> <> (lock_water_level == low_level))}
+//ltl d1 {[] (request_low!?true && ship_status[0] == go_up -> <>(ship_pos[0 ] == go_up_in_lock))}
 
 // Type for direction of ship.
 mtype:direction = { go_down, go_down_in_lock, go_up, go_up_in_lock, goal_reached };
@@ -229,12 +229,14 @@ proctype ship(byte shipid) {
 // requests of ships!
 proctype main_control() {
 	do
-	::  atomic {request_low?true ->
+	:: request_low?true ->
 		if
 		:: doors_status.higher == open -> change_doors_pos!high; doors_pos_changed?true;
+		:: else -> skip;
 		fi;
 		if
 		:: slide_status.higher == open -> change_slide_pos!high; slide_pos_changed?true;
+		:: else -> skip;
 		fi;
 		if
 		:: doors_status.lower == closed ->
@@ -245,13 +247,15 @@ proctype main_control() {
 			fi;
 		:: doors_status.lower == open -> skip;
 		fi;
-		observed_low[0]?true;}
-	:: atomic {request_high?true ->
+		observed_low[0]?true;
+	:: request_high?true ->
 		if
 		:: doors_status.lower == open -> change_doors_pos!low; doors_pos_changed?true;
+		:: else -> skip;
 		fi;
 		if
 		:: slide_status.lower == open -> change_slide_pos!low; slide_pos_changed?true;
+		:: else -> skip;
 		fi;
 		if
 		:: doors_status.higher == closed ->
@@ -262,7 +266,7 @@ proctype main_control() {
 			fi;
 		:: doors_status.higher == open -> skip;
 		fi;
-		observed_high[0]?true;}
+		observed_high[0]?true;
 	od;
 }
 
@@ -270,15 +274,15 @@ proctype monitor() {
 	// an example assertion.
 	assert(0 <= ship_pos[0] && ship_pos[0] <= N);
 	// property a
-	//assert(!(doors_status.lower == open && doors_status.higher == open));
+	assert(!(doors_status.lower == open && doors_status.higher == open));
 	// peoperty b1
-	//assert(!(doors_status.lower == open && slide_status.higher == open));
+	assert(!(doors_status.lower == open && slide_status.higher == open));
 	// peoperty b2
-	//assert(!(doors_status.higher == open && slide_status.lower == open));
+	assert(!(doors_status.higher == open && slide_status.lower == open));
 	//property c1
-	//assert(!(doors_status.lower == open && lock_water_level != low_level));
+	assert(!(doors_status.lower == open && lock_water_level != low_level));
 	//property c2
-	//assert(!(doors_status.higher == open && lock_water_level != high_level));
+	assert(!(doors_status.higher == open && lock_water_level != high_level));
 	
 }
 
