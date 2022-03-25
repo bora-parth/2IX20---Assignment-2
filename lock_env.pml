@@ -19,9 +19,8 @@
 // Formula p1 holds if the first ship can always eventually enter the lock when going up.
 //ltl p1 { []<> (ship_status[0] == go_up_in_lock) } /*  */
 
-//ltl b1 {[] (doors_status.lower == open -> slide_status.higher == closed)}
-//ltl c1 {[] (doors_status.lower == open -> lock_water_level == low_level)}
-//ltl d1 {[] (request_low?true && ship_status[0] == go_up -> <> (lock_water_level == low_level))}
+ltl d1 {[] (request_sent == lowdoor && ship_status[0] == go_up -> <> (ship_status[0] == go_up_in_lock))}
+//ltl d2 {[] (request_high?true && ship_status[0] == go_down -> <> (lock_water_level == low_level))}
 
 // Type for direction of ship.
 mtype:direction = { go_down, go_down_in_lock, go_up, go_up_in_lock, goal_reached };
@@ -35,6 +34,9 @@ mtype:side = { low, high };
 // Type for door and slide position.
 mtype:pos = { closed, open };
 
+//Store request
+mtype:request = { lowdoor, highdoor, null };
+
 // Datatypes to store the status of the doors and slides of a lock.
 typedef doorpairs_t {
 	mtype:pos lower;
@@ -45,6 +47,9 @@ typedef slides_t {
 	mtype:pos lower;
 	mtype:pos higher;
 }
+
+
+
 
 // Asynchronous channels to handle ship requests.
 chan request_low = [M] of { bool };
@@ -58,6 +63,9 @@ chan observed_high[N] = [0] of { bool };
 mtype:level lock_water_level;
 // Is there a ship currently in the lock?
 bool lock_is_occupied;
+
+//status of request
+mtype:request request_sent;
 
 // Status of the ships.
 mtype:direction ship_status[M];
@@ -229,12 +237,15 @@ proctype ship(byte shipid) {
 // requests of ships!
 proctype main_control() {
 	do
-	::  atomic {request_low?true ->
+	::  request_low?true ->
+		request_sent = lowdoor;
 		if
 		:: doors_status.higher == open -> change_doors_pos!high; doors_pos_changed?true;
+		:: else -> skip;
 		fi;
 		if
 		:: slide_status.higher == open -> change_slide_pos!high; slide_pos_changed?true;
+		:: else -> skip;
 		fi;
 		if
 		:: doors_status.lower == closed ->
@@ -245,13 +256,17 @@ proctype main_control() {
 			fi;
 		:: doors_status.lower == open -> skip;
 		fi;
-		observed_low[0]?true;}
-	:: atomic {request_high?true ->
+		observed_low[0]?true;
+		request_sent = null
+	:: request_high?true ->
+		request_sent = highdoor;
 		if
 		:: doors_status.lower == open -> change_doors_pos!low; doors_pos_changed?true;
+		:: else -> skip;
 		fi;
 		if
 		:: slide_status.lower == open -> change_slide_pos!low; slide_pos_changed?true;
+		:: else -> skip;
 		fi;
 		if
 		:: doors_status.higher == closed ->
@@ -262,7 +277,7 @@ proctype main_control() {
 			fi;
 		:: doors_status.higher == open -> skip;
 		fi;
-		observed_high[0]?true;}
+		observed_high[0]?true;
 	od;
 }
 
