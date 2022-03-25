@@ -1,5 +1,5 @@
 
-(Spin Version 6.5.1 -- 31 July 2020)
+(Spin Version 6.5.1 -- 3 June 2021)
 
 Full statespace search for:
 	never claim         	+ (d1)
@@ -7,15 +7,15 @@ Full statespace search for:
 	acceptance   cycles 	+ (fairness enabled)
 	invalid end states	- (disabled by never claim)
 
-State-vector 140 byte, depth reached 411, errors: 0
-      279 states, stored (457 visited)
-      351 states, matched
-      808 transitions (= visited+matched)
+State-vector 140 byte, depth reached 415, errors: 0
+      299 states, stored (477 visited)
+      379 states, matched
+      856 transitions (= visited+matched)
       176 atomic steps
 hash conflicts:         0 (resolved)
 
 Stats on memory usage (in Megabytes):
-    0.045	equivalent memory usage for states (stored*(State-vector + overhead))
+    0.048	equivalent memory usage for states (stored*(State-vector + overhead))
     0.262	actual memory usage for states
   128.000	memory used for hash table (-w24)
    53.406	memory used for DFS stack (-m1000000)
@@ -50,8 +50,8 @@ unreached in proctype main_control
 	lock_env.pml:255, state 25, "doors_pos_changed?1"
 	lock_env.pml:276, state 57, "change_doors_pos!1"
 	lock_env.pml:276, state 58, "doors_pos_changed?1"
-	lock_env.pml:282, state 69, "-end-"
-	(5 of 69 states)
+	lock_env.pml:283, state 70, "-end-"
+	(5 of 70 states)
 unreached in proctype monitor
 	(0 of 2 states)
 unreached in init
@@ -60,5 +60,5 @@ unreached in claim d1
 	_spin_nvr.tmp:10, state 13, "-end-"
 	(1 of 13 states)
 
-pan: elapsed time 0.01 seconds
+pan: elapsed time 0 seconds
 null

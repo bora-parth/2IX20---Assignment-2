@@ -28,37 +28,37 @@ settable(void)
 
 	trans[5] = (Trans **) emalloc(14*sizeof(Trans *));
 
-	trans[5][6]	= settr(277,0,5,1,0,".(goto)", 0, 2, 0);
-	T = trans[5][5] = settr(276,0,0,0,0,"DO", 0, 2, 0);
-	T = T->nxt	= settr(276,0,1,0,0,"DO", 0, 2, 0);
-	    T->nxt	= settr(276,0,3,0,0,"DO", 0, 2, 0);
-	trans[5][1]	= settr(272,0,10,3,0,"((!(!(((request_sent==3)&&(ship_status[0]==3))))&&!((ship_status[0]==2))))", 1, 2, 0);
-	trans[5][2]	= settr(273,0,10,1,0,"goto accept_S4", 0, 2, 0);
-	trans[5][3]	= settr(274,0,5,1,0,"(1)", 0, 2, 0);
-	trans[5][4]	= settr(275,0,5,1,0,"goto T0_init", 0, 2, 0);
-	trans[5][7]	= settr(278,0,10,1,0,"break", 0, 2, 0);
-	trans[5][11]	= settr(282,0,10,1,0,".(goto)", 0, 2, 0);
-	T = trans[5][10] = settr(281,0,0,0,0,"DO", 0, 2, 0);
-	    T->nxt	= settr(281,0,8,0,0,"DO", 0, 2, 0);
-	trans[5][8]	= settr(279,0,10,4,0,"(!((ship_status[0]==2)))", 1, 2, 0);
-	trans[5][9]	= settr(280,0,10,1,0,"goto accept_S4", 0, 2, 0);
-	trans[5][12]	= settr(283,0,13,1,0,"break", 0, 2, 0);
-	trans[5][13]	= settr(284,0,0,5,5,"-end-", 0, 3500, 0);
+	trans[5][6]	= settr(278,0,5,1,0,".(goto)", 0, 2, 0);
+	T = trans[5][5] = settr(277,0,0,0,0,"DO", 0, 2, 0);
+	T = T->nxt	= settr(277,0,1,0,0,"DO", 0, 2, 0);
+	    T->nxt	= settr(277,0,3,0,0,"DO", 0, 2, 0);
+	trans[5][1]	= settr(273,0,10,3,0,"((!(!(((request_sent==3)&&(ship_status[0]==3))))&&!((ship_status[0]==2))))", 1, 2, 0);
+	trans[5][2]	= settr(274,0,10,1,0,"goto accept_S4", 0, 2, 0);
+	trans[5][3]	= settr(275,0,5,1,0,"(1)", 0, 2, 0);
+	trans[5][4]	= settr(276,0,5,1,0,"goto T0_init", 0, 2, 0);
+	trans[5][7]	= settr(279,0,10,1,0,"break", 0, 2, 0);
+	trans[5][11]	= settr(283,0,10,1,0,".(goto)", 0, 2, 0);
+	T = trans[5][10] = settr(282,0,0,0,0,"DO", 0, 2, 0);
+	    T->nxt	= settr(282,0,8,0,0,"DO", 0, 2, 0);
+	trans[5][8]	= settr(280,0,10,4,0,"(!((ship_status[0]==2)))", 1, 2, 0);
+	trans[5][9]	= settr(281,0,10,1,0,"goto accept_S4", 0, 2, 0);
+	trans[5][12]	= settr(284,0,13,1,0,"break", 0, 2, 0);
+	trans[5][13]	= settr(285,0,0,5,5,"-end-", 0, 3500, 0);
 
 	/* proctype 4: :init: */
 
 	trans[4] = (Trans **) emalloc(42*sizeof(Trans *));
 
-	T = trans[ 4][40] = settr(270,2,0,0,0,"ATOMIC", 1, 2, 0);
-	T->nxt	= settr(270,2,1,0,0,"ATOMIC", 1, 2, 0);
-	trans[4][1]	= settr(231,2,2,6,6,"(run monitor())", 1, 2, 0);
-	trans[4][2]	= settr(232,2,3,7,7,"(run main_control())", 1, 2, 0);
-	trans[4][3]	= settr(233,2,15,8,8,"proc = 0", 1, 2, 0);
-	trans[4][16]	= settr(246,2,15,1,0,".(goto)", 1, 2, 0);
-	T = trans[4][15] = settr(245,2,0,0,0,"DO", 1, 2, 0);
-	T = T->nxt	= settr(245,2,4,0,0,"DO", 1, 2, 0);
-	    T->nxt	= settr(245,2,13,0,0,"DO", 1, 2, 0);
-	trans[4][4]	= settr(234,2,11,9,9,"((proc<1))", 1, 2, 0); /* m: 5 -> 11,0 */
+	T = trans[ 4][40] = settr(271,2,0,0,0,"ATOMIC", 1, 2, 0);
+	T->nxt	= settr(271,2,1,0,0,"ATOMIC", 1, 2, 0);
+	trans[4][1]	= settr(232,2,2,6,6,"(run monitor())", 1, 2, 0);
+	trans[4][2]	= settr(233,2,3,7,7,"(run main_control())", 1, 2, 0);
+	trans[4][3]	= settr(234,2,15,8,8,"proc = 0", 1, 2, 0);
+	trans[4][16]	= settr(247,2,15,1,0,".(goto)", 1, 2, 0);
+	T = trans[4][15] = settr(246,2,0,0,0,"DO", 1, 2, 0);
+	T = T->nxt	= settr(246,2,4,0,0,"DO", 1, 2, 0);
+	    T->nxt	= settr(246,2,13,0,0,"DO", 1, 2, 0);
+	trans[4][4]	= settr(235,2,11,9,9,"((proc<1))", 1, 2, 0); /* m: 5 -> 11,0 */
 	reached4[5] = 1;
 	trans[4][5]	= settr(0,0,0,0,0,"doors_status.lower = 2",0,0,0);
 	trans[4][6]	= settr(0,0,0,0,0,"doors_status.higher = 2",0,0,0);
@@ -66,62 +66,62 @@ settable(void)
 	trans[4][8]	= settr(0,0,0,0,0,"slide_status.higher = 2",0,0,0);
 	trans[4][9]	= settr(0,0,0,0,0,"lock_water_level = 1",0,0,0);
 	trans[4][10]	= settr(0,0,0,0,0,"lock_is_occupied = 0",0,0,0);
-	trans[4][11]	= settr(241,2,12,10,10,"(run lock(proc))", 1, 2, 0);
-	trans[4][12]	= settr(242,2,15,11,11,"proc = (proc+1)", 1, 2, 0);
-	trans[4][13]	= settr(243,2,28,12,12,"((proc==1))", 1, 2, 0); /* m: 18 -> 28,0 */
+	trans[4][11]	= settr(242,2,12,10,10,"(run lock(proc))", 1, 2, 0);
+	trans[4][12]	= settr(243,2,15,11,11,"proc = (proc+1)", 1, 2, 0);
+	trans[4][13]	= settr(244,2,28,12,12,"((proc==1))", 1, 2, 0); /* m: 18 -> 28,0 */
 	reached4[18] = 1;
-	trans[4][14]	= settr(244,2,18,1,0,"goto :b7", 1, 2, 0); /* m: 18 -> 0,28 */
+	trans[4][14]	= settr(245,2,18,1,0,"goto :b7", 1, 2, 0); /* m: 18 -> 0,28 */
 	reached4[18] = 1;
-	trans[4][17]	= settr(247,2,18,1,0,"break", 1, 2, 0);
-	trans[4][18]	= settr(248,2,28,13,13,"proc = 0", 1, 2, 0);
-	trans[4][29]	= settr(259,2,28,1,0,".(goto)", 1, 2, 0);
-	T = trans[4][28] = settr(258,2,0,0,0,"DO", 1, 2, 0);
-	T = T->nxt	= settr(258,2,19,0,0,"DO", 1, 2, 0);
-	T = T->nxt	= settr(258,2,24,0,0,"DO", 1, 2, 0);
-	    T->nxt	= settr(258,2,26,0,0,"DO", 1, 2, 0);
-	trans[4][19]	= settr(249,2,22,14,14,"((proc==0))", 1, 2, 0); /* m: 20 -> 22,0 */
+	trans[4][17]	= settr(248,2,18,1,0,"break", 1, 2, 0);
+	trans[4][18]	= settr(249,2,28,13,13,"proc = 0", 1, 2, 0);
+	trans[4][29]	= settr(260,2,28,1,0,".(goto)", 1, 2, 0);
+	T = trans[4][28] = settr(259,2,0,0,0,"DO", 1, 2, 0);
+	T = T->nxt	= settr(259,2,19,0,0,"DO", 1, 2, 0);
+	T = T->nxt	= settr(259,2,24,0,0,"DO", 1, 2, 0);
+	    T->nxt	= settr(259,2,26,0,0,"DO", 1, 2, 0);
+	trans[4][19]	= settr(250,2,22,14,14,"((proc==0))", 1, 2, 0); /* m: 20 -> 22,0 */
 	reached4[20] = 1;
 	trans[4][20]	= settr(0,0,0,0,0,"ship_status[proc] = 3",0,0,0);
 	trans[4][21]	= settr(0,0,0,0,0,"ship_pos[proc] = 0",0,0,0);
-	trans[4][22]	= settr(252,2,23,15,15,"(run ship(proc))", 1, 2, 0);
-	trans[4][23]	= settr(253,2,28,16,16,"proc = (proc+1)", 1, 2, 0);
-	trans[4][24]	= settr(254,2,28,17,17,"(((proc>0)&&(proc<1)))", 1, 2, 0); /* m: 25 -> 28,0 */
+	trans[4][22]	= settr(253,2,23,15,15,"(run ship(proc))", 1, 2, 0);
+	trans[4][23]	= settr(254,2,28,16,16,"proc = (proc+1)", 1, 2, 0);
+	trans[4][24]	= settr(255,2,28,17,17,"(((proc>0)&&(proc<1)))", 1, 2, 0); /* m: 25 -> 28,0 */
 	reached4[25] = 1;
 	trans[4][25]	= settr(0,0,0,0,0,"proc = (proc+1)",0,0,0);
-	trans[4][26]	= settr(256,2,37,18,18,"((proc==1))", 1, 2, 0); /* m: 31 -> 37,0 */
+	trans[4][26]	= settr(257,2,37,18,18,"((proc==1))", 1, 2, 0); /* m: 31 -> 37,0 */
 	reached4[31] = 1;
-	trans[4][27]	= settr(257,2,31,1,0,"goto :b8", 1, 2, 0); /* m: 31 -> 0,37 */
+	trans[4][27]	= settr(258,2,31,1,0,"goto :b8", 1, 2, 0); /* m: 31 -> 0,37 */
 	reached4[31] = 1;
-	trans[4][30]	= settr(260,2,31,1,0,"break", 1, 2, 0);
-	trans[4][31]	= settr(261,2,37,19,19,"proc = 0", 1, 2, 0);
-	trans[4][38]	= settr(268,2,37,1,0,".(goto)", 1, 2, 0);
-	T = trans[4][37] = settr(267,2,0,0,0,"DO", 1, 2, 0);
-	T = T->nxt	= settr(267,2,32,0,0,"DO", 1, 2, 0);
-	    T->nxt	= settr(267,2,35,0,0,"DO", 1, 2, 0);
-	trans[4][32]	= settr(262,2,37,20,20,"((proc<1))", 1, 2, 0); /* m: 33 -> 37,0 */
+	trans[4][30]	= settr(261,2,31,1,0,"break", 1, 2, 0);
+	trans[4][31]	= settr(262,2,37,19,19,"proc = 0", 1, 2, 0);
+	trans[4][38]	= settr(269,2,37,1,0,".(goto)", 1, 2, 0);
+	T = trans[4][37] = settr(268,2,0,0,0,"DO", 1, 2, 0);
+	T = T->nxt	= settr(268,2,32,0,0,"DO", 1, 2, 0);
+	    T->nxt	= settr(268,2,35,0,0,"DO", 1, 2, 0);
+	trans[4][32]	= settr(263,2,37,20,20,"((proc<1))", 1, 2, 0); /* m: 33 -> 37,0 */
 	reached4[33] = 1;
 	trans[4][33]	= settr(0,0,0,0,0,"nr_of_ships_at_pos[ship_pos[proc]] = (nr_of_ships_at_pos[ship_pos[proc]]+1)",0,0,0);
 	trans[4][34]	= settr(0,0,0,0,0,"proc = (proc+1)",0,0,0);
-	trans[4][35]	= settr(265,2,36,2,0,"else", 1, 2, 0);
-	trans[4][36]	= settr(266,2,39,1,0,"goto :b9", 1, 2, 0);
-	trans[4][39]	= settr(269,0,41,1,0,"break", 1, 2, 0);
-	trans[4][41]	= settr(271,0,0,21,21,"-end-", 0, 3500, 0);
+	trans[4][35]	= settr(266,2,36,2,0,"else", 1, 2, 0);
+	trans[4][36]	= settr(267,2,39,1,0,"goto :b9", 1, 2, 0);
+	trans[4][39]	= settr(270,0,41,1,0,"break", 1, 2, 0);
+	trans[4][41]	= settr(272,0,0,21,21,"-end-", 0, 3500, 0);
 
 	/* proctype 3: monitor */
 
 	trans[3] = (Trans **) emalloc(3*sizeof(Trans *));
 
-	trans[3][1]	= settr(229,0,2,22,0,"assert(((0<=ship_pos[0])&&(ship_pos[0]<=1)))", 1, 2, 0);
-	trans[3][2]	= settr(230,0,0,23,23,"-end-", 0, 3500, 0);
+	trans[3][1]	= settr(230,0,2,22,0,"assert(((0<=ship_pos[0])&&(ship_pos[0]<=1)))", 1, 2, 0);
+	trans[3][2]	= settr(231,0,0,23,23,"-end-", 0, 3500, 0);
 
 	/* proctype 2: main_control */
 
-	trans[2] = (Trans **) emalloc(70*sizeof(Trans *));
+	trans[2] = (Trans **) emalloc(71*sizeof(Trans *));
 
-	trans[2][67]	= settr(226,0,66,1,0,".(goto)", 0, 2, 0);
-	T = trans[2][66] = settr(225,0,0,0,0,"DO", 0, 2, 0);
-	T = T->nxt	= settr(225,0,1,0,0,"DO", 0, 2, 0);
-	    T->nxt	= settr(225,0,34,0,0,"DO", 0, 2, 0);
+	trans[2][68]	= settr(227,0,67,1,0,".(goto)", 0, 2, 0);
+	T = trans[2][67] = settr(226,0,0,0,0,"DO", 0, 2, 0);
+	T = T->nxt	= settr(226,0,1,0,0,"DO", 0, 2, 0);
+	    T->nxt	= settr(226,0,34,0,0,"DO", 0, 2, 0);
 	trans[2][1]	= settr(160,0,2,24,24,"request_low?1", 1, 503, 0);
 	trans[2][2]	= settr(161,0,8,25,25,"request_sent = 3", 1, 2, 0);
 	T = trans[2][8] = settr(167,0,0,0,0,"IF", 0, 2, 0);
@@ -162,7 +162,7 @@ settable(void)
 	trans[2][28]	= settr(187,0,29,41,0,"((doors_status.lower==1))", 1, 2, 0);
 	trans[2][29]	= settr(188,0,32,1,0,"(1)", 0, 2, 0);
 	trans[2][32]	= settr(191,0,33,42,42,"observed_low[0]?1", 1, 505, 0);
-	trans[2][33]	= settr(192,0,66,43,43,"request_sent = 1", 1, 2, 0);
+	trans[2][33]	= settr(192,0,67,43,43,"request_sent = 1", 1, 2, 0);
 	trans[2][34]	= settr(193,0,35,44,44,"request_high?1", 1, 504, 0);
 	trans[2][35]	= settr(194,0,41,45,45,"request_sent = 2", 1, 2, 0);
 	T = trans[2][41] = settr(200,0,0,0,0,"IF", 0, 2, 0);
@@ -203,8 +203,9 @@ settable(void)
 	trans[2][61]	= settr(220,0,62,61,0,"((doors_status.higher==1))", 1, 2, 0);
 	trans[2][62]	= settr(221,0,65,1,0,"(1)", 0, 2, 0);
 	trans[2][65]	= settr(224,0,66,62,62,"observed_high[0]?1", 1, 506, 0);
-	trans[2][68]	= settr(227,0,69,1,0,"break", 0, 2, 0);
-	trans[2][69]	= settr(228,0,0,63,63,"-end-", 0, 3500, 0);
+	trans[2][66]	= settr(225,0,67,63,63,"request_sent = 1", 1, 2, 0);
+	trans[2][69]	= settr(228,0,70,1,0,"break", 0, 2, 0);
+	trans[2][70]	= settr(229,0,0,64,64,"-end-", 0, 3500, 0);
 
 	/* proctype 1: ship */
 
@@ -218,65 +219,65 @@ settable(void)
 	T = T->nxt	= settr(156,0,75,0,0,"DO", 0, 2, 0);
 	T = T->nxt	= settr(156,0,101,0,0,"DO", 0, 2, 0);
 	    T->nxt	= settr(156,0,104,0,0,"DO", 0, 2, 0);
-	trans[1][1]	= settr(50,0,22,64,0,"(((ship_status[shipid]==5)&&(ship_pos[shipid]!=0)))", 1, 2, 0);
+	trans[1][1]	= settr(50,0,22,65,0,"(((ship_status[shipid]==5)&&(ship_pos[shipid]!=0)))", 1, 2, 0);
 	trans[1][23]	= settr(72,0,22,1,0,".(goto)", 0, 2, 0);
 	T = trans[1][22] = settr(71,0,0,0,0,"DO", 0, 2, 0);
 	T = T->nxt	= settr(71,0,2,0,0,"DO", 0, 2, 0);
 	    T->nxt	= settr(71,0,21,0,0,"DO", 0, 2, 0);
-	trans[1][2]	= settr(51,0,3,65,0,"((doors_status.higher==2))", 1, 2, 0);
-	trans[1][3]	= settr(52,0,15,66,66,"request_high!1", 1, 4, 0);
+	trans[1][2]	= settr(51,0,3,66,0,"((doors_status.higher==2))", 1, 2, 0);
+	trans[1][3]	= settr(52,0,15,67,67,"request_high!1", 1, 4, 0);
 	T = trans[ 1][15] = settr(64,2,0,0,0,"ATOMIC", 1, 2, 0);
 	T->nxt	= settr(64,2,4,0,0,"ATOMIC", 1, 6, 0);
-	trans[1][4]	= settr(53,2,13,67,0,"((doors_status.higher==1))", 1, 6, 0);
+	trans[1][4]	= settr(53,2,13,68,0,"((doors_status.higher==1))", 1, 6, 0);
 	T = trans[1][13] = settr(62,2,0,0,0,"IF", 1, 6, 0);
 	T = T->nxt	= settr(62,2,5,0,0,"IF", 1, 6, 0);
 	    T->nxt	= settr(62,2,11,0,0,"IF", 1, 6, 0);
-	trans[1][5]	= settr(54,2,9,68,68,"(!(lock_is_occupied))", 1, 6, 0); /* m: 6 -> 9,0 */
+	trans[1][5]	= settr(54,2,9,69,69,"(!(lock_is_occupied))", 1, 6, 0); /* m: 6 -> 9,0 */
 	reached1[6] = 1;
 	trans[1][6]	= settr(0,0,0,0,0,"ship_status[shipid] = 4",0,0,0);
 	trans[1][7]	= settr(0,0,0,0,0,"lock_is_occupied = 1",0,0,0);
 	trans[1][8]	= settr(0,0,0,0,0,"nr_of_ships_at_pos[ship_pos[shipid]] = (nr_of_ships_at_pos[ship_pos[shipid]]-1)",0,0,0);
-	trans[1][9]	= settr(58,2,10,69,69,"observed_high[0]!1", 1, 6, 0);
+	trans[1][9]	= settr(58,2,10,70,70,"observed_high[0]!1", 1, 6, 0);
 	trans[1][10]	= settr(59,0,107,1,0,"goto :b2", 1, 6, 0);
 	trans[1][14]	= settr(63,0,22,1,0,".(goto)", 1, 6, 0);
-	trans[1][11]	= settr(60,2,12,70,0,"(lock_is_occupied)", 1, 6, 0);
-	trans[1][12]	= settr(61,2,14,71,71,"observed_high[0]!1", 1, 6, 0);
+	trans[1][11]	= settr(60,2,12,71,0,"(lock_is_occupied)", 1, 6, 0);
+	trans[1][12]	= settr(61,2,14,72,72,"observed_high[0]!1", 1, 6, 0);
 	T = trans[ 1][21] = settr(70,2,0,0,0,"ATOMIC", 1, 2, 0);
 	T->nxt	= settr(70,2,16,0,0,"ATOMIC", 1, 2, 0);
-	trans[1][16]	= settr(65,4,107,72,72,"(((doors_status.higher==1)&&!(lock_is_occupied)))", 1, 2, 0); /* m: 17 -> 107,0 */
+	trans[1][16]	= settr(65,4,107,73,73,"(((doors_status.higher==1)&&!(lock_is_occupied)))", 1, 2, 0); /* m: 17 -> 107,0 */
 	reached1[17] = 1;
 	trans[1][17]	= settr(0,0,0,0,0,"ship_status[shipid] = 4",0,0,0);
 	trans[1][18]	= settr(0,0,0,0,0,"lock_is_occupied = 1",0,0,0);
 	trans[1][19]	= settr(0,0,0,0,0,"nr_of_ships_at_pos[ship_pos[shipid]] = (nr_of_ships_at_pos[ship_pos[shipid]]-1)",0,0,0);
 	trans[1][20]	= settr(69,0,107,1,0,"goto :b2", 1, 2, 0);
 	trans[1][24]	= settr(73,0,107,1,0,"break", 0, 2, 0);
-	trans[1][25]	= settr(74,0,48,73,0,"((ship_status[shipid]==4))", 1, 2, 0);
+	trans[1][25]	= settr(74,0,48,74,0,"((ship_status[shipid]==4))", 1, 2, 0);
 	trans[1][49]	= settr(98,0,48,1,0,".(goto)", 0, 2, 0);
 	T = trans[1][48] = settr(97,0,0,0,0,"DO", 0, 2, 0);
 	T = T->nxt	= settr(97,0,26,0,0,"DO", 0, 2, 0);
 	    T->nxt	= settr(97,0,47,0,0,"DO", 0, 2, 0);
-	trans[1][26]	= settr(75,0,27,74,0,"((doors_status.lower==2))", 1, 2, 0);
-	trans[1][27]	= settr(76,0,40,75,75,"request_low!1", 1, 3, 0);
+	trans[1][26]	= settr(75,0,27,75,0,"((doors_status.lower==2))", 1, 2, 0);
+	trans[1][27]	= settr(76,0,40,76,76,"request_low!1", 1, 3, 0);
 	T = trans[ 1][40] = settr(89,2,0,0,0,"ATOMIC", 1, 2, 0);
 	T->nxt	= settr(89,2,28,0,0,"ATOMIC", 1, 5, 0);
-	trans[1][28]	= settr(77,2,38,76,0,"((doors_status.lower==1))", 1, 5, 0);
+	trans[1][28]	= settr(77,2,38,77,0,"((doors_status.lower==1))", 1, 5, 0);
 	T = trans[1][38] = settr(87,2,0,0,0,"IF", 1, 5, 0);
 	T = T->nxt	= settr(87,2,29,0,0,"IF", 1, 5, 0);
 	    T->nxt	= settr(87,2,36,0,0,"IF", 1, 5, 0);
-	trans[1][29]	= settr(78,2,34,77,77,"(((nr_of_ships_at_pos[(ship_pos[shipid]-1)]<2)||((ship_pos[shipid]-1)==0)))", 1, 5, 0); /* m: 30 -> 34,0 */
+	trans[1][29]	= settr(78,2,34,78,78,"(((nr_of_ships_at_pos[(ship_pos[shipid]-1)]<2)||((ship_pos[shipid]-1)==0)))", 1, 5, 0); /* m: 30 -> 34,0 */
 	reached1[30] = 1;
 	trans[1][30]	= settr(0,0,0,0,0,"ship_status[shipid] = 5",0,0,0);
 	trans[1][31]	= settr(0,0,0,0,0,"lock_is_occupied = 0",0,0,0);
 	trans[1][32]	= settr(0,0,0,0,0,"ship_pos[shipid] = (ship_pos[shipid]-1)",0,0,0);
 	trans[1][33]	= settr(0,0,0,0,0,"nr_of_ships_at_pos[ship_pos[shipid]] = (nr_of_ships_at_pos[ship_pos[shipid]]+1)",0,0,0);
-	trans[1][34]	= settr(83,2,35,78,78,"observed_low[0]!1", 1, 5, 0);
+	trans[1][34]	= settr(83,2,35,79,79,"observed_low[0]!1", 1, 5, 0);
 	trans[1][35]	= settr(84,0,107,1,0,"goto :b3", 1, 5, 0);
 	trans[1][39]	= settr(88,0,48,1,0,".(goto)", 1, 5, 0);
-	trans[1][36]	= settr(85,2,37,79,0,"(((nr_of_ships_at_pos[(ship_pos[shipid]-1)]==2)&&((ship_pos[shipid]-1)!=0)))", 1, 5, 0);
-	trans[1][37]	= settr(86,2,39,80,80,"observed_low[0]!1", 1, 5, 0);
+	trans[1][36]	= settr(85,2,37,80,0,"(((nr_of_ships_at_pos[(ship_pos[shipid]-1)]==2)&&((ship_pos[shipid]-1)!=0)))", 1, 5, 0);
+	trans[1][37]	= settr(86,2,39,81,81,"observed_low[0]!1", 1, 5, 0);
 	T = trans[ 1][47] = settr(96,2,0,0,0,"ATOMIC", 1, 2, 0);
 	T->nxt	= settr(96,2,41,0,0,"ATOMIC", 1, 2, 0);
-	trans[1][41]	= settr(90,4,107,81,81,"(((doors_status.lower==1)&&((nr_of_ships_at_pos[(ship_pos[shipid]-1)]<2)||((ship_pos[shipid]-1)==0))))", 1, 2, 0); /* m: 42 -> 107,0 */
+	trans[1][41]	= settr(90,4,107,82,82,"(((doors_status.lower==1)&&((nr_of_ships_at_pos[(ship_pos[shipid]-1)]<2)||((ship_pos[shipid]-1)==0))))", 1, 2, 0); /* m: 42 -> 107,0 */
 	reached1[42] = 1;
 	trans[1][42]	= settr(0,0,0,0,0,"ship_status[shipid] = 5",0,0,0);
 	trans[1][43]	= settr(0,0,0,0,0,"lock_is_occupied = 0",0,0,0);
@@ -284,65 +285,65 @@ settable(void)
 	trans[1][45]	= settr(0,0,0,0,0,"nr_of_ships_at_pos[ship_pos[shipid]] = (nr_of_ships_at_pos[ship_pos[shipid]]+1)",0,0,0);
 	trans[1][46]	= settr(95,0,107,1,0,"goto :b3", 1, 2, 0);
 	trans[1][50]	= settr(99,0,107,1,0,"break", 0, 2, 0);
-	trans[1][51]	= settr(100,0,72,82,0,"(((ship_status[shipid]==3)&&(ship_pos[shipid]!=1)))", 1, 2, 0);
+	trans[1][51]	= settr(100,0,72,83,0,"(((ship_status[shipid]==3)&&(ship_pos[shipid]!=1)))", 1, 2, 0);
 	trans[1][73]	= settr(122,0,72,1,0,".(goto)", 0, 2, 0);
 	T = trans[1][72] = settr(121,0,0,0,0,"DO", 0, 2, 0);
 	T = T->nxt	= settr(121,0,52,0,0,"DO", 0, 2, 0);
 	    T->nxt	= settr(121,0,71,0,0,"DO", 0, 2, 0);
-	trans[1][52]	= settr(101,0,53,83,0,"((doors_status.lower==2))", 1, 2, 0);
-	trans[1][53]	= settr(102,0,65,84,84,"request_low!1", 1, 3, 0);
+	trans[1][52]	= settr(101,0,53,84,0,"((doors_status.lower==2))", 1, 2, 0);
+	trans[1][53]	= settr(102,0,65,85,85,"request_low!1", 1, 3, 0);
 	T = trans[ 1][65] = settr(114,2,0,0,0,"ATOMIC", 1, 2, 0);
 	T->nxt	= settr(114,2,54,0,0,"ATOMIC", 1, 5, 0);
-	trans[1][54]	= settr(103,2,63,85,0,"((doors_status.lower==1))", 1, 5, 0);
+	trans[1][54]	= settr(103,2,63,86,0,"((doors_status.lower==1))", 1, 5, 0);
 	T = trans[1][63] = settr(112,2,0,0,0,"IF", 1, 5, 0);
 	T = T->nxt	= settr(112,2,55,0,0,"IF", 1, 5, 0);
 	    T->nxt	= settr(112,2,61,0,0,"IF", 1, 5, 0);
-	trans[1][55]	= settr(104,2,59,86,86,"(!(lock_is_occupied))", 1, 5, 0); /* m: 56 -> 59,0 */
+	trans[1][55]	= settr(104,2,59,87,87,"(!(lock_is_occupied))", 1, 5, 0); /* m: 56 -> 59,0 */
 	reached1[56] = 1;
 	trans[1][56]	= settr(0,0,0,0,0,"ship_status[shipid] = 2",0,0,0);
 	trans[1][57]	= settr(0,0,0,0,0,"lock_is_occupied = 1",0,0,0);
 	trans[1][58]	= settr(0,0,0,0,0,"nr_of_ships_at_pos[ship_pos[shipid]] = (nr_of_ships_at_pos[ship_pos[shipid]]-1)",0,0,0);
-	trans[1][59]	= settr(108,2,60,87,87,"observed_low[0]!1", 1, 5, 0);
+	trans[1][59]	= settr(108,2,60,88,88,"observed_low[0]!1", 1, 5, 0);
 	trans[1][60]	= settr(109,0,107,1,0,"goto :b4", 1, 5, 0);
 	trans[1][64]	= settr(113,0,72,1,0,".(goto)", 1, 5, 0);
-	trans[1][61]	= settr(110,2,62,88,0,"(lock_is_occupied)", 1, 5, 0);
-	trans[1][62]	= settr(111,2,64,89,89,"observed_low[0]!1", 1, 5, 0);
+	trans[1][61]	= settr(110,2,62,89,0,"(lock_is_occupied)", 1, 5, 0);
+	trans[1][62]	= settr(111,2,64,90,90,"observed_low[0]!1", 1, 5, 0);
 	T = trans[ 1][71] = settr(120,2,0,0,0,"ATOMIC", 1, 2, 0);
 	T->nxt	= settr(120,2,66,0,0,"ATOMIC", 1, 2, 0);
-	trans[1][66]	= settr(115,4,107,90,90,"(((doors_status.lower==1)&&!(lock_is_occupied)))", 1, 2, 0); /* m: 67 -> 107,0 */
+	trans[1][66]	= settr(115,4,107,91,91,"(((doors_status.lower==1)&&!(lock_is_occupied)))", 1, 2, 0); /* m: 67 -> 107,0 */
 	reached1[67] = 1;
 	trans[1][67]	= settr(0,0,0,0,0,"ship_status[shipid] = 2",0,0,0);
 	trans[1][68]	= settr(0,0,0,0,0,"lock_is_occupied = 1",0,0,0);
 	trans[1][69]	= settr(0,0,0,0,0,"nr_of_ships_at_pos[ship_pos[shipid]] = (nr_of_ships_at_pos[ship_pos[shipid]]-1)",0,0,0);
 	trans[1][70]	= settr(119,0,107,1,0,"goto :b4", 1, 2, 0);
 	trans[1][74]	= settr(123,0,107,1,0,"break", 0, 2, 0);
-	trans[1][75]	= settr(124,0,98,91,0,"((ship_status[shipid]==2))", 1, 2, 0);
+	trans[1][75]	= settr(124,0,98,92,0,"((ship_status[shipid]==2))", 1, 2, 0);
 	trans[1][99]	= settr(148,0,98,1,0,".(goto)", 0, 2, 0);
 	T = trans[1][98] = settr(147,0,0,0,0,"DO", 0, 2, 0);
 	T = T->nxt	= settr(147,0,76,0,0,"DO", 0, 2, 0);
 	    T->nxt	= settr(147,0,97,0,0,"DO", 0, 2, 0);
-	trans[1][76]	= settr(125,0,77,92,0,"((doors_status.higher==2))", 1, 2, 0);
-	trans[1][77]	= settr(126,0,90,93,93,"request_high!1", 1, 4, 0);
+	trans[1][76]	= settr(125,0,77,93,0,"((doors_status.higher==2))", 1, 2, 0);
+	trans[1][77]	= settr(126,0,90,94,94,"request_high!1", 1, 4, 0);
 	T = trans[ 1][90] = settr(139,2,0,0,0,"ATOMIC", 1, 2, 0);
 	T->nxt	= settr(139,2,78,0,0,"ATOMIC", 1, 6, 0);
-	trans[1][78]	= settr(127,2,88,94,0,"((doors_status.higher==1))", 1, 6, 0);
+	trans[1][78]	= settr(127,2,88,95,0,"((doors_status.higher==1))", 1, 6, 0);
 	T = trans[1][88] = settr(137,2,0,0,0,"IF", 1, 6, 0);
 	T = T->nxt	= settr(137,2,79,0,0,"IF", 1, 6, 0);
 	    T->nxt	= settr(137,2,86,0,0,"IF", 1, 6, 0);
-	trans[1][79]	= settr(128,2,84,95,95,"(((nr_of_ships_at_pos[(ship_pos[shipid]+1)]<2)||((ship_pos[shipid]+1)==1)))", 1, 6, 0); /* m: 80 -> 84,0 */
+	trans[1][79]	= settr(128,2,84,96,96,"(((nr_of_ships_at_pos[(ship_pos[shipid]+1)]<2)||((ship_pos[shipid]+1)==1)))", 1, 6, 0); /* m: 80 -> 84,0 */
 	reached1[80] = 1;
 	trans[1][80]	= settr(0,0,0,0,0,"ship_status[shipid] = 3",0,0,0);
 	trans[1][81]	= settr(0,0,0,0,0,"lock_is_occupied = 0",0,0,0);
 	trans[1][82]	= settr(0,0,0,0,0,"ship_pos[shipid] = (ship_pos[shipid]+1)",0,0,0);
 	trans[1][83]	= settr(0,0,0,0,0,"nr_of_ships_at_pos[ship_pos[shipid]] = (nr_of_ships_at_pos[ship_pos[shipid]]+1)",0,0,0);
-	trans[1][84]	= settr(133,2,85,96,96,"observed_high[0]!1", 1, 6, 0);
+	trans[1][84]	= settr(133,2,85,97,97,"observed_high[0]!1", 1, 6, 0);
 	trans[1][85]	= settr(134,0,107,1,0,"goto :b5", 1, 6, 0);
 	trans[1][89]	= settr(138,0,98,1,0,".(goto)", 1, 6, 0);
-	trans[1][86]	= settr(135,2,87,97,0,"(((nr_of_ships_at_pos[(ship_pos[shipid]+1)]==2)&&((ship_pos[shipid]+1)!=1)))", 1, 6, 0);
-	trans[1][87]	= settr(136,2,89,98,98,"observed_high[0]!1", 1, 6, 0);
+	trans[1][86]	= settr(135,2,87,98,0,"(((nr_of_ships_at_pos[(ship_pos[shipid]+1)]==2)&&((ship_pos[shipid]+1)!=1)))", 1, 6, 0);
+	trans[1][87]	= settr(136,2,89,99,99,"observed_high[0]!1", 1, 6, 0);
 	T = trans[ 1][97] = settr(146,2,0,0,0,"ATOMIC", 1, 2, 0);
 	T->nxt	= settr(146,2,91,0,0,"ATOMIC", 1, 2, 0);
-	trans[1][91]	= settr(140,4,107,99,99,"(((doors_status.higher==1)&&((nr_of_ships_at_pos[(ship_pos[shipid]+1)]<2)||((ship_pos[shipid]+1)==1))))", 1, 2, 0); /* m: 92 -> 107,0 */
+	trans[1][91]	= settr(140,4,107,100,100,"(((doors_status.higher==1)&&((nr_of_ships_at_pos[(ship_pos[shipid]+1)]<2)||((ship_pos[shipid]+1)==1))))", 1, 2, 0); /* m: 92 -> 107,0 */
 	reached1[92] = 1;
 	trans[1][92]	= settr(0,0,0,0,0,"ship_status[shipid] = 3",0,0,0);
 	trans[1][93]	= settr(0,0,0,0,0,"lock_is_occupied = 0",0,0,0);
@@ -350,14 +351,14 @@ settable(void)
 	trans[1][95]	= settr(0,0,0,0,0,"nr_of_ships_at_pos[ship_pos[shipid]] = (nr_of_ships_at_pos[ship_pos[shipid]]+1)",0,0,0);
 	trans[1][96]	= settr(145,0,107,1,0,"goto :b5", 1, 2, 0);
 	trans[1][100]	= settr(149,0,107,1,0,"break", 0, 2, 0);
-	trans[1][101]	= settr(150,0,102,100,0,"(((ship_status[shipid]==5)&&(ship_pos[shipid]==0)))", 1, 2, 0);
-	trans[1][102]	= settr(151,0,103,101,101,"ship_status[shipid] = 1", 1, 2, 0);
-	trans[1][103]	= settr(152,0,107,102,102,"ship_status[shipid] = 3", 1, 2, 0);
-	trans[1][104]	= settr(153,0,105,103,0,"(((ship_status[shipid]==3)&&(ship_pos[shipid]==1)))", 1, 2, 0);
-	trans[1][105]	= settr(154,0,106,104,104,"ship_status[shipid] = 1", 1, 2, 0);
-	trans[1][106]	= settr(155,0,107,105,105,"ship_status[shipid] = 5", 1, 2, 0);
+	trans[1][101]	= settr(150,0,102,101,0,"(((ship_status[shipid]==5)&&(ship_pos[shipid]==0)))", 1, 2, 0);
+	trans[1][102]	= settr(151,0,103,102,102,"ship_status[shipid] = 1", 1, 2, 0);
+	trans[1][103]	= settr(152,0,107,103,103,"ship_status[shipid] = 3", 1, 2, 0);
+	trans[1][104]	= settr(153,0,105,104,0,"(((ship_status[shipid]==3)&&(ship_pos[shipid]==1)))", 1, 2, 0);
+	trans[1][105]	= settr(154,0,106,105,105,"ship_status[shipid] = 1", 1, 2, 0);
+	trans[1][106]	= settr(155,0,107,106,106,"ship_status[shipid] = 5", 1, 2, 0);
 	trans[1][109]	= settr(158,0,110,1,0,"break", 0, 2, 0);
-	trans[1][110]	= settr(159,0,0,106,106,"-end-", 0, 3500, 0);
+	trans[1][110]	= settr(159,0,0,107,107,"-end-", 0, 3500, 0);
 
 	/* proctype 0: lock */
 
@@ -369,66 +370,66 @@ settable(void)
 	T = T->nxt	= settr(46,0,10,0,0,"DO", 0, 2, 0);
 	T = T->nxt	= settr(46,0,24,0,0,"DO", 0, 2, 0);
 	    T->nxt	= settr(46,0,33,0,0,"DO", 0, 2, 0);
-	trans[0][1]	= settr(0,0,7,107,107,"change_doors_pos?2", 1, 507, 0);
+	trans[0][1]	= settr(0,0,7,108,108,"change_doors_pos?2", 1, 507, 0);
 	T = trans[0][7] = settr(6,0,0,0,0,"IF", 0, 2, 0);
 	T = T->nxt	= settr(6,0,2,0,0,"IF", 0, 2, 0);
 	    T->nxt	= settr(6,0,5,0,0,"IF", 0, 2, 0);
-	trans[0][2]	= settr(1,0,3,108,0,"((doors_status.lower==2))", 1, 2, 0);
-	trans[0][3]	= settr(2,0,4,109,109,"doors_status.lower = 1", 1, 2, 0);
-	trans[0][4]	= settr(3,0,9,110,110,"lock_water_level = 2", 1, 2, 0);
+	trans[0][2]	= settr(1,0,3,109,0,"((doors_status.lower==2))", 1, 2, 0);
+	trans[0][3]	= settr(2,0,4,110,110,"doors_status.lower = 1", 1, 2, 0);
+	trans[0][4]	= settr(3,0,9,111,111,"lock_water_level = 2", 1, 2, 0);
 	trans[0][8]	= settr(7,0,9,1,0,".(goto)", 0, 2, 0);
-	trans[0][5]	= settr(4,0,6,111,0,"((doors_status.lower==1))", 1, 2, 0);
-	trans[0][6]	= settr(5,0,9,112,112,"doors_status.lower = 2", 1, 2, 0);
-	trans[0][9]	= settr(8,0,47,113,113,"doors_pos_changed!1", 1, 8, 0);
-	trans[0][10]	= settr(9,0,21,114,114,"change_doors_pos?1", 1, 507, 0);
+	trans[0][5]	= settr(4,0,6,112,0,"((doors_status.lower==1))", 1, 2, 0);
+	trans[0][6]	= settr(5,0,9,113,113,"doors_status.lower = 2", 1, 2, 0);
+	trans[0][9]	= settr(8,0,47,114,114,"doors_pos_changed!1", 1, 8, 0);
+	trans[0][10]	= settr(9,0,21,115,115,"change_doors_pos?1", 1, 507, 0);
 	T = trans[0][21] = settr(20,0,0,0,0,"IF", 0, 2, 0);
 	T = T->nxt	= settr(20,0,11,0,0,"IF", 0, 2, 0);
 	    T->nxt	= settr(20,0,19,0,0,"IF", 0, 2, 0);
-	trans[0][11]	= settr(10,0,12,115,0,"((doors_status.higher==2))", 1, 2, 0);
-	trans[0][12]	= settr(11,0,17,116,116,"doors_status.higher = 1", 1, 2, 0);
+	trans[0][11]	= settr(10,0,12,116,0,"((doors_status.higher==2))", 1, 2, 0);
+	trans[0][12]	= settr(11,0,17,117,117,"doors_status.higher = 1", 1, 2, 0);
 	T = trans[0][17] = settr(16,0,0,0,0,"IF", 0, 2, 0);
 	T = T->nxt	= settr(16,0,13,0,0,"IF", 0, 2, 0);
 	    T->nxt	= settr(16,0,15,0,0,"IF", 0, 2, 0);
-	trans[0][13]	= settr(12,0,14,117,0,"(((doors_status.lower==2)&&(slide_status.lower==2)))", 1, 2, 0);
-	trans[0][14]	= settr(13,0,23,118,118,"lock_water_level = 1", 1, 2, 0);
+	trans[0][13]	= settr(12,0,14,118,0,"(((doors_status.lower==2)&&(slide_status.lower==2)))", 1, 2, 0);
+	trans[0][14]	= settr(13,0,23,119,119,"lock_water_level = 1", 1, 2, 0);
 	trans[0][18]	= settr(17,0,23,1,0,".(goto)", 0, 2, 0);
-	trans[0][15]	= settr(14,0,16,119,0,"(((doors_status.lower==1)||(slide_status.lower==1)))", 1, 2, 0);
+	trans[0][15]	= settr(14,0,16,120,0,"(((doors_status.lower==1)||(slide_status.lower==1)))", 1, 2, 0);
 	trans[0][16]	= settr(15,0,23,1,0,"(1)", 0, 2, 0);
 	trans[0][22]	= settr(21,0,23,1,0,".(goto)", 0, 2, 0);
-	trans[0][19]	= settr(18,0,20,120,0,"((doors_status.higher==1))", 1, 2, 0);
-	trans[0][20]	= settr(19,0,23,121,121,"doors_status.higher = 2", 1, 2, 0);
-	trans[0][23]	= settr(22,0,47,122,122,"doors_pos_changed!1", 1, 8, 0);
-	trans[0][24]	= settr(23,0,30,123,123,"change_slide_pos?2", 1, 509, 0);
+	trans[0][19]	= settr(18,0,20,121,0,"((doors_status.higher==1))", 1, 2, 0);
+	trans[0][20]	= settr(19,0,23,122,122,"doors_status.higher = 2", 1, 2, 0);
+	trans[0][23]	= settr(22,0,47,123,123,"doors_pos_changed!1", 1, 8, 0);
+	trans[0][24]	= settr(23,0,30,124,124,"change_slide_pos?2", 1, 509, 0);
 	T = trans[0][30] = settr(29,0,0,0,0,"IF", 0, 2, 0);
 	T = T->nxt	= settr(29,0,25,0,0,"IF", 0, 2, 0);
 	    T->nxt	= settr(29,0,28,0,0,"IF", 0, 2, 0);
-	trans[0][25]	= settr(24,0,26,124,0,"((slide_status.lower==2))", 1, 2, 0);
-	trans[0][26]	= settr(25,0,27,125,125,"slide_status.lower = 1", 1, 2, 0);
-	trans[0][27]	= settr(26,0,32,126,126,"lock_water_level = 2", 1, 2, 0);
+	trans[0][25]	= settr(24,0,26,125,0,"((slide_status.lower==2))", 1, 2, 0);
+	trans[0][26]	= settr(25,0,27,126,126,"slide_status.lower = 1", 1, 2, 0);
+	trans[0][27]	= settr(26,0,32,127,127,"lock_water_level = 2", 1, 2, 0);
 	trans[0][31]	= settr(30,0,32,1,0,".(goto)", 0, 2, 0);
-	trans[0][28]	= settr(27,0,29,127,0,"((slide_status.lower==1))", 1, 2, 0);
-	trans[0][29]	= settr(28,0,32,128,128,"slide_status.lower = 2", 1, 2, 0);
-	trans[0][32]	= settr(31,0,47,129,129,"slide_pos_changed!1", 1, 10, 0);
-	trans[0][33]	= settr(32,0,44,130,130,"change_slide_pos?1", 1, 509, 0);
+	trans[0][28]	= settr(27,0,29,128,0,"((slide_status.lower==1))", 1, 2, 0);
+	trans[0][29]	= settr(28,0,32,129,129,"slide_status.lower = 2", 1, 2, 0);
+	trans[0][32]	= settr(31,0,47,130,130,"slide_pos_changed!1", 1, 10, 0);
+	trans[0][33]	= settr(32,0,44,131,131,"change_slide_pos?1", 1, 509, 0);
 	T = trans[0][44] = settr(43,0,0,0,0,"IF", 0, 2, 0);
 	T = T->nxt	= settr(43,0,34,0,0,"IF", 0, 2, 0);
 	    T->nxt	= settr(43,0,42,0,0,"IF", 0, 2, 0);
-	trans[0][34]	= settr(33,0,35,131,0,"((slide_status.higher==2))", 1, 2, 0);
-	trans[0][35]	= settr(34,0,40,132,132,"slide_status.higher = 1", 1, 2, 0);
+	trans[0][34]	= settr(33,0,35,132,0,"((slide_status.higher==2))", 1, 2, 0);
+	trans[0][35]	= settr(34,0,40,133,133,"slide_status.higher = 1", 1, 2, 0);
 	T = trans[0][40] = settr(39,0,0,0,0,"IF", 0, 2, 0);
 	T = T->nxt	= settr(39,0,36,0,0,"IF", 0, 2, 0);
 	    T->nxt	= settr(39,0,38,0,0,"IF", 0, 2, 0);
-	trans[0][36]	= settr(35,0,37,133,0,"(((doors_status.lower==2)&&(slide_status.lower==2)))", 1, 2, 0);
-	trans[0][37]	= settr(36,0,46,134,134,"lock_water_level = 1", 1, 2, 0);
+	trans[0][36]	= settr(35,0,37,134,0,"(((doors_status.lower==2)&&(slide_status.lower==2)))", 1, 2, 0);
+	trans[0][37]	= settr(36,0,46,135,135,"lock_water_level = 1", 1, 2, 0);
 	trans[0][41]	= settr(40,0,46,1,0,".(goto)", 0, 2, 0);
-	trans[0][38]	= settr(37,0,39,135,0,"(((doors_status.lower==1)||(slide_status.lower==1)))", 1, 2, 0);
+	trans[0][38]	= settr(37,0,39,136,0,"(((doors_status.lower==1)||(slide_status.lower==1)))", 1, 2, 0);
 	trans[0][39]	= settr(38,0,46,1,0,"(1)", 0, 2, 0);
 	trans[0][45]	= settr(44,0,46,1,0,".(goto)", 0, 2, 0);
-	trans[0][42]	= settr(41,0,43,136,0,"((slide_status.higher==1))", 1, 2, 0);
-	trans[0][43]	= settr(42,0,46,137,137,"slide_status.higher = 2", 1, 2, 0);
-	trans[0][46]	= settr(45,0,47,138,138,"slide_pos_changed!1", 1, 10, 0);
+	trans[0][42]	= settr(41,0,43,137,0,"((slide_status.higher==1))", 1, 2, 0);
+	trans[0][43]	= settr(42,0,46,138,138,"slide_status.higher = 2", 1, 2, 0);
+	trans[0][46]	= settr(45,0,47,139,139,"slide_pos_changed!1", 1, 10, 0);
 	trans[0][49]	= settr(48,0,50,1,0,"break", 0, 2, 0);
-	trans[0][50]	= settr(49,0,0,139,139,"-end-", 0, 3500, 0);
+	trans[0][50]	= settr(49,0,0,140,140,"-end-", 0, 3500, 0);
 	/* np_ demon: */
 	trans[_NP_] = (Trans **) emalloc(3*sizeof(Trans *));
 	T = trans[_NP_][0] = settr(9997,0,1,_T5,0,"(np_)", 1,2,0);
