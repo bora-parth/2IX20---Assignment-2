@@ -257,7 +257,7 @@ proctype main_control() {
 		:: doors_status.lower == open -> skip;
 		fi;
 		observed_low[0]?true;
-		request_sent = null
+		request_sent = null;
 	:: request_high?true ->
 		request_sent = highdoor;
 		if
@@ -278,7 +278,7 @@ proctype main_control() {
 		:: doors_status.higher == open -> skip;
 		fi;
 		observed_high[0]?true;
-		request_sent = null
+		request_sent = null;
 	od;
 }
 
