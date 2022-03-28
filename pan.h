@@ -139,7 +139,7 @@ typedef struct S_F_MAP {
 	int upto;
 } S_F_MAP;
 
-#define _nstates5	14	/* d1 */
+#define _nstates5	14	/* d2 */
 #define minseq5	273
 #define maxseq5	285
 #define _endstate5	13
@@ -207,7 +207,7 @@ struct slides_t { /* user defined type */
 	uchar lower;
 	uchar higher;
 };
-typedef struct P5 { /* d1 */
+typedef struct P5 { /* d2 */
 	unsigned _pid : 8;  /* 0..255 */
 	unsigned _t   : 4; /* proctype */
 	unsigned _p   : 8; /* state    */
@@ -487,7 +487,6 @@ typedef struct State {
 	uchar change_slide_pos;
 	uchar slide_pos_changed;
 	uchar lock_water_level;
-	uchar request_sent;
 	uchar ship_status[1];
 	struct doorpairs_t doors_status;
 	struct slides_t slide_status;
@@ -512,6 +511,7 @@ typedef struct TRIX_v6 {
 #endif
 
 #define HAS_TRACK	0
+/* hidden variable: */	uchar request_sent;
 #define FORWARD_MOVES	"pan.m"
 #define BACKWARD_MOVES	"pan.b"
 #define TRANSITIONS	"pan.t"

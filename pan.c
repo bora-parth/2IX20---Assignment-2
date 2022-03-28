@@ -669,7 +669,7 @@ char *procname[] = {
    "main_control",
    "monitor",
    ":init:",
-   "d1",
+   "d2",
    ":np_:",
 	0
 };
@@ -682,7 +682,7 @@ int Btypes[] = {
    4,	/* main_control */
    4,	/* monitor */
    2,	/* :init: */
-   1,	/* d1 */
+   1,	/* d2 */
    0	/* :np_: */
 };
 
@@ -958,7 +958,7 @@ addproc(int calling_pid, int priority, int n, int par0)
 		reached6[0] = 1;
 		accpstate[6][1] = 1;
 		break;
-	case 5:	/* d1 */
+	case 5:	/* d2 */
 		((P5 *)pptr(h))->_t = 5;
 		((P5 *)pptr(h))->_p = 5;
 #ifdef HAS_PRIORITY
@@ -12626,7 +12626,7 @@ iniglobals(int calling_pid)
 		now.change_slide_pos = addqueue(calling_pid, 7, 1);
 		now.slide_pos_changed = addqueue(calling_pid, 8, 1);
 		now.lock_water_level = 0;
-		now.request_sent = 0;
+		request_sent = 0;
 	{	int l_in;
 		for (l_in = 0; l_in < 1; l_in++)
 		{
@@ -12652,7 +12652,6 @@ iniglobals(int calling_pid)
 		}
 	}
 		logval("lock_water_level", now.lock_water_level);
-		logval("request_sent", now.request_sent);
 	{	int l_in;
 		for (l_in = 0; l_in < 1; l_in++)
 		{
@@ -14765,7 +14764,6 @@ c_globals(void)
 	c_chandump(now.observed_high[0]);
 	printf("	mtype  lock_water_level:	%d\n", now.lock_water_level);
 	printf("	bit    lock_is_occupied:	%d\n", now.lock_is_occupied);
-	printf("	mtype  request_sent:	%d\n", now.request_sent);
 	{	int l_in;
 		for (l_in = 0; l_in < 1; l_in++)
 		{

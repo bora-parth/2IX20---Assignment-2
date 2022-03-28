@@ -2,7 +2,7 @@
 	default: Uerror("bad return move");
 	case  0: goto R999; /* nothing to undo */
 
-		 /* CLAIM d1 */
+		 /* CLAIM d2 */
 ;
 		;
 		;
@@ -157,7 +157,7 @@
 
 	case 25: // STATE 2
 		;
-		now.request_sent = trpt->bup.oval;
+		request_sent = trpt->bup.oval;
 		;
 		goto R999;
 ;
@@ -253,7 +253,7 @@
 
 	case 43: // STATE 33
 		;
-		now.request_sent = trpt->bup.oval;
+		request_sent = trpt->bup.oval;
 		;
 		goto R999;
 
@@ -267,7 +267,7 @@
 
 	case 45: // STATE 35
 		;
-		now.request_sent = trpt->bup.oval;
+		request_sent = trpt->bup.oval;
 		;
 		goto R999;
 ;
@@ -363,7 +363,7 @@
 
 	case 63: // STATE 66
 		;
-		now.request_sent = trpt->bup.oval;
+		request_sent = trpt->bup.oval;
 		;
 		goto R999;
 

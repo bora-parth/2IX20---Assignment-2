@@ -19,8 +19,8 @@
 		if (trpt->o_pm&1) continue;
 		_m = 3; goto P999;
 
-		 /* CLAIM d1 */
-	case 3: // STATE 1 - _spin_nvr.tmp:3 - [((!(!(((request_sent==3)&&(ship_status[0]==3))))&&!((ship_status[0]==2))))] (0:0:0 - 1)
+		 /* CLAIM d2 */
+	case 3: // STATE 1 - _spin_nvr.tmp:3 - [((!(!((request_high?[1]&&(ship_status[0]==5))))&&!((lock_water_level==2))))] (0:0:0 - 1)
 		
 #if defined(VERI) && !defined(NP)
 #if NCLAIMS>1
@@ -43,10 +43,12 @@
 #endif
 #endif
 		reached[5][1] = 1;
-		if (!(( !( !(((now.request_sent==3)&&(now.ship_status[0]==3))))&& !((now.ship_status[0]==2)))))
+		if (!(( !( !((not_RV(now.request_high) && \
+		(q_len(now.request_high) > 0 \
+		&& qrecv(now.request_high, 0, 0, 0) == 1)&&(now.ship_status[0]==5))))&& !((now.lock_water_level==2)))))
 			continue;
 		_m = 3; goto P999; /* 0 */
-	case 4: // STATE 8 - _spin_nvr.tmp:8 - [(!((ship_status[0]==2)))] (0:0:0 - 1)
+	case 4: // STATE 8 - _spin_nvr.tmp:8 - [(!((lock_water_level==2)))] (0:0:0 - 1)
 		
 #if defined(VERI) && !defined(NP)
 #if NCLAIMS>1
@@ -69,7 +71,7 @@
 #endif
 #endif
 		reached[5][8] = 1;
-		if (!( !((now.ship_status[0]==2))))
+		if (!( !((now.lock_water_level==2))))
 			continue;
 		_m = 3; goto P999; /* 0 */
 	case 5: // STATE 13 - _spin_nvr.tmp:10 - [-end-] (0:0:0 - 1)
@@ -425,10 +427,10 @@
 	case 25: // STATE 2 - lock_env.pml:241 - [request_sent = 3] (0:0:1 - 1)
 		IfNotBlocked
 		reached[2][2] = 1;
-		(trpt+1)->bup.oval = now.request_sent;
-		now.request_sent = 3;
+		(trpt+1)->bup.oval = request_sent;
+		request_sent = 3;
 #ifdef VAR_RANGES
-		logval("request_sent", now.request_sent);
+		logval("request_sent", request_sent);
 #endif
 		;
 		_m = 3; goto P999; /* 0 */
@@ -840,10 +842,10 @@
 	case 43: // STATE 33 - lock_env.pml:260 - [request_sent = 1] (0:0:1 - 1)
 		IfNotBlocked
 		reached[2][33] = 1;
-		(trpt+1)->bup.oval = now.request_sent;
-		now.request_sent = 1;
+		(trpt+1)->bup.oval = request_sent;
+		request_sent = 1;
 #ifdef VAR_RANGES
-		logval("request_sent", now.request_sent);
+		logval("request_sent", request_sent);
 #endif
 		;
 		_m = 3; goto P999; /* 0 */
@@ -899,10 +901,10 @@
 	case 45: // STATE 35 - lock_env.pml:262 - [request_sent = 2] (0:0:1 - 1)
 		IfNotBlocked
 		reached[2][35] = 1;
-		(trpt+1)->bup.oval = now.request_sent;
-		now.request_sent = 2;
+		(trpt+1)->bup.oval = request_sent;
+		request_sent = 2;
 #ifdef VAR_RANGES
-		logval("request_sent", now.request_sent);
+		logval("request_sent", request_sent);
 #endif
 		;
 		_m = 3; goto P999; /* 0 */
@@ -1314,10 +1316,10 @@
 	case 63: // STATE 66 - lock_env.pml:281 - [request_sent = 1] (0:0:1 - 1)
 		IfNotBlocked
 		reached[2][66] = 1;
-		(trpt+1)->bup.oval = now.request_sent;
-		now.request_sent = 1;
+		(trpt+1)->bup.oval = request_sent;
+		request_sent = 1;
 #ifdef VAR_RANGES
-		logval("request_sent", now.request_sent);
+		logval("request_sent", request_sent);
 #endif
 		;
 		_m = 3; goto P999; /* 0 */

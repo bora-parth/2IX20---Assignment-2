@@ -1,11 +1,11 @@
-never d1 {    /* !([] ((! (((request_sent==3)) && ((ship_status[0]==3)))) || (<> ((ship_status[0]==2))))) */
+never d2 {    /* !([] ((! ((request_high?[1]) && ((ship_status[0]==5)))) || (<> ((lock_water_level==2))))) */
 T0_init:
 	do
-	:: (! ((! (((request_sent==3)) && ((ship_status[0]==3))))) && ! (((ship_status[0]==2)))) -> goto accept_S4
+	:: (! ((! ((request_high?[1]) && ((ship_status[0]==5))))) && ! (((lock_water_level==2)))) -> goto accept_S4
 	:: (1) -> goto T0_init
 	od;
 accept_S4:
 	do
-	:: (! (((ship_status[0]==2)))) -> goto accept_S4
+	:: (! (((lock_water_level==2)))) -> goto accept_S4
 	od;
 }

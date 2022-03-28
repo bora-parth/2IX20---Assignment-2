@@ -2,20 +2,20 @@
 (Spin Version 6.5.1 -- 3 June 2021)
 
 Full statespace search for:
-	never claim         	+ (d1)
+	never claim         	+ (d2)
 	assertion violations	+ (if within scope of claim)
 	acceptance   cycles 	+ (fairness enabled)
 	invalid end states	- (disabled by never claim)
 
 State-vector 140 byte, depth reached 415, errors: 0
-      299 states, stored (477 visited)
-      379 states, matched
-      856 transitions (= visited+matched)
-      176 atomic steps
+      249 states, stored
+      177 states, matched
+      426 transitions (= stored+matched)
+       54 atomic steps
 hash conflicts:         0 (resolved)
 
 Stats on memory usage (in Megabytes):
-    0.048	equivalent memory usage for states (stored*(State-vector + overhead))
+    0.040	equivalent memory usage for states (stored*(State-vector + overhead))
     0.262	actual memory usage for states
   128.000	memory used for hash table (-w24)
    53.406	memory used for DFS stack (-m1000000)
@@ -56,9 +56,10 @@ unreached in proctype monitor
 	(0 of 2 states)
 unreached in init
 	(0 of 41 states)
-unreached in claim d1
+unreached in claim d2
+	_spin_nvr.tmp:8, state 10, "(!((lock_water_level==2)))"
 	_spin_nvr.tmp:10, state 13, "-end-"
-	(1 of 13 states)
+	(2 of 13 states)
 
 pan: elapsed time 0 seconds
 null

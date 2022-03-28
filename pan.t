@@ -24,7 +24,7 @@ settable(void)
 
 	trans = (Trans ***) emalloc(7*sizeof(Trans **));
 
-	/* proctype 5: d1 */
+	/* proctype 5: d2 */
 
 	trans[5] = (Trans **) emalloc(14*sizeof(Trans *));
 
@@ -32,7 +32,7 @@ settable(void)
 	T = trans[5][5] = settr(277,0,0,0,0,"DO", 0, 2, 0);
 	T = T->nxt	= settr(277,0,1,0,0,"DO", 0, 2, 0);
 	    T->nxt	= settr(277,0,3,0,0,"DO", 0, 2, 0);
-	trans[5][1]	= settr(273,0,10,3,0,"((!(!(((request_sent==3)&&(ship_status[0]==3))))&&!((ship_status[0]==2))))", 1, 2, 0);
+	trans[5][1]	= settr(273,0,10,3,0,"((!(!((request_high?[1]&&(ship_status[0]==5))))&&!((lock_water_level==2))))", 1, 2, 0);
 	trans[5][2]	= settr(274,0,10,1,0,"goto accept_S4", 0, 2, 0);
 	trans[5][3]	= settr(275,0,5,1,0,"(1)", 0, 2, 0);
 	trans[5][4]	= settr(276,0,5,1,0,"goto T0_init", 0, 2, 0);
@@ -40,7 +40,7 @@ settable(void)
 	trans[5][11]	= settr(283,0,10,1,0,".(goto)", 0, 2, 0);
 	T = trans[5][10] = settr(282,0,0,0,0,"DO", 0, 2, 0);
 	    T->nxt	= settr(282,0,8,0,0,"DO", 0, 2, 0);
-	trans[5][8]	= settr(280,0,10,4,0,"(!((ship_status[0]==2)))", 1, 2, 0);
+	trans[5][8]	= settr(280,0,10,4,0,"(!((lock_water_level==2)))", 1, 2, 0);
 	trans[5][9]	= settr(281,0,10,1,0,"goto accept_S4", 0, 2, 0);
 	trans[5][12]	= settr(284,0,13,1,0,"break", 0, 2, 0);
 	trans[5][13]	= settr(285,0,0,5,5,"-end-", 0, 3500, 0);
