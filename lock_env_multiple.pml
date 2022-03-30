@@ -9,9 +9,9 @@
 */
 
 // The number of locks.
-#define N	1
+#define N	3
 // The number of ships.
-#define M	1
+#define M	3
 // The maximum number of ships immediately at either side of a lock.
 #define MAX 2
 
@@ -19,8 +19,11 @@
 // Formula p1 holds if the first ship can always eventually enter the lock when going up.
 //ltl p1 { []<> (ship_status[0] == go_up_in_lock) } /*  */
 
-//ltl d1 {[] (request_low?[true] && ship_status[0] == go_up -> <> (ship_status[0] == go_up_in_lock))}
-//ltl d2 {[] (request_high?[true] && ship_status[0] == go_down -> <> (lock_water_level == low_level))}
+//ltl e1 {request_low[i]?[true] => <> observed_low[i]?[true]}
+ltl e2 {request_high[i]?[true] => <> observed_high[i]?[true]}
+
+//ltl f1 {[] <>(request_high[N-1]?[true])}
+//ltl f2 {[] <>(request_low[0]?[true])}
 
 // Type for direction of ship.
 mtype:direction = { go_down, go_down_in_lock, go_up, go_up_in_lock, goal_reached };
