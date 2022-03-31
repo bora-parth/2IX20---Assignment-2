@@ -9,7 +9,7 @@
 */
 
 // The number of locks.
-#define N	3
+#define N	4
 // The number of ships.
 #define M	2
 // The maximum number of ships immediately at either side of a lock.
@@ -91,12 +91,12 @@ proctype lock(byte lockid) {
 		if
 		:: doors_status[lockid].lower == closed -> doors_status[lockid].lower = open;
 			lock_water_level[lockid] = low_level;
-		:: doors_status[lockid] .lower== open -> doors_status[lockid].lower= closed;
+		:: doors_status[lockid].lower== open -> doors_status[lockid].lower= closed;
 		fi;
 		doors_pos_changed[lockid]!true;
 	:: change_doors_pos[lockid]?high ->
 		if
-		:: doors_status[lockid].higher == closed -> doors_status[lockid] .higher= open;
+		:: doors_status[lockid].higher == closed -> doors_status[lockid].higher= open;
 			if
 			:: doors_status[lockid].lower == closed && slide_status[lockid].lower == closed ->
 				lock_water_level[lockid] = high_level;

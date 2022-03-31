@@ -12561,7 +12561,7 @@ void
 iniglobals(int calling_pid)
 {
 	{	int l_in;
-		for (l_in = 0; l_in < 3; l_in++)
+		for (l_in = 0; l_in < 4; l_in++)
 		{
 			now.lock_is_occupied[l_in] = 0;
 		}
@@ -12573,7 +12573,7 @@ iniglobals(int calling_pid)
 		}
 	}
 	{	int l_in;
-		for (l_in = 0; l_in < 4; l_in++)
+		for (l_in = 0; l_in < 5; l_in++)
 		{
 			now.nr_of_ships_at_pos[l_in] = 0;
 		}
@@ -12581,29 +12581,37 @@ iniglobals(int calling_pid)
 		now.request_low[0] = addqueue(calling_pid, 1, 0);
 		now.request_low[1] = addqueue(calling_pid, 2, 0);
 		now.request_low[2] = addqueue(calling_pid, 3, 0);
-		now.request_high[0] = addqueue(calling_pid, 4, 0);
-		now.request_high[1] = addqueue(calling_pid, 5, 0);
-		now.request_high[2] = addqueue(calling_pid, 6, 0);
-		now.observed_low[0] = addqueue(calling_pid, 7, 1);
-		now.observed_low[1] = addqueue(calling_pid, 8, 1);
-		now.observed_low[2] = addqueue(calling_pid, 9, 1);
-		now.observed_high[0] = addqueue(calling_pid, 10, 1);
-		now.observed_high[1] = addqueue(calling_pid, 11, 1);
-		now.observed_high[2] = addqueue(calling_pid, 12, 1);
-		now.change_doors_pos[0] = addqueue(calling_pid, 13, 1);
-		now.change_doors_pos[1] = addqueue(calling_pid, 14, 1);
-		now.change_doors_pos[2] = addqueue(calling_pid, 15, 1);
-		now.doors_pos_changed[0] = addqueue(calling_pid, 16, 1);
-		now.doors_pos_changed[1] = addqueue(calling_pid, 17, 1);
-		now.doors_pos_changed[2] = addqueue(calling_pid, 18, 1);
-		now.change_slide_pos[0] = addqueue(calling_pid, 19, 1);
-		now.change_slide_pos[1] = addqueue(calling_pid, 20, 1);
-		now.change_slide_pos[2] = addqueue(calling_pid, 21, 1);
-		now.slide_pos_changed[0] = addqueue(calling_pid, 22, 1);
-		now.slide_pos_changed[1] = addqueue(calling_pid, 23, 1);
-		now.slide_pos_changed[2] = addqueue(calling_pid, 24, 1);
+		now.request_low[3] = addqueue(calling_pid, 4, 0);
+		now.request_high[0] = addqueue(calling_pid, 5, 0);
+		now.request_high[1] = addqueue(calling_pid, 6, 0);
+		now.request_high[2] = addqueue(calling_pid, 7, 0);
+		now.request_high[3] = addqueue(calling_pid, 8, 0);
+		now.observed_low[0] = addqueue(calling_pid, 9, 1);
+		now.observed_low[1] = addqueue(calling_pid, 10, 1);
+		now.observed_low[2] = addqueue(calling_pid, 11, 1);
+		now.observed_low[3] = addqueue(calling_pid, 12, 1);
+		now.observed_high[0] = addqueue(calling_pid, 13, 1);
+		now.observed_high[1] = addqueue(calling_pid, 14, 1);
+		now.observed_high[2] = addqueue(calling_pid, 15, 1);
+		now.observed_high[3] = addqueue(calling_pid, 16, 1);
+		now.change_doors_pos[0] = addqueue(calling_pid, 17, 1);
+		now.change_doors_pos[1] = addqueue(calling_pid, 18, 1);
+		now.change_doors_pos[2] = addqueue(calling_pid, 19, 1);
+		now.change_doors_pos[3] = addqueue(calling_pid, 20, 1);
+		now.doors_pos_changed[0] = addqueue(calling_pid, 21, 1);
+		now.doors_pos_changed[1] = addqueue(calling_pid, 22, 1);
+		now.doors_pos_changed[2] = addqueue(calling_pid, 23, 1);
+		now.doors_pos_changed[3] = addqueue(calling_pid, 24, 1);
+		now.change_slide_pos[0] = addqueue(calling_pid, 25, 1);
+		now.change_slide_pos[1] = addqueue(calling_pid, 26, 1);
+		now.change_slide_pos[2] = addqueue(calling_pid, 27, 1);
+		now.change_slide_pos[3] = addqueue(calling_pid, 28, 1);
+		now.slide_pos_changed[0] = addqueue(calling_pid, 29, 1);
+		now.slide_pos_changed[1] = addqueue(calling_pid, 30, 1);
+		now.slide_pos_changed[2] = addqueue(calling_pid, 31, 1);
+		now.slide_pos_changed[3] = addqueue(calling_pid, 32, 1);
 	{	int l_in;
-		for (l_in = 0; l_in < 3; l_in++)
+		for (l_in = 0; l_in < 4; l_in++)
 		{
 			now.lock_water_level[l_in] = 0;
 		}
@@ -12620,15 +12628,19 @@ iniglobals(int calling_pid)
 		now.doors_status[1].higher = 0;
 		now.doors_status[2].lower = 0;
 		now.doors_status[2].higher = 0;
+		now.doors_status[3].lower = 0;
+		now.doors_status[3].higher = 0;
 		now.slide_status[0].lower = 0;
 		now.slide_status[0].higher = 0;
 		now.slide_status[1].lower = 0;
 		now.slide_status[1].higher = 0;
 		now.slide_status[2].lower = 0;
 		now.slide_status[2].higher = 0;
+		now.slide_status[3].lower = 0;
+		now.slide_status[3].higher = 0;
 #ifdef VAR_RANGES
 	{	int l_in;
-		for (l_in = 0; l_in < 3; l_in++)
+		for (l_in = 0; l_in < 4; l_in++)
 		{
 			logval("lock_is_occupied[l_in]", now.lock_is_occupied[l_in]);
 		}
@@ -12640,13 +12652,13 @@ iniglobals(int calling_pid)
 		}
 	}
 	{	int l_in;
-		for (l_in = 0; l_in < 4; l_in++)
+		for (l_in = 0; l_in < 5; l_in++)
 		{
 			logval("nr_of_ships_at_pos[l_in]", now.nr_of_ships_at_pos[l_in]);
 		}
 	}
 	{	int l_in;
-		for (l_in = 0; l_in < 3; l_in++)
+		for (l_in = 0; l_in < 4; l_in++)
 		{
 			logval("lock_water_level[l_in]", now.lock_water_level[l_in]);
 		}
@@ -12663,12 +12675,16 @@ iniglobals(int calling_pid)
 		logval("doors_status[1].higher", now.doors_status[1].higher);
 		logval("doors_status[2].lower", now.doors_status[2].lower);
 		logval("doors_status[2].higher", now.doors_status[2].higher);
+		logval("doors_status[3].lower", now.doors_status[3].lower);
+		logval("doors_status[3].higher", now.doors_status[3].higher);
 		logval("slide_status[0].lower", now.slide_status[0].lower);
 		logval("slide_status[0].higher", now.slide_status[0].higher);
 		logval("slide_status[1].lower", now.slide_status[1].lower);
 		logval("slide_status[1].higher", now.slide_status[1].higher);
 		logval("slide_status[2].lower", now.slide_status[2].lower);
 		logval("slide_status[2].higher", now.slide_status[2].higher);
+		logval("slide_status[3].lower", now.slide_status[3].lower);
+		logval("slide_status[3].higher", now.slide_status[3].higher);
 #endif
 }
 
@@ -12685,6 +12701,14 @@ addqueue(int calling_pid, int n, int is_rv)
 	printf("%4d: add queue %d\n", depth, i);
 #endif
 	switch (n) {
+	case 32: j = sizeof(Q32); q_flds[32] = 1; q_max[32] = 1; break;
+	case 31: j = sizeof(Q31); q_flds[31] = 1; q_max[31] = 1; break;
+	case 30: j = sizeof(Q30); q_flds[30] = 1; q_max[30] = 1; break;
+	case 29: j = sizeof(Q29); q_flds[29] = 1; q_max[29] = 1; break;
+	case 28: j = sizeof(Q28); q_flds[28] = 1; q_max[28] = 1; break;
+	case 27: j = sizeof(Q27); q_flds[27] = 1; q_max[27] = 1; break;
+	case 26: j = sizeof(Q26); q_flds[26] = 1; q_max[26] = 1; break;
+	case 25: j = sizeof(Q25); q_flds[25] = 1; q_max[25] = 1; break;
 	case 24: j = sizeof(Q24); q_flds[24] = 1; q_max[24] = 1; break;
 	case 23: j = sizeof(Q23); q_flds[23] = 1; q_max[23] = 1; break;
 	case 22: j = sizeof(Q22); q_flds[22] = 1; q_max[22] = 1; break;
@@ -12701,8 +12725,8 @@ addqueue(int calling_pid, int n, int is_rv)
 	case 11: j = sizeof(Q11); q_flds[11] = 1; q_max[11] = 1; break;
 	case 10: j = sizeof(Q10); q_flds[10] = 1; q_max[10] = 1; break;
 	case 9: j = sizeof(Q9); q_flds[9] = 1; q_max[9] = 1; break;
-	case 8: j = sizeof(Q8); q_flds[8] = 1; q_max[8] = 1; break;
-	case 7: j = sizeof(Q7); q_flds[7] = 1; q_max[7] = 1; break;
+	case 8: j = sizeof(Q8); q_flds[8] = 1; q_max[8] = 2; break;
+	case 7: j = sizeof(Q7); q_flds[7] = 1; q_max[7] = 2; break;
 	case 6: j = sizeof(Q6); q_flds[6] = 1; q_max[6] = 2; break;
 	case 5: j = sizeof(Q5); q_flds[5] = 1; q_max[5] = 2; break;
 	case 4: j = sizeof(Q4); q_flds[4] = 1; q_max[4] = 2; break;
@@ -12811,6 +12835,14 @@ what_q_size(int t)
 	case 22: j = sizeof(Q22); break;
 	case 23: j = sizeof(Q23); break;
 	case 24: j = sizeof(Q24); break;
+	case 25: j = sizeof(Q25); break;
+	case 26: j = sizeof(Q26); break;
+	case 27: j = sizeof(Q27); break;
+	case 28: j = sizeof(Q28); break;
+	case 29: j = sizeof(Q29); break;
+	case 30: j = sizeof(Q30); break;
+	case 31: j = sizeof(Q31); break;
+	case 32: j = sizeof(Q32); break;
 	default: Uerror("bad qtype");
 	}
 	return j;
@@ -12845,6 +12877,118 @@ qsend(int into, int sorted, int fld0, int args_given)
 	z = qptr(into);
 	j = ((Q0 *)qptr(into))->Qlen;
 	switch (((Q0 *)qptr(into))->_t) {
+	case 32: /* =rv= */
+		(trpt+2)->o_m = 0;
+#ifdef HAS_SORTED
+		(trpt+1)->ipt = j;
+#endif
+		((Q32 *)z)->Qlen = ((Q32 *)z)->Qlen + 1;
+		((Q32 *)z)->contents[j].fld0 = fld0;
+		if (args_given != 1)
+		{	if (args_given > 1)
+				uerror("too many parameters in send stmnt");
+			else
+				uerror("too few parameters in send stmnt");
+		}
+		break;
+	case 31: /* =rv= */
+		(trpt+2)->o_m = 0;
+#ifdef HAS_SORTED
+		(trpt+1)->ipt = j;
+#endif
+		((Q31 *)z)->Qlen = ((Q31 *)z)->Qlen + 1;
+		((Q31 *)z)->contents[j].fld0 = fld0;
+		if (args_given != 1)
+		{	if (args_given > 1)
+				uerror("too many parameters in send stmnt");
+			else
+				uerror("too few parameters in send stmnt");
+		}
+		break;
+	case 30: /* =rv= */
+		(trpt+2)->o_m = 0;
+#ifdef HAS_SORTED
+		(trpt+1)->ipt = j;
+#endif
+		((Q30 *)z)->Qlen = ((Q30 *)z)->Qlen + 1;
+		((Q30 *)z)->contents[j].fld0 = fld0;
+		if (args_given != 1)
+		{	if (args_given > 1)
+				uerror("too many parameters in send stmnt");
+			else
+				uerror("too few parameters in send stmnt");
+		}
+		break;
+	case 29: /* =rv= */
+		(trpt+2)->o_m = 0;
+#ifdef HAS_SORTED
+		(trpt+1)->ipt = j;
+#endif
+		((Q29 *)z)->Qlen = ((Q29 *)z)->Qlen + 1;
+		((Q29 *)z)->contents[j].fld0 = fld0;
+		if (args_given != 1)
+		{	if (args_given > 1)
+				uerror("too many parameters in send stmnt");
+			else
+				uerror("too few parameters in send stmnt");
+		}
+		break;
+	case 28: /* =rv= */
+		(trpt+2)->o_m = 0;
+#ifdef HAS_SORTED
+		(trpt+1)->ipt = j;
+#endif
+		((Q28 *)z)->Qlen = ((Q28 *)z)->Qlen + 1;
+		((Q28 *)z)->contents[j].fld0 = fld0;	/* mtype side */
+		if (args_given != 1)
+		{	if (args_given > 1)
+				uerror("too many parameters in send stmnt");
+			else
+				uerror("too few parameters in send stmnt");
+		}
+		break;
+	case 27: /* =rv= */
+		(trpt+2)->o_m = 0;
+#ifdef HAS_SORTED
+		(trpt+1)->ipt = j;
+#endif
+		((Q27 *)z)->Qlen = ((Q27 *)z)->Qlen + 1;
+		((Q27 *)z)->contents[j].fld0 = fld0;	/* mtype side */
+		if (args_given != 1)
+		{	if (args_given > 1)
+				uerror("too many parameters in send stmnt");
+			else
+				uerror("too few parameters in send stmnt");
+		}
+		break;
+	case 26: /* =rv= */
+		(trpt+2)->o_m = 0;
+#ifdef HAS_SORTED
+		(trpt+1)->ipt = j;
+#endif
+		((Q26 *)z)->Qlen = ((Q26 *)z)->Qlen + 1;
+		((Q26 *)z)->contents[j].fld0 = fld0;	/* mtype side */
+		if (args_given != 1)
+		{	if (args_given > 1)
+				uerror("too many parameters in send stmnt");
+			else
+				uerror("too few parameters in send stmnt");
+		}
+		break;
+	case 25: /* =rv= */
+		(trpt+2)->o_m = 0;
+#ifdef HAS_SORTED
+		(trpt+1)->ipt = j;
+#endif
+		((Q25 *)z)->Qlen = ((Q25 *)z)->Qlen + 1;
+		((Q25 *)z)->contents[j].fld0 = fld0;	/* mtype side */
+		if (args_given != 1)
+		{	if (args_given > 1)
+				uerror("too many parameters in send stmnt");
+			else
+				uerror("too few parameters in send stmnt");
+		}
+		break;
 	case 24: /* =rv= */
 		(trpt+2)->o_m = 0;
 #ifdef HAS_SORTED
@@ -12893,7 +13037,7 @@ qsend(int into, int sorted, int fld0, int args_given)
 		(trpt+1)->ipt = j;
 #endif
 		((Q21 *)z)->Qlen = ((Q21 *)z)->Qlen + 1;
-		((Q21 *)z)->contents[j].fld0 = fld0;	/* mtype side */
+		((Q21 *)z)->contents[j].fld0 = fld0;
 		if (args_given != 1)
 		{	if (args_given > 1)
 				uerror("too many parameters in send stmnt");
@@ -12935,7 +13079,7 @@ qsend(int into, int sorted, int fld0, int args_given)
 		(trpt+1)->ipt = j;
 #endif
 		((Q18 *)z)->Qlen = ((Q18 *)z)->Qlen + 1;
-		((Q18 *)z)->contents[j].fld0 = fld0;
+		((Q18 *)z)->contents[j].fld0 = fld0;	/* mtype side */
 		if (args_given != 1)
 		{	if (args_given > 1)
 				uerror("too many parameters in send stmnt");
@@ -12949,7 +13093,7 @@ qsend(int into, int sorted, int fld0, int args_given)
 		(trpt+1)->ipt = j;
 #endif
 		((Q17 *)z)->Qlen = ((Q17 *)z)->Qlen + 1;
-		((Q17 *)z)->contents[j].fld0 = fld0;
+		((Q17 *)z)->contents[j].fld0 = fld0;	/* mtype side */
 		if (args_given != 1)
 		{	if (args_given > 1)
 				uerror("too many parameters in send stmnt");
@@ -12977,7 +13121,7 @@ qsend(int into, int sorted, int fld0, int args_given)
 		(trpt+1)->ipt = j;
 #endif
 		((Q15 *)z)->Qlen = ((Q15 *)z)->Qlen + 1;
-		((Q15 *)z)->contents[j].fld0 = fld0;	/* mtype side */
+		((Q15 *)z)->contents[j].fld0 = fld0;
 		if (args_given != 1)
 		{	if (args_given > 1)
 				uerror("too many parameters in send stmnt");
@@ -12991,7 +13135,7 @@ qsend(int into, int sorted, int fld0, int args_given)
 		(trpt+1)->ipt = j;
 #endif
 		((Q14 *)z)->Qlen = ((Q14 *)z)->Qlen + 1;
-		((Q14 *)z)->contents[j].fld0 = fld0;	/* mtype side */
+		((Q14 *)z)->contents[j].fld0 = fld0;
 		if (args_given != 1)
 		{	if (args_given > 1)
 				uerror("too many parameters in send stmnt");
@@ -13005,7 +13149,7 @@ qsend(int into, int sorted, int fld0, int args_given)
 		(trpt+1)->ipt = j;
 #endif
 		((Q13 *)z)->Qlen = ((Q13 *)z)->Qlen + 1;
-		((Q13 *)z)->contents[j].fld0 = fld0;	/* mtype side */
+		((Q13 *)z)->contents[j].fld0 = fld0;
 		if (args_given != 1)
 		{	if (args_given > 1)
 				uerror("too many parameters in send stmnt");
@@ -13069,8 +13213,7 @@ qsend(int into, int sorted, int fld0, int args_given)
 				uerror("too few parameters in send stmnt");
 		}
 		break;
-	case 8: /* =rv= */
-		(trpt+2)->o_m = 0;
+	case 8:
 #ifdef HAS_SORTED
 		(trpt+1)->ipt = j;
 #endif
@@ -13083,8 +13226,7 @@ qsend(int into, int sorted, int fld0, int args_given)
 				uerror("too few parameters in send stmnt");
 		}
 		break;
-	case 7: /* =rv= */
-		(trpt+2)->o_m = 0;
+	case 7:
 #ifdef HAS_SORTED
 		(trpt+1)->ipt = j;
 #endif
@@ -13193,6 +13335,14 @@ q_zero(int from)
 		return 0;
 	}
 	switch(((Q0 *)qptr(from))->_t) {
+	case 32: return 1;
+	case 31: return 1;
+	case 30: return 1;
+	case 29: return 1;
+	case 28: return 1;
+	case 27: return 1;
+	case 26: return 1;
+	case 25: return 1;
 	case 24: return 1;
 	case 23: return 1;
 	case 22: return 1;
@@ -13209,8 +13359,8 @@ q_zero(int from)
 	case 11: return 1;
 	case 10: return 1;
 	case 9: return 1;
-	case 8: return 1;
-	case 7: return 1;
+	case 8: return 0;
+	case 7: return 0;
 	case 6: return 0;
 	case 5: return 0;
 	case 4: return 0;
@@ -13318,6 +13468,14 @@ q_full(int from)
 {	if (!from--)
 	uerror("ref to uninitialized chan name (qfull)");
 	switch(((Q0 *)qptr(from))->_t) {
+	case 32: return (q_sz(from) == 1);
+	case 31: return (q_sz(from) == 1);
+	case 30: return (q_sz(from) == 1);
+	case 29: return (q_sz(from) == 1);
+	case 28: return (q_sz(from) == 1);
+	case 27: return (q_sz(from) == 1);
+	case 26: return (q_sz(from) == 1);
+	case 25: return (q_sz(from) == 1);
 	case 24: return (q_sz(from) == 1);
 	case 23: return (q_sz(from) == 1);
 	case 22: return (q_sz(from) == 1);
@@ -13334,8 +13492,8 @@ q_full(int from)
 	case 11: return (q_sz(from) == 1);
 	case 10: return (q_sz(from) == 1);
 	case 9: return (q_sz(from) == 1);
-	case 8: return (q_sz(from) == 1);
-	case 7: return (q_sz(from) == 1);
+	case 8: return (q_sz(from) == 2);
+	case 7: return (q_sz(from) == 2);
 	case 6: return (q_sz(from) == 2);
 	case 5: return (q_sz(from) == 2);
 	case 4: return (q_sz(from) == 2);
@@ -13384,6 +13542,86 @@ qrecv(int from, int slot, int fld, int done)
 		require('r', from);
 #endif
 	switch (((Q0 *)qptr(from))->_t) {
+	case 32: /* =rv= */
+		if (fld == 0) r = ((Q32 *)z)->contents[slot].fld0;
+		if (done)
+		{	j = ((Q32 *)z)->Qlen - 1;
+			((Q32 *)z)->Qlen = 0;
+			((Q32 *)z)->contents[j].fld0 = 0;
+			if (fld+1 != 1)
+				uerror("missing pars in receive");
+		}
+		break;
+	case 31: /* =rv= */
+		if (fld == 0) r = ((Q31 *)z)->contents[slot].fld0;
+		if (done)
+		{	j = ((Q31 *)z)->Qlen - 1;
+			((Q31 *)z)->Qlen = 0;
+			((Q31 *)z)->contents[j].fld0 = 0;
+			if (fld+1 != 1)
+				uerror("missing pars in receive");
+		}
+		break;
+	case 30: /* =rv= */
+		if (fld == 0) r = ((Q30 *)z)->contents[slot].fld0;
+		if (done)
+		{	j = ((Q30 *)z)->Qlen - 1;
+			((Q30 *)z)->Qlen = 0;
+			((Q30 *)z)->contents[j].fld0 = 0;
+			if (fld+1 != 1)
+				uerror("missing pars in receive");
+		}
+		break;
+	case 29: /* =rv= */
+		if (fld == 0) r = ((Q29 *)z)->contents[slot].fld0;
+		if (done)
+		{	j = ((Q29 *)z)->Qlen - 1;
+			((Q29 *)z)->Qlen = 0;
+			((Q29 *)z)->contents[j].fld0 = 0;
+			if (fld+1 != 1)
+				uerror("missing pars in receive");
+		}
+		break;
+	case 28: /* =rv= */
+		if (fld == 0) r = ((Q28 *)z)->contents[slot].fld0;
+		if (done)
+		{	j = ((Q28 *)z)->Qlen - 1;
+			((Q28 *)z)->Qlen = 0;
+			((Q28 *)z)->contents[j].fld0 = 0;
+			if (fld+1 != 1)
+				uerror("missing pars in receive");
+		}
+		break;
+	case 27: /* =rv= */
+		if (fld == 0) r = ((Q27 *)z)->contents[slot].fld0;
+		if (done)
+		{	j = ((Q27 *)z)->Qlen - 1;
+			((Q27 *)z)->Qlen = 0;
+			((Q27 *)z)->contents[j].fld0 = 0;
+			if (fld+1 != 1)
+				uerror("missing pars in receive");
+		}
+		break;
+	case 26: /* =rv= */
+		if (fld == 0) r = ((Q26 *)z)->contents[slot].fld0;
+		if (done)
+		{	j = ((Q26 *)z)->Qlen - 1;
+			((Q26 *)z)->Qlen = 0;
+			((Q26 *)z)->contents[j].fld0 = 0;
+			if (fld+1 != 1)
+				uerror("missing pars in receive");
+		}
+		break;
+	case 25: /* =rv= */
+		if (fld == 0) r = ((Q25 *)z)->contents[slot].fld0;
+		if (done)
+		{	j = ((Q25 *)z)->Qlen - 1;
+			((Q25 *)z)->Qlen = 0;
+			((Q25 *)z)->contents[j].fld0 = 0;
+			if (fld+1 != 1)
+				uerror("missing pars in receive");
+		}
+		break;
 	case 24: /* =rv= */
 		if (fld == 0) r = ((Q24 *)z)->contents[slot].fld0;
 		if (done)
@@ -13544,21 +13782,31 @@ qrecv(int from, int slot, int fld, int done)
 				uerror("missing pars in receive");
 		}
 		break;
-	case 8: /* =rv= */
+	case 8:
 		if (fld == 0) r = ((Q8 *)z)->contents[slot].fld0;
 		if (done)
-		{	j = ((Q8 *)z)->Qlen - 1;
-			((Q8 *)z)->Qlen = 0;
+		{	j = ((Q8 *)z)->Qlen;
+			((Q8 *)z)->Qlen = --j;
+			for (k=slot; k<j; k++)
+			{
+				((Q8 *)z)->contents[k].fld0 = 
+					((Q8 *)z)->contents[k+1].fld0;
+			}
 			((Q8 *)z)->contents[j].fld0 = 0;
 			if (fld+1 != 1)
 				uerror("missing pars in receive");
 		}
 		break;
-	case 7: /* =rv= */
+	case 7:
 		if (fld == 0) r = ((Q7 *)z)->contents[slot].fld0;
 		if (done)
-		{	j = ((Q7 *)z)->Qlen - 1;
-			((Q7 *)z)->Qlen = 0;
+		{	j = ((Q7 *)z)->Qlen;
+			((Q7 *)z)->Qlen = --j;
+			for (k=slot; k<j; k++)
+			{
+				((Q7 *)z)->contents[k].fld0 = 
+					((Q7 *)z)->contents[k+1].fld0;
+			}
 			((Q7 *)z)->contents[j].fld0 = 0;
 			if (fld+1 != 1)
 				uerror("missing pars in receive");
@@ -13669,6 +13917,14 @@ col_q(int i, char *z)
 	char *x, *y;
 	Q0 *ptr = (Q0 *) qptr(i);
 	switch (ptr->_t) {
+	case 32: j = sizeof(Q32); break;
+	case 31: j = sizeof(Q31); break;
+	case 30: j = sizeof(Q30); break;
+	case 29: j = sizeof(Q29); break;
+	case 28: j = sizeof(Q28); break;
+	case 27: j = sizeof(Q27); break;
+	case 26: j = sizeof(Q26); break;
+	case 25: j = sizeof(Q25); break;
 	case 24: j = sizeof(Q24); break;
 	case 23: j = sizeof(Q23); break;
 	case 22: j = sizeof(Q22); break;
@@ -13744,6 +14000,54 @@ unsend(int into)
 	j = ((Q0 *)z)->Qlen;
 	((Q0 *)z)->Qlen = --j;
 	switch (((Q0 *)qptr(into))->_t) {
+	case 32:
+		((Q32 *)z)->contents[j].fld0 = 0;
+		_m = (trpt+1)->o_m;
+		if (_m) (trpt-1)->o_pm |= 1;
+		UnBlock;
+		break;
+	case 31:
+		((Q31 *)z)->contents[j].fld0 = 0;
+		_m = (trpt+1)->o_m;
+		if (_m) (trpt-1)->o_pm |= 1;
+		UnBlock;
+		break;
+	case 30:
+		((Q30 *)z)->contents[j].fld0 = 0;
+		_m = (trpt+1)->o_m;
+		if (_m) (trpt-1)->o_pm |= 1;
+		UnBlock;
+		break;
+	case 29:
+		((Q29 *)z)->contents[j].fld0 = 0;
+		_m = (trpt+1)->o_m;
+		if (_m) (trpt-1)->o_pm |= 1;
+		UnBlock;
+		break;
+	case 28:
+		((Q28 *)z)->contents[j].fld0 = 0;
+		_m = (trpt+1)->o_m;
+		if (_m) (trpt-1)->o_pm |= 1;
+		UnBlock;
+		break;
+	case 27:
+		((Q27 *)z)->contents[j].fld0 = 0;
+		_m = (trpt+1)->o_m;
+		if (_m) (trpt-1)->o_pm |= 1;
+		UnBlock;
+		break;
+	case 26:
+		((Q26 *)z)->contents[j].fld0 = 0;
+		_m = (trpt+1)->o_m;
+		if (_m) (trpt-1)->o_pm |= 1;
+		UnBlock;
+		break;
+	case 25:
+		((Q25 *)z)->contents[j].fld0 = 0;
+		_m = (trpt+1)->o_m;
+		if (_m) (trpt-1)->o_pm |= 1;
+		UnBlock;
+		break;
 	case 24:
 		((Q24 *)z)->contents[j].fld0 = 0;
 		_m = (trpt+1)->o_m;
@@ -13842,15 +14146,11 @@ unsend(int into)
 		break;
 	case 8:
 		((Q8 *)z)->contents[j].fld0 = 0;
-		_m = (trpt+1)->o_m;
-		if (_m) (trpt-1)->o_pm |= 1;
-		UnBlock;
+		_m = trpt->o_m;
 		break;
 	case 7:
 		((Q7 *)z)->contents[j].fld0 = 0;
-		_m = (trpt+1)->o_m;
-		if (_m) (trpt-1)->o_pm |= 1;
-		UnBlock;
+		_m = trpt->o_m;
 		break;
 	case 6:
 		((Q6 *)z)->contents[j].fld0 = 0;
@@ -13905,6 +14205,62 @@ unrecv(int from, int slot, int fld, int fldvar, int strt)
 	j = ((Q0 *)z)->Qlen;
 	if (strt) ((Q0 *)z)->Qlen = j+1;
 	switch (((Q0 *)qptr(from))->_t) {
+	case 32:
+		if (strt) boq = from+1;
+		if (strt) {
+			((Q32 *)z)->contents[slot].fld0 = 0;
+		}
+		if (fld == 0) ((Q32 *)z)->contents[slot].fld0 = fldvar;
+		break;
+	case 31:
+		if (strt) boq = from+1;
+		if (strt) {
+			((Q31 *)z)->contents[slot].fld0 = 0;
+		}
+		if (fld == 0) ((Q31 *)z)->contents[slot].fld0 = fldvar;
+		break;
+	case 30:
+		if (strt) boq = from+1;
+		if (strt) {
+			((Q30 *)z)->contents[slot].fld0 = 0;
+		}
+		if (fld == 0) ((Q30 *)z)->contents[slot].fld0 = fldvar;
+		break;
+	case 29:
+		if (strt) boq = from+1;
+		if (strt) {
+			((Q29 *)z)->contents[slot].fld0 = 0;
+		}
+		if (fld == 0) ((Q29 *)z)->contents[slot].fld0 = fldvar;
+		break;
+	case 28:
+		if (strt) boq = from+1;
+		if (strt) {
+			((Q28 *)z)->contents[slot].fld0 = 0;
+		}
+		if (fld == 0) ((Q28 *)z)->contents[slot].fld0 = fldvar;
+		break;
+	case 27:
+		if (strt) boq = from+1;
+		if (strt) {
+			((Q27 *)z)->contents[slot].fld0 = 0;
+		}
+		if (fld == 0) ((Q27 *)z)->contents[slot].fld0 = fldvar;
+		break;
+	case 26:
+		if (strt) boq = from+1;
+		if (strt) {
+			((Q26 *)z)->contents[slot].fld0 = 0;
+		}
+		if (fld == 0) ((Q26 *)z)->contents[slot].fld0 = fldvar;
+		break;
+	case 25:
+		if (strt) boq = from+1;
+		if (strt) {
+			((Q25 *)z)->contents[slot].fld0 = 0;
+		}
+		if (fld == 0) ((Q25 *)z)->contents[slot].fld0 = fldvar;
+		break;
 	case 24:
 		if (strt) boq = from+1;
 		if (strt) {
@@ -14018,14 +14374,24 @@ unrecv(int from, int slot, int fld, int fldvar, int strt)
 		if (fld == 0) ((Q9 *)z)->contents[slot].fld0 = fldvar;
 		break;
 	case 8:
-		if (strt) boq = from+1;
+		if (strt && slot<1)
+		{	for (j--; j>=slot; j--)
+			{	((Q8 *)z)->contents[j+1].fld0 =
+				((Q8 *)z)->contents[j].fld0;
+			}
+		}
 		if (strt) {
 			((Q8 *)z)->contents[slot].fld0 = 0;
 		}
 		if (fld == 0) ((Q8 *)z)->contents[slot].fld0 = fldvar;
 		break;
 	case 7:
-		if (strt) boq = from+1;
+		if (strt && slot<1)
+		{	for (j--; j>=slot; j--)
+			{	((Q7 *)z)->contents[j+1].fld0 =
+				((Q7 *)z)->contents[j].fld0;
+			}
+		}
 		if (strt) {
 			((Q7 *)z)->contents[slot].fld0 = 0;
 		}
@@ -14121,107 +14487,139 @@ q_cond(short II, Trans *t)
 		case 0: break;
 		case 1: if (	(t->ty[i] == Q_FULL_F && ( q_full((int) ( now.request_low[0]) )
 			 ||     q_full((int) ( now.request_low[1]) )
-			 ||     q_full((int) ( now.request_low[2]) )))
+			 ||     q_full((int) ( now.request_low[2]) )
+			 ||     q_full((int) ( now.request_low[3]) )))
 			 || 	(t->ty[i] == Q_FULL_T && (!q_full((int) ( now.request_low[0]) )
 			 ||    !q_full((int) ( now.request_low[1]) )
-			 ||    !q_full((int) ( now.request_low[2]) )))
+			 ||    !q_full((int) ( now.request_low[2]) )
+			 ||    !q_full((int) ( now.request_low[3]) )))
 			 || 	(t->ty[i] == Q_EMPT_F && ( !q_len((int) ( now.request_low[0]) )
 			 ||     !q_len((int) ( now.request_low[1]) )
-			 ||     !q_len((int) ( now.request_low[2]) )))
+			 ||     !q_len((int) ( now.request_low[2]) )
+			 ||     !q_len((int) ( now.request_low[3]) )))
 			 || 	(t->ty[i] == Q_EMPT_T && (  q_len((int) ( now.request_low[0]) )
 			 ||      q_len((int) ( now.request_low[1]) )
-			 ||      q_len((int) ( now.request_low[2]) )))
+			 ||      q_len((int) ( now.request_low[2]) )
+			 ||      q_len((int) ( now.request_low[3]) )))
 			    ) return 0; break;
 		case 2: if (	(t->ty[i] == Q_FULL_F && ( q_full((int) ( now.request_high[0]) )
 			 ||     q_full((int) ( now.request_high[1]) )
-			 ||     q_full((int) ( now.request_high[2]) )))
+			 ||     q_full((int) ( now.request_high[2]) )
+			 ||     q_full((int) ( now.request_high[3]) )))
 			 || 	(t->ty[i] == Q_FULL_T && (!q_full((int) ( now.request_high[0]) )
 			 ||    !q_full((int) ( now.request_high[1]) )
-			 ||    !q_full((int) ( now.request_high[2]) )))
+			 ||    !q_full((int) ( now.request_high[2]) )
+			 ||    !q_full((int) ( now.request_high[3]) )))
 			 || 	(t->ty[i] == Q_EMPT_F && ( !q_len((int) ( now.request_high[0]) )
 			 ||     !q_len((int) ( now.request_high[1]) )
-			 ||     !q_len((int) ( now.request_high[2]) )))
+			 ||     !q_len((int) ( now.request_high[2]) )
+			 ||     !q_len((int) ( now.request_high[3]) )))
 			 || 	(t->ty[i] == Q_EMPT_T && (  q_len((int) ( now.request_high[0]) )
 			 ||      q_len((int) ( now.request_high[1]) )
-			 ||      q_len((int) ( now.request_high[2]) )))
+			 ||      q_len((int) ( now.request_high[2]) )
+			 ||      q_len((int) ( now.request_high[3]) )))
 			    ) return 0; break;
 		case 3: if (	(t->ty[i] == Q_FULL_F && ( q_full((int) ( now.observed_low[0]) )
 			 ||     q_full((int) ( now.observed_low[1]) )
-			 ||     q_full((int) ( now.observed_low[2]) )))
+			 ||     q_full((int) ( now.observed_low[2]) )
+			 ||     q_full((int) ( now.observed_low[3]) )))
 			 || 	(t->ty[i] == Q_FULL_T && (!q_full((int) ( now.observed_low[0]) )
 			 ||    !q_full((int) ( now.observed_low[1]) )
-			 ||    !q_full((int) ( now.observed_low[2]) )))
+			 ||    !q_full((int) ( now.observed_low[2]) )
+			 ||    !q_full((int) ( now.observed_low[3]) )))
 			 || 	(t->ty[i] == Q_EMPT_F && ( !q_len((int) ( now.observed_low[0]) )
 			 ||     !q_len((int) ( now.observed_low[1]) )
-			 ||     !q_len((int) ( now.observed_low[2]) )))
+			 ||     !q_len((int) ( now.observed_low[2]) )
+			 ||     !q_len((int) ( now.observed_low[3]) )))
 			 || 	(t->ty[i] == Q_EMPT_T && (  q_len((int) ( now.observed_low[0]) )
 			 ||      q_len((int) ( now.observed_low[1]) )
-			 ||      q_len((int) ( now.observed_low[2]) )))
+			 ||      q_len((int) ( now.observed_low[2]) )
+			 ||      q_len((int) ( now.observed_low[3]) )))
 			    ) return 0; break;
 		case 4: if (	(t->ty[i] == Q_FULL_F && ( q_full((int) ( now.observed_high[0]) )
 			 ||     q_full((int) ( now.observed_high[1]) )
-			 ||     q_full((int) ( now.observed_high[2]) )))
+			 ||     q_full((int) ( now.observed_high[2]) )
+			 ||     q_full((int) ( now.observed_high[3]) )))
 			 || 	(t->ty[i] == Q_FULL_T && (!q_full((int) ( now.observed_high[0]) )
 			 ||    !q_full((int) ( now.observed_high[1]) )
-			 ||    !q_full((int) ( now.observed_high[2]) )))
+			 ||    !q_full((int) ( now.observed_high[2]) )
+			 ||    !q_full((int) ( now.observed_high[3]) )))
 			 || 	(t->ty[i] == Q_EMPT_F && ( !q_len((int) ( now.observed_high[0]) )
 			 ||     !q_len((int) ( now.observed_high[1]) )
-			 ||     !q_len((int) ( now.observed_high[2]) )))
+			 ||     !q_len((int) ( now.observed_high[2]) )
+			 ||     !q_len((int) ( now.observed_high[3]) )))
 			 || 	(t->ty[i] == Q_EMPT_T && (  q_len((int) ( now.observed_high[0]) )
 			 ||      q_len((int) ( now.observed_high[1]) )
-			 ||      q_len((int) ( now.observed_high[2]) )))
+			 ||      q_len((int) ( now.observed_high[2]) )
+			 ||      q_len((int) ( now.observed_high[3]) )))
 			    ) return 0; break;
 		case 5: if (	(t->ty[i] == Q_FULL_F && ( q_full((int) ( now.change_doors_pos[0]) )
 			 ||     q_full((int) ( now.change_doors_pos[1]) )
-			 ||     q_full((int) ( now.change_doors_pos[2]) )))
+			 ||     q_full((int) ( now.change_doors_pos[2]) )
+			 ||     q_full((int) ( now.change_doors_pos[3]) )))
 			 || 	(t->ty[i] == Q_FULL_T && (!q_full((int) ( now.change_doors_pos[0]) )
 			 ||    !q_full((int) ( now.change_doors_pos[1]) )
-			 ||    !q_full((int) ( now.change_doors_pos[2]) )))
+			 ||    !q_full((int) ( now.change_doors_pos[2]) )
+			 ||    !q_full((int) ( now.change_doors_pos[3]) )))
 			 || 	(t->ty[i] == Q_EMPT_F && ( !q_len((int) ( now.change_doors_pos[0]) )
 			 ||     !q_len((int) ( now.change_doors_pos[1]) )
-			 ||     !q_len((int) ( now.change_doors_pos[2]) )))
+			 ||     !q_len((int) ( now.change_doors_pos[2]) )
+			 ||     !q_len((int) ( now.change_doors_pos[3]) )))
 			 || 	(t->ty[i] == Q_EMPT_T && (  q_len((int) ( now.change_doors_pos[0]) )
 			 ||      q_len((int) ( now.change_doors_pos[1]) )
-			 ||      q_len((int) ( now.change_doors_pos[2]) )))
+			 ||      q_len((int) ( now.change_doors_pos[2]) )
+			 ||      q_len((int) ( now.change_doors_pos[3]) )))
 			    ) return 0; break;
 		case 6: if (	(t->ty[i] == Q_FULL_F && ( q_full((int) ( now.doors_pos_changed[0]) )
 			 ||     q_full((int) ( now.doors_pos_changed[1]) )
-			 ||     q_full((int) ( now.doors_pos_changed[2]) )))
+			 ||     q_full((int) ( now.doors_pos_changed[2]) )
+			 ||     q_full((int) ( now.doors_pos_changed[3]) )))
 			 || 	(t->ty[i] == Q_FULL_T && (!q_full((int) ( now.doors_pos_changed[0]) )
 			 ||    !q_full((int) ( now.doors_pos_changed[1]) )
-			 ||    !q_full((int) ( now.doors_pos_changed[2]) )))
+			 ||    !q_full((int) ( now.doors_pos_changed[2]) )
+			 ||    !q_full((int) ( now.doors_pos_changed[3]) )))
 			 || 	(t->ty[i] == Q_EMPT_F && ( !q_len((int) ( now.doors_pos_changed[0]) )
 			 ||     !q_len((int) ( now.doors_pos_changed[1]) )
-			 ||     !q_len((int) ( now.doors_pos_changed[2]) )))
+			 ||     !q_len((int) ( now.doors_pos_changed[2]) )
+			 ||     !q_len((int) ( now.doors_pos_changed[3]) )))
 			 || 	(t->ty[i] == Q_EMPT_T && (  q_len((int) ( now.doors_pos_changed[0]) )
 			 ||      q_len((int) ( now.doors_pos_changed[1]) )
-			 ||      q_len((int) ( now.doors_pos_changed[2]) )))
+			 ||      q_len((int) ( now.doors_pos_changed[2]) )
+			 ||      q_len((int) ( now.doors_pos_changed[3]) )))
 			    ) return 0; break;
 		case 7: if (	(t->ty[i] == Q_FULL_F && ( q_full((int) ( now.change_slide_pos[0]) )
 			 ||     q_full((int) ( now.change_slide_pos[1]) )
-			 ||     q_full((int) ( now.change_slide_pos[2]) )))
+			 ||     q_full((int) ( now.change_slide_pos[2]) )
+			 ||     q_full((int) ( now.change_slide_pos[3]) )))
 			 || 	(t->ty[i] == Q_FULL_T && (!q_full((int) ( now.change_slide_pos[0]) )
 			 ||    !q_full((int) ( now.change_slide_pos[1]) )
-			 ||    !q_full((int) ( now.change_slide_pos[2]) )))
+			 ||    !q_full((int) ( now.change_slide_pos[2]) )
+			 ||    !q_full((int) ( now.change_slide_pos[3]) )))
 			 || 	(t->ty[i] == Q_EMPT_F && ( !q_len((int) ( now.change_slide_pos[0]) )
 			 ||     !q_len((int) ( now.change_slide_pos[1]) )
-			 ||     !q_len((int) ( now.change_slide_pos[2]) )))
+			 ||     !q_len((int) ( now.change_slide_pos[2]) )
+			 ||     !q_len((int) ( now.change_slide_pos[3]) )))
 			 || 	(t->ty[i] == Q_EMPT_T && (  q_len((int) ( now.change_slide_pos[0]) )
 			 ||      q_len((int) ( now.change_slide_pos[1]) )
-			 ||      q_len((int) ( now.change_slide_pos[2]) )))
+			 ||      q_len((int) ( now.change_slide_pos[2]) )
+			 ||      q_len((int) ( now.change_slide_pos[3]) )))
 			    ) return 0; break;
 		case 8: if (	(t->ty[i] == Q_FULL_F && ( q_full((int) ( now.slide_pos_changed[0]) )
 			 ||     q_full((int) ( now.slide_pos_changed[1]) )
-			 ||     q_full((int) ( now.slide_pos_changed[2]) )))
+			 ||     q_full((int) ( now.slide_pos_changed[2]) )
+			 ||     q_full((int) ( now.slide_pos_changed[3]) )))
 			 || 	(t->ty[i] == Q_FULL_T && (!q_full((int) ( now.slide_pos_changed[0]) )
 			 ||    !q_full((int) ( now.slide_pos_changed[1]) )
-			 ||    !q_full((int) ( now.slide_pos_changed[2]) )))
+			 ||    !q_full((int) ( now.slide_pos_changed[2]) )
+			 ||    !q_full((int) ( now.slide_pos_changed[3]) )))
 			 || 	(t->ty[i] == Q_EMPT_F && ( !q_len((int) ( now.slide_pos_changed[0]) )
 			 ||     !q_len((int) ( now.slide_pos_changed[1]) )
-			 ||     !q_len((int) ( now.slide_pos_changed[2]) )))
+			 ||     !q_len((int) ( now.slide_pos_changed[2]) )
+			 ||     !q_len((int) ( now.slide_pos_changed[3]) )))
 			 || 	(t->ty[i] == Q_EMPT_T && (  q_len((int) ( now.slide_pos_changed[0]) )
 			 ||      q_len((int) ( now.slide_pos_changed[1]) )
-			 ||      q_len((int) ( now.slide_pos_changed[2]) )))
+			 ||      q_len((int) ( now.slide_pos_changed[2]) )
+			 ||      q_len((int) ( now.slide_pos_changed[3]) )))
 			    ) return 0; break;
 		default: Uerror("unknown qid - q_cond");
 				return 0;
@@ -15539,32 +15937,40 @@ c_globals(void)
 	c_chandump(now.request_low[1]);
 	printf("	chan request_low[2] (=%d):	len %d:\t", now.request_low[2], q_len(now.request_low[2]));
 	c_chandump(now.request_low[2]);
+	printf("	chan request_low[3] (=%d):	len %d:\t", now.request_low[3], q_len(now.request_low[3]));
+	c_chandump(now.request_low[3]);
 	printf("	chan request_high[0] (=%d):	len %d:\t", now.request_high[0], q_len(now.request_high[0]));
 	c_chandump(now.request_high[0]);
 	printf("	chan request_high[1] (=%d):	len %d:\t", now.request_high[1], q_len(now.request_high[1]));
 	c_chandump(now.request_high[1]);
 	printf("	chan request_high[2] (=%d):	len %d:\t", now.request_high[2], q_len(now.request_high[2]));
 	c_chandump(now.request_high[2]);
+	printf("	chan request_high[3] (=%d):	len %d:\t", now.request_high[3], q_len(now.request_high[3]));
+	c_chandump(now.request_high[3]);
 	printf("	chan observed_low[0] (=%d):	len %d:\t", now.observed_low[0], q_len(now.observed_low[0]));
 	c_chandump(now.observed_low[0]);
 	printf("	chan observed_low[1] (=%d):	len %d:\t", now.observed_low[1], q_len(now.observed_low[1]));
 	c_chandump(now.observed_low[1]);
 	printf("	chan observed_low[2] (=%d):	len %d:\t", now.observed_low[2], q_len(now.observed_low[2]));
 	c_chandump(now.observed_low[2]);
+	printf("	chan observed_low[3] (=%d):	len %d:\t", now.observed_low[3], q_len(now.observed_low[3]));
+	c_chandump(now.observed_low[3]);
 	printf("	chan observed_high[0] (=%d):	len %d:\t", now.observed_high[0], q_len(now.observed_high[0]));
 	c_chandump(now.observed_high[0]);
 	printf("	chan observed_high[1] (=%d):	len %d:\t", now.observed_high[1], q_len(now.observed_high[1]));
 	c_chandump(now.observed_high[1]);
 	printf("	chan observed_high[2] (=%d):	len %d:\t", now.observed_high[2], q_len(now.observed_high[2]));
 	c_chandump(now.observed_high[2]);
+	printf("	chan observed_high[3] (=%d):	len %d:\t", now.observed_high[3], q_len(now.observed_high[3]));
+	c_chandump(now.observed_high[3]);
 	{	int l_in;
-		for (l_in = 0; l_in < 3; l_in++)
+		for (l_in = 0; l_in < 4; l_in++)
 		{
 			printf("	mtype  lock_water_level[%d]:	%d\n", l_in, now.lock_water_level[l_in]);
 		}
 	}
 	{	int l_in;
-		for (l_in = 0; l_in < 3; l_in++)
+		for (l_in = 0; l_in < 4; l_in++)
 		{
 			printf("	bit    lock_is_occupied[%d]:	%d\n", l_in, now.lock_is_occupied[l_in]);
 		}
@@ -15582,7 +15988,7 @@ c_globals(void)
 		}
 	}
 	{	int l_in;
-		for (l_in = 0; l_in < 4; l_in++)
+		for (l_in = 0; l_in < 5; l_in++)
 		{
 			printf("	byte   nr_of_ships_at_pos[%d]:	%d\n", l_in, now.nr_of_ships_at_pos[l_in]);
 		}
@@ -15594,6 +16000,8 @@ c_globals(void)
 	printf("	mtype  higher:	%d\n", now.doors_status[ 1 ].higher);
 	printf("	mtype  lower:	%d\n", now.doors_status[ 2 ].lower);
 	printf("	mtype  higher:	%d\n", now.doors_status[ 2 ].higher);
+	printf("	mtype  lower:	%d\n", now.doors_status[ 3 ].lower);
+	printf("	mtype  higher:	%d\n", now.doors_status[ 3 ].higher);
 		printf("	(struct slide_status)\n");
 	printf("	mtype  lower:	%d\n", now.slide_status[ 0 ].lower);
 	printf("	mtype  higher:	%d\n", now.slide_status[ 0 ].higher);
@@ -15601,30 +16009,40 @@ c_globals(void)
 	printf("	mtype  higher:	%d\n", now.slide_status[ 1 ].higher);
 	printf("	mtype  lower:	%d\n", now.slide_status[ 2 ].lower);
 	printf("	mtype  higher:	%d\n", now.slide_status[ 2 ].higher);
+	printf("	mtype  lower:	%d\n", now.slide_status[ 3 ].lower);
+	printf("	mtype  higher:	%d\n", now.slide_status[ 3 ].higher);
 	printf("	chan change_doors_pos[0] (=%d):	len %d:\t", now.change_doors_pos[0], q_len(now.change_doors_pos[0]));
 	c_chandump(now.change_doors_pos[0]);
 	printf("	chan change_doors_pos[1] (=%d):	len %d:\t", now.change_doors_pos[1], q_len(now.change_doors_pos[1]));
 	c_chandump(now.change_doors_pos[1]);
 	printf("	chan change_doors_pos[2] (=%d):	len %d:\t", now.change_doors_pos[2], q_len(now.change_doors_pos[2]));
 	c_chandump(now.change_doors_pos[2]);
+	printf("	chan change_doors_pos[3] (=%d):	len %d:\t", now.change_doors_pos[3], q_len(now.change_doors_pos[3]));
+	c_chandump(now.change_doors_pos[3]);
 	printf("	chan doors_pos_changed[0] (=%d):	len %d:\t", now.doors_pos_changed[0], q_len(now.doors_pos_changed[0]));
 	c_chandump(now.doors_pos_changed[0]);
 	printf("	chan doors_pos_changed[1] (=%d):	len %d:\t", now.doors_pos_changed[1], q_len(now.doors_pos_changed[1]));
 	c_chandump(now.doors_pos_changed[1]);
 	printf("	chan doors_pos_changed[2] (=%d):	len %d:\t", now.doors_pos_changed[2], q_len(now.doors_pos_changed[2]));
 	c_chandump(now.doors_pos_changed[2]);
+	printf("	chan doors_pos_changed[3] (=%d):	len %d:\t", now.doors_pos_changed[3], q_len(now.doors_pos_changed[3]));
+	c_chandump(now.doors_pos_changed[3]);
 	printf("	chan change_slide_pos[0] (=%d):	len %d:\t", now.change_slide_pos[0], q_len(now.change_slide_pos[0]));
 	c_chandump(now.change_slide_pos[0]);
 	printf("	chan change_slide_pos[1] (=%d):	len %d:\t", now.change_slide_pos[1], q_len(now.change_slide_pos[1]));
 	c_chandump(now.change_slide_pos[1]);
 	printf("	chan change_slide_pos[2] (=%d):	len %d:\t", now.change_slide_pos[2], q_len(now.change_slide_pos[2]));
 	c_chandump(now.change_slide_pos[2]);
+	printf("	chan change_slide_pos[3] (=%d):	len %d:\t", now.change_slide_pos[3], q_len(now.change_slide_pos[3]));
+	c_chandump(now.change_slide_pos[3]);
 	printf("	chan slide_pos_changed[0] (=%d):	len %d:\t", now.slide_pos_changed[0], q_len(now.slide_pos_changed[0]));
 	c_chandump(now.slide_pos_changed[0]);
 	printf("	chan slide_pos_changed[1] (=%d):	len %d:\t", now.slide_pos_changed[1], q_len(now.slide_pos_changed[1]));
 	c_chandump(now.slide_pos_changed[1]);
 	printf("	chan slide_pos_changed[2] (=%d):	len %d:\t", now.slide_pos_changed[2], q_len(now.slide_pos_changed[2]));
 	c_chandump(now.slide_pos_changed[2]);
+	printf("	chan slide_pos_changed[3] (=%d):	len %d:\t", now.slide_pos_changed[3], q_len(now.slide_pos_changed[3]));
+	c_chandump(now.slide_pos_changed[3]);
 }
 void
 c_locals(int pid, int tp)
@@ -15697,6 +16115,62 @@ c_chandump(int from)
 	}
 	z = qptr(from);
 	switch (((Q0 *)z)->_t) {
+	case 32:
+		for (slot = 0; slot < ((Q32 *)z)->Qlen; slot++)
+		{	printf(" [");
+			printf("%d,", ((Q32 *)z)->contents[slot].fld0);
+			printf("],");
+		}
+		break;
+	case 31:
+		for (slot = 0; slot < ((Q31 *)z)->Qlen; slot++)
+		{	printf(" [");
+			printf("%d,", ((Q31 *)z)->contents[slot].fld0);
+			printf("],");
+		}
+		break;
+	case 30:
+		for (slot = 0; slot < ((Q30 *)z)->Qlen; slot++)
+		{	printf(" [");
+			printf("%d,", ((Q30 *)z)->contents[slot].fld0);
+			printf("],");
+		}
+		break;
+	case 29:
+		for (slot = 0; slot < ((Q29 *)z)->Qlen; slot++)
+		{	printf(" [");
+			printf("%d,", ((Q29 *)z)->contents[slot].fld0);
+			printf("],");
+		}
+		break;
+	case 28:
+		for (slot = 0; slot < ((Q28 *)z)->Qlen; slot++)
+		{	printf(" [");
+			printm(((Q28 *)z)->contents[slot].fld0, "side");
+			printf("],");
+		}
+		break;
+	case 27:
+		for (slot = 0; slot < ((Q27 *)z)->Qlen; slot++)
+		{	printf(" [");
+			printm(((Q27 *)z)->contents[slot].fld0, "side");
+			printf("],");
+		}
+		break;
+	case 26:
+		for (slot = 0; slot < ((Q26 *)z)->Qlen; slot++)
+		{	printf(" [");
+			printm(((Q26 *)z)->contents[slot].fld0, "side");
+			printf("],");
+		}
+		break;
+	case 25:
+		for (slot = 0; slot < ((Q25 *)z)->Qlen; slot++)
+		{	printf(" [");
+			printm(((Q25 *)z)->contents[slot].fld0, "side");
+			printf("],");
+		}
+		break;
 	case 24:
 		for (slot = 0; slot < ((Q24 *)z)->Qlen; slot++)
 		{	printf(" [");
@@ -15721,7 +16195,7 @@ c_chandump(int from)
 	case 21:
 		for (slot = 0; slot < ((Q21 *)z)->Qlen; slot++)
 		{	printf(" [");
-			printm(((Q21 *)z)->contents[slot].fld0, "side");
+			printf("%d,", ((Q21 *)z)->contents[slot].fld0);
 			printf("],");
 		}
 		break;
@@ -15742,14 +16216,14 @@ c_chandump(int from)
 	case 18:
 		for (slot = 0; slot < ((Q18 *)z)->Qlen; slot++)
 		{	printf(" [");
-			printf("%d,", ((Q18 *)z)->contents[slot].fld0);
+			printm(((Q18 *)z)->contents[slot].fld0, "side");
 			printf("],");
 		}
 		break;
 	case 17:
 		for (slot = 0; slot < ((Q17 *)z)->Qlen; slot++)
 		{	printf(" [");
-			printf("%d,", ((Q17 *)z)->contents[slot].fld0);
+			printm(((Q17 *)z)->contents[slot].fld0, "side");
 			printf("],");
 		}
 		break;
@@ -15763,21 +16237,21 @@ c_chandump(int from)
 	case 15:
 		for (slot = 0; slot < ((Q15 *)z)->Qlen; slot++)
 		{	printf(" [");
-			printm(((Q15 *)z)->contents[slot].fld0, "side");
+			printf("%d,", ((Q15 *)z)->contents[slot].fld0);
 			printf("],");
 		}
 		break;
 	case 14:
 		for (slot = 0; slot < ((Q14 *)z)->Qlen; slot++)
 		{	printf(" [");
-			printm(((Q14 *)z)->contents[slot].fld0, "side");
+			printf("%d,", ((Q14 *)z)->contents[slot].fld0);
 			printf("],");
 		}
 		break;
 	case 13:
 		for (slot = 0; slot < ((Q13 *)z)->Qlen; slot++)
 		{	printf(" [");
-			printm(((Q13 *)z)->contents[slot].fld0, "side");
+			printf("%d,", ((Q13 *)z)->contents[slot].fld0);
 			printf("],");
 		}
 		break;

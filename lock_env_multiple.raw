@@ -4,23 +4,23 @@
 Full statespace search for:
 	never claim         	+ (e1)
 	assertion violations	+ (if within scope of claim)
-	acceptance   cycles 	+ (fairness enabled)
+	acceptance   cycles 	+ (fairness disabled)
 	invalid end states	- (disabled by never claim)
 
-State-vector 316 byte, depth reached 39672, errors: 0
-   158554 states, stored (270130 visited)
-   388646 states, matched
-   658776 transitions (= visited+matched)
-    41027 atomic steps
-hash conflicts:      1084 (resolved)
+State-vector 404 byte, depth reached 72077, errors: 0
+   336541 states, stored (353875 visited)
+   506569 states, matched
+   860444 transitions (= visited+matched)
+    61998 atomic steps
+hash conflicts:      2841 (resolved)
 
 Stats on memory usage (in Megabytes):
-   52.016	equivalent memory usage for states (stored*(State-vector + overhead))
-   19.600	actual memory usage for states (compression: 37.68%)
-         	state-vector as stored = 102 byte + 28 byte overhead
+  138.651	equivalent memory usage for states (stored*(State-vector + overhead))
+   49.135	actual memory usage for states (compression: 35.44%)
+         	state-vector as stored = 125 byte + 28 byte overhead
   128.000	memory used for hash table (-w24)
  5340.576	memory used for DFS stack (-m100000000)
- 5488.108	total actual memory usage
+ 5517.600	total actual memory usage
 
 
 unreached in proctype lock
@@ -44,6 +44,6 @@ unreached in claim e1
 	_spin_nvr.tmp:10, state 13, "-end-"
 	(1 of 13 states)
 
-pan: elapsed time 0.77 seconds
-pan: rate 350818.18 states/second
+pan: elapsed time 1.2 seconds
+pan: rate 294895.83 states/second
 null
