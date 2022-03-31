@@ -1,14 +1,3 @@
-never e1 {    /* !([] ((! (request_low[0]?[1])) || (<> ((doors_status[0].lower==1))))) */
-T0_init:
-	do
-	:: (! ((! (request_low[0]?[1]))) && ! (((doors_status[0].lower==1)))) -> goto accept_S4
-	:: (1) -> goto T0_init
-	od;
-accept_S4:
-	do
-	:: (! (((doors_status[0].lower==1)))) -> goto accept_S4
-	od;
-}
 never f1 {    /* !([] (<> (request_high[(4-1)]?[1]))) */
 T0_init:
 	do

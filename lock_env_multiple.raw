@@ -1,8 +1,6 @@
 spin: lock_env_multiple.pml:291, Error: dubious use of 'else' combined with i/o, statement separator near 'num'
-ltl e1: [] ((! (request_low[0]?[1])) || (<> ((doors_status[0].lower==1))))
-ltl f1: [] (<> (request_high[(4-1)]?[1]))
 starting claim 5
-  1: error: invalid statement
+spin: couldn't find claim 5 (ignored)
 Starting main_control with pid 2
   2:	proc  0 (:init::1) lock_env_multiple.pml:319 (state 1)	[(run main_control())]
 		lock_water_level[0] = 0
@@ -907,7 +905,6 @@ Starting ship with pid 4
 		slide_status[3].higher = 0
 		:init:(0):proc = 1
 
- 16: error: invalid statement
  17:	proc  3 (ship:1) lock_env_multiple.pml:182 (state 51)	[(((ship_status[shipid]==3)&&(ship_pos[shipid]!=4)))]
 		lock_water_level[0] = high_level
 		lock_water_level[1] = 0
@@ -944,7 +941,6 @@ Starting ship with pid 4
 		slide_status[3].higher = 0
 		ship(3):shipid = 1
 
- 18: error: invalid statement
  19:	proc  3 (ship:1) lock_env_multiple.pml:184 (state 52)	[((doors_status[ship_pos[shipid]].lower==2))]
 		lock_water_level[0] = high_level
 		lock_water_level[1] = 0
@@ -981,7 +977,6 @@ Starting ship with pid 4
 		slide_status[3].higher = 0
 		ship(3):shipid = 1
 
- 20: error: invalid statement
  21:	proc  3 (ship:1) lock_env_multiple.pml:185 (state -)	[values: 1!1]
  21:	proc  3 (ship:1) lock_env_multiple.pml:185 (state 53)	[request_low[ship_pos[shipid]]!1]
 		queue 1 (request_low[0]): [1]
@@ -1023,7 +1018,6 @@ Starting ship with pid 4
 		slide_status[3].higher = 0
 		ship(3):shipid = 1
 
- 22: error: invalid statement
  23:	proc  1 (main_control:1) lock_env_multiple.pml:242 (state 1)	[num = 0]
 		lock_water_level[0] = high_level
 		lock_water_level[1] = 0
@@ -1060,7 +1054,6 @@ Starting ship with pid 4
 		slide_status[3].higher = 0
 		main_control(1):num = 0
 
- 24: error: invalid statement
  25:	proc  1 (main_control:1) lock_env_multiple.pml:244 (state 2)	[((num<4))]
 		lock_water_level[0] = high_level
 		lock_water_level[1] = 0
@@ -1097,7 +1090,6 @@ Starting ship with pid 4
 		slide_status[3].higher = 0
 		main_control(1):num = 0
 
- 26: error: invalid statement
  27:	proc  1 (main_control:1) lock_env_multiple.pml:246 (state -)	[values: 1?1]
  27:	proc  1 (main_control:1) lock_env_multiple.pml:246 (state 3)	[request_low[num]?1]
 		queue 1 (request_low[0]): 
@@ -1136,7 +1128,6 @@ Starting ship with pid 4
 		slide_status[3].higher = 0
 		main_control(1):num = 0
 
- 28: error: invalid statement
  29:	proc  1 (main_control:1) lock_env_multiple.pml:250 (state 7)	[else]
 		lock_water_level[0] = high_level
 		lock_water_level[1] = 0
@@ -1173,7 +1164,6 @@ Starting ship with pid 4
 		slide_status[3].higher = 0
 		main_control(1):num = 0
 
- 30: error: invalid statement
  31:	proc  1 (main_control:1) lock_env_multiple.pml:250 (state 8)	[(1)]
 		lock_water_level[0] = high_level
 		lock_water_level[1] = 0
@@ -1210,7 +1200,6 @@ Starting ship with pid 4
 		slide_status[3].higher = 0
 		main_control(1):num = 0
 
- 32: error: invalid statement
  33:	proc  1 (main_control:1) lock_env_multiple.pml:254 (state 14)	[else]
 		lock_water_level[0] = high_level
 		lock_water_level[1] = 0
@@ -1247,7 +1236,6 @@ Starting ship with pid 4
 		slide_status[3].higher = 0
 		main_control(1):num = 0
 
- 34: error: invalid statement
  35:	proc  1 (main_control:1) lock_env_multiple.pml:254 (state 15)	[(1)]
 		lock_water_level[0] = high_level
 		lock_water_level[1] = 0
@@ -1284,7 +1272,6 @@ Starting ship with pid 4
 		slide_status[3].higher = 0
 		main_control(1):num = 0
 
- 36: error: invalid statement
  37:	proc  1 (main_control:1) lock_env_multiple.pml:257 (state 18)	[((doors_status[num].lower==2))]
 		lock_water_level[0] = high_level
 		lock_water_level[1] = 0
@@ -1321,7 +1308,6 @@ Starting ship with pid 4
 		slide_status[3].higher = 0
 		main_control(1):num = 0
 
- 38: error: invalid statement
  39:	proc  1 (main_control:1) lock_env_multiple.pml:259 (state 19)	[(((lock_water_level[num]!=2)&&(slide_status[num].lower==2)))]
 		lock_water_level[0] = high_level
 		lock_water_level[1] = 0
@@ -1358,7 +1344,6 @@ Starting ship with pid 4
 		slide_status[3].higher = 0
 		main_control(1):num = 0
 
- 40: error: invalid statement
  41:	proc  1 (main_control:1) lock_env_multiple.pml:259 (state -)	[values: 5!low]
  41:	proc  1 (main_control:1) lock_env_multiple.pml:259 (state 20)	[change_slide_pos[num]!2]
 		lock_water_level[0] = high_level
@@ -1433,7 +1418,6 @@ Starting ship with pid 4
 		slide_status[3].higher = 0
 		lock(2):lockid = 0
 
- 43: error: invalid statement
  44:	proc  2 (lock:1) lock_env_multiple.pml:110 (state 25)	[((slide_status[lockid].lower==2))]
 		lock_water_level[0] = high_level
 		lock_water_level[1] = 0
@@ -1470,7 +1454,6 @@ Starting ship with pid 4
 		slide_status[3].higher = 0
 		lock(2):lockid = 0
 
- 45: error: invalid statement
  46:	proc  2 (lock:1) lock_env_multiple.pml:110 (state 26)	[slide_status[lockid].lower = 1]
 		lock_water_level[0] = high_level
 		lock_water_level[1] = 0
@@ -1507,7 +1490,6 @@ Starting ship with pid 4
 		slide_status[3].higher = 0
 		lock(2):lockid = 0
 
- 47: error: invalid statement
  48:	proc  2 (lock:1) lock_env_multiple.pml:111 (state 27)	[lock_water_level[lockid] = 2]
 		lock_water_level[0] = low_level
 		lock_water_level[1] = 0
@@ -1544,7 +1526,6 @@ Starting ship with pid 4
 		slide_status[3].higher = 0
 		lock(2):lockid = 0
 
- 49: error: invalid statement
  50:	proc  2 (lock:1) lock_env_multiple.pml:114 (state -)	[values: 9!1]
  50:	proc  2 (lock:1) lock_env_multiple.pml:114 (state 32)	[slide_pos_changed[lockid]!1]
 		lock_water_level[0] = low_level
@@ -1619,7 +1600,6 @@ Starting ship with pid 4
 		slide_status[3].higher = 0
 		main_control(1):num = 0
 
- 52: error: invalid statement
  53:	proc  1 (main_control:1) lock_env_multiple.pml:259 (state -)	[values: 13!low]
  53:	proc  1 (main_control:1) lock_env_multiple.pml:259 (state 22)	[change_doors_pos[num]!2]
 		lock_water_level[0] = low_level
@@ -1694,7 +1674,6 @@ Starting ship with pid 4
 		slide_status[3].higher = 0
 		lock(2):lockid = 0
 
- 55: error: invalid statement
  56:	proc  2 (lock:1) lock_env_multiple.pml:92 (state 2)	[((doors_status[lockid].lower==2))]
 		lock_water_level[0] = low_level
 		lock_water_level[1] = 0
@@ -1731,7 +1710,6 @@ Starting ship with pid 4
 		slide_status[3].higher = 0
 		lock(2):lockid = 0
 
- 57: error: invalid statement
  58:	proc  2 (lock:1) lock_env_multiple.pml:92 (state 3)	[doors_status[lockid].lower = 1]
 		lock_water_level[0] = low_level
 		lock_water_level[1] = 0
@@ -1768,7 +1746,6 @@ Starting ship with pid 4
 		slide_status[3].higher = 0
 		lock(2):lockid = 0
 
- 59: error: invalid statement
  60:	proc  3 (ship:1) lock_env_multiple.pml:186 (state 54)	[((doors_status[ship_pos[shipid]].lower==1))]
 		lock_water_level[0] = low_level
 		lock_water_level[1] = 0
@@ -1949,7 +1926,6 @@ Starting ship with pid 4
 		slide_status[3].higher = 0
 		ship(3):shipid = 1
 
- 62: error: invalid statement
  63:	proc  2 (lock:1) lock_env_multiple.pml:93 (state 4)	[lock_water_level[lockid] = 2]
 		lock_water_level[0] = low_level
 		lock_water_level[1] = 0
@@ -1986,7 +1962,6 @@ Starting ship with pid 4
 		slide_status[3].higher = 0
 		lock(2):lockid = 0
 
- 64: error: invalid statement
  65:	proc  2 (lock:1) lock_env_multiple.pml:96 (state -)	[values: 17!1]
  65:	proc  2 (lock:1) lock_env_multiple.pml:96 (state 9)	[doors_pos_changed[lockid]!1]
 		lock_water_level[0] = low_level
@@ -2061,7 +2036,6 @@ Starting ship with pid 4
 		slide_status[3].higher = 0
 		main_control(1):num = 0
 
- 67: error: invalid statement
  68:	proc  3 (ship:1) lock_env_multiple.pml:192 (state -)	[values: 21!1]
  68:	proc  3 (ship:1) lock_env_multiple.pml:192 (state 59)	[observed_low[ship_pos[shipid]]!1]
 		lock_water_level[0] = low_level
@@ -2136,7 +2110,6 @@ Starting ship with pid 4
 		slide_status[3].higher = 0
 		main_control(1):num = 0
 
- 70: error: invalid statement
  71:	proc  3 (ship:1) lock_env_multiple.pml:193 (state 60)	[goto :b4]
 		lock_water_level[0] = low_level
 		lock_water_level[1] = 0
@@ -2173,7 +2146,6 @@ Starting ship with pid 4
 		slide_status[3].higher = 0
 		ship(3):shipid = 1
 
- 72: error: invalid statement
  73:	proc  3 (ship:1) lock_env_multiple.pml:204 (state 75)	[((ship_status[shipid]==2))]
 		lock_water_level[0] = low_level
 		lock_water_level[1] = 0
@@ -2210,7 +2182,6 @@ Starting ship with pid 4
 		slide_status[3].higher = 0
 		ship(3):shipid = 1
 
- 74: error: invalid statement
  75:	proc  3 (ship:1) lock_env_multiple.pml:206 (state 76)	[((doors_status[ship_pos[shipid]].higher==2))]
 		lock_water_level[0] = low_level
 		lock_water_level[1] = 0
@@ -2247,7 +2218,6 @@ Starting ship with pid 4
 		slide_status[3].higher = 0
 		ship(3):shipid = 1
 
- 76: error: invalid statement
  77:	proc  3 (ship:1) lock_env_multiple.pml:207 (state -)	[values: 25!1]
  77:	proc  3 (ship:1) lock_env_multiple.pml:207 (state 77)	[request_high[ship_pos[shipid]]!1]
 		queue 25 (request_high[0]): [1]
@@ -2289,7 +2259,6 @@ Starting ship with pid 4
 		slide_status[3].higher = 0
 		ship(3):shipid = 1
 
- 78: error: invalid statement
 spin: trail ends after 78 steps
 #processes: 4
 		queue 1 (request_low[0]): 
@@ -2341,8 +2310,6 @@ spin: trail ends after 78 steps
 		main_control(1):num = 0
  78:	proc  0 (:init::1) lock_env_multiple.pml:352 (state 38)
 		:init:(0):proc = 1
-MSC: ~G line 13
- 78:	proc  - (f1:1) _spin_nvr.tmp:13 (state 5)
 4 processes created
 Exit-Status 0
 null
