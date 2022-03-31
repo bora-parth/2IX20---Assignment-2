@@ -19,8 +19,8 @@
 // Formula p1 holds if the first ship can always eventually enter the lock when going up.
 //ltl p1 { []<> (ship_status[0] == go_up_in_lock) } /*  */
 
-//ltl d1 {[] (request_low?[true] && ship_status[0] == go_up -> <> (ship_status[0] == go_up_in_lock))}
-ltl d2 {[] (request_high?[true] && ship_status[0] == go_down -> <> (lock_water_level == low_level))}
+ltl d1 {[] (request_low?[true] && ship_status[0] == go_up -> <> (ship_status[0] == go_up_in_lock))}
+//ltl d2 {[] (request_high?[true] && ship_status[0] == go_down -> <> (lock_water_level == low_level))}
 
 // Type for direction of ship.
 mtype:direction = { go_down, go_down_in_lock, go_up, go_up_in_lock, goal_reached };
@@ -280,15 +280,15 @@ proctype monitor() {
 	// an example assertion.
 	assert(0 <= ship_pos[0] && ship_pos[0] <= N);
 	// property a
-	//assert(!(doors_status.lower == open && doors_status.higher == open));
+	assert(!(doors_status.lower == open && doors_status.higher == open));
 	// peoperty b1
-	//assert(!(doors_status.lower == open && slide_status.higher == open));
+	assert(!(doors_status.lower == open && slide_status.higher == open));
 	// peoperty b2
-	//assert(!(doors_status.higher == open && slide_status.lower == open));
+	assert(!(doors_status.higher == open && slide_status.lower == open));
 	//property c1
-	//assert(!(doors_status.lower == open && lock_water_level != low_level));
+	assert(!(doors_status.lower == open && lock_water_level != low_level));
 	//property c2
-	//assert(!(doors_status.higher == open && lock_water_level != high_level));
+	assert(!(doors_status.higher == open && lock_water_level != high_level));
 	
 }
 

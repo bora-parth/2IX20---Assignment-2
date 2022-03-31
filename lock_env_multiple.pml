@@ -9,9 +9,9 @@
 */
 
 // The number of locks.
-#define N	10
+#define N	4
 // The number of ships.
-#define M	5
+#define M	2
 // The maximum number of ships immediately at either side of a lock.
 #define MAX 2
 
@@ -20,7 +20,7 @@
 //ltl p1 { []<> (ship_status[0] == go_up_in_lock) } /*  */
 
 //ltl e1 {request_low[i]?[true] => <> observed_low[i]?[true]}
-//ltl e2 {request_high[i]?[true] => <> observed_high[i]?[true]}
+ltl e2 {request_high[i]?[true] => <> observed_high[i]?[true]}
 
 //ltl f1 {[] <>(request_high[N-1]?[true])}
 ltl f2 {[] <>(request_low[0]?[true])}
@@ -241,7 +241,7 @@ proctype main_control() {
 	do
 	:: num < N ->
 		do
-		::  atomic {request_low[num]?true ->
+		:: request_low[num]?true ->
 			if
 			:: doors_status[num].higher == open -> change_doors_pos[num]!high; doors_pos_changed[num]?true;
 			:: else -> skip;
@@ -260,8 +260,8 @@ proctype main_control() {
 			:: doors_status[num].lower == open -> skip;
 			fi;
 			observed_low[num]?true;
-			}
-		:: atomic {request_high[num]?true ->
+			
+		:: request_high[num]?true ->
 		
 			if
 			:: doors_status[num].lower == open -> change_doors_pos[num]!low; doors_pos_changed[num]?true;
@@ -281,7 +281,7 @@ proctype main_control() {
 			:: doors_status[num].higher == open -> skip;
 			fi;
 			observed_high[num]?true;
-			break;}
+			break;
 		:: else -> break;
 		od;
 		num++;
