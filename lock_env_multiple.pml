@@ -19,12 +19,12 @@
 // Formula p1 holds if the first ship can always eventually enter the lock when going up.
 //ltl p1 { []<> (ship_status[0] == go_up_in_lock) } /*  */
 
-#define i 2
+#define i 0
 
 ltl e1 {[](request_low[i]?[true] -> <> (doors_status[i].lower == open))}
 //ltl e2 {[](request_high[i]?[true] -> <> (doors_status[i].higher == open))}
 
-//ltl f1 {[] <>(request_high[N-1]?[true])}
+ltl f1 {[] <>(request_high[N-1]?[true])}
 //ltl f2 {[] <>(request_low[0]?[true])}
 
 // Type for direction of ship.
@@ -244,6 +244,7 @@ proctype main_control() {
 	:: num < N ->
 		do
 		:: request_low[num]?true ->
+			atomic {
 			if
 			:: doors_status[num].higher == open -> change_doors_pos[num]!high; doors_pos_changed[num]?true;
 			:: else -> skip;
@@ -262,9 +263,9 @@ proctype main_control() {
 			:: doors_status[num].lower == open -> skip;
 			fi;
 			observed_low[num]?true;
-			
+			}
 		:: request_high[num]?true ->
-		
+			atomic {
 			if
 			:: doors_status[num].lower == open -> change_doors_pos[num]!low; doors_pos_changed[num]?true;
 			:: else -> skip;
@@ -284,6 +285,7 @@ proctype main_control() {
 			fi;
 			observed_high[num]?true;
 			break;
+			}
 		:: else -> break;
 		od;
 		num++;

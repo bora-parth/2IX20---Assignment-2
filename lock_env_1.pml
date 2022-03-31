@@ -235,30 +235,35 @@ proctype ship(byte shipid) {
 proctype main_control() {
 	do
 	::  request_low?true ->
+		// if it is open, close high door before opening low door
 		if
 		:: doors_status.higher == open -> change_doors_pos!high; doors_pos_changed?true;
 		:: else -> skip;
 		fi;
+		// if it is open, close high slide before opening low door
 		if
 		:: slide_status.higher == open -> change_slide_pos!high; slide_pos_changed?true;
 		:: else -> skip;
 		fi;
 		if
 		:: doors_status.lower == closed ->
+			//if water level in the lock is not equal to low_level and low slide is closed, then we open the low slide and immediately after open the low door
 			if
 			:: lock_water_level != low_level && slide_status.lower == closed-> change_slide_pos!low; slide_pos_changed?true; change_doors_pos!low; doors_pos_changed?true;
-	
+			//if water level in the lock is equal to low_level then we open the low door
 			:: lock_water_level == low_level -> change_doors_pos!low; doors_pos_changed?true;
 			fi;
+		//if low door is already open then skip
 		:: doors_status.lower == open -> skip;
 		fi;
 		observed_low[0]?true;
 	:: request_high?true ->
-	
+		// if it is open, close low door before opening high door
 		if
 		:: doors_status.lower == open -> change_doors_pos!low; doors_pos_changed?true;
 		:: else -> skip;
 		fi;
+		// if it is open, close high slide before opening low door
 		if
 		:: slide_status.lower == open -> change_slide_pos!low; slide_pos_changed?true;
 		:: else -> skip;
