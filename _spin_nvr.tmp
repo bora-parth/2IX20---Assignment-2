@@ -1,0 +1,11 @@
+never e1 {    /* !([] ((! (request_low[2]?[1])) || (<> ((doors_status[2].lower==1))))) */
+T0_init:
+	do
+	:: (! ((! (request_low[2]?[1]))) && ! (((doors_status[2].lower==1)))) -> goto accept_S4
+	:: (1) -> goto T0_init
+	od;
+accept_S4:
+	do
+	:: (! (((doors_status[2].lower==1)))) -> goto accept_S4
+	od;
+}

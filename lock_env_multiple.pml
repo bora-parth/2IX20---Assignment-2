@@ -9,7 +9,7 @@
 */
 
 // The number of locks.
-#define N	4
+#define N	3
 // The number of ships.
 #define M	2
 // The maximum number of ships immediately at either side of a lock.
@@ -19,11 +19,13 @@
 // Formula p1 holds if the first ship can always eventually enter the lock when going up.
 //ltl p1 { []<> (ship_status[0] == go_up_in_lock) } /*  */
 
-//ltl e1 {request_low[i]?[true] => <> observed_low[i]?[true]}
-ltl e2 {request_high[i]?[true] => <> observed_high[i]?[true]}
+#define i 2
+
+ltl e1 {[](request_low[i]?[true] -> <> (doors_status[i].lower == open))}
+//ltl e2 {[](request_high[i]?[true] -> <> (doors_status[i].higher == open))}
 
 //ltl f1 {[] <>(request_high[N-1]?[true])}
-ltl f2 {[] <>(request_low[0]?[true])}
+//ltl f2 {[] <>(request_low[0]?[true])}
 
 // Type for direction of ship.
 mtype:direction = { go_down, go_down_in_lock, go_up, go_up_in_lock, goal_reached };
@@ -289,8 +291,8 @@ proctype main_control() {
 	od;
 }
 
-proctype monitor() {
-	assert(true);
+//proctype monitor() {
+	//assert(true);
 	// an example assertion.
 	//assert(0 <= ship_pos[0] && ship_pos[0] <= N);
 	// property a
@@ -304,7 +306,7 @@ proctype monitor() {
 	//property c2
 	//assert(!(doors_status.higher == open && lock_water_level != high_level));
 	
-}
+//}
 
 // Initial process that instantiates all other processes and creates
 // the initial lock and ship situation.
