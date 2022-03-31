@@ -106,10 +106,6 @@
 #if defined(RANDSTORE) && !defined(RANDSTOR)
 	#define RANDSTOR	RANDSTORE
 #endif
-#define HAS_BADELSE	1
-#ifndef NOREDUCE
-	#define NOREDUCE	1
-#endif
 #define MERGED	1
 #if !defined(HAS_LAST) && defined(BCS)
 	#define HAS_LAST	1 /* use it, but */
@@ -438,21 +434,21 @@ typedef struct State {
 		unsigned short _event;
 	#endif
 #endif
-	uchar lock_is_occupied[4];
-	uchar ship_pos[2];
-	uchar nr_of_ships_at_pos[5];
-	uchar request_low[4];
-	uchar request_high[4];
-	uchar observed_low[4];
-	uchar observed_high[4];
-	uchar change_doors_pos[4];
-	uchar doors_pos_changed[4];
-	uchar change_slide_pos[4];
-	uchar slide_pos_changed[4];
-	uchar lock_water_level[4];
-	uchar ship_status[2];
-	struct doorpairs_t doors_status[4];
-	struct slides_t slide_status[4];
+	uchar lock_is_occupied[3];
+	uchar ship_pos[5];
+	uchar nr_of_ships_at_pos[4];
+	uchar request_low[3];
+	uchar request_high[3];
+	uchar observed_low[3];
+	uchar observed_high[3];
+	uchar change_doors_pos[3];
+	uchar doors_pos_changed[3];
+	uchar change_slide_pos[3];
+	uchar slide_pos_changed[3];
+	uchar lock_water_level[3];
+	uchar ship_status[5];
+	struct doorpairs_t doors_status[3];
+	struct slides_t slide_status[3];
 #ifdef TRIX
 	/* room for 512 proc+chan ptrs, + safety margin */
 	char *_ids_[MAXPROC+MAXQ+4];
@@ -518,63 +514,7 @@ typedef struct TRIX_v6 {
 	#define MEMLIM	(2048)	/* need a default, using 2 GB */
 #endif
 #define PROG_LAB	0 /* progress labels */
-#define NQS	32
-typedef struct Q32 {
-	uchar Qlen;	/* q_size */
-	uchar _t;	/* q_type */
-	struct {
-		uchar fld0;
-	} contents[1];
-} Q32;
-typedef struct Q31 {
-	uchar Qlen;	/* q_size */
-	uchar _t;	/* q_type */
-	struct {
-		uchar fld0;
-	} contents[1];
-} Q31;
-typedef struct Q30 {
-	uchar Qlen;	/* q_size */
-	uchar _t;	/* q_type */
-	struct {
-		uchar fld0;
-	} contents[1];
-} Q30;
-typedef struct Q29 {
-	uchar Qlen;	/* q_size */
-	uchar _t;	/* q_type */
-	struct {
-		uchar fld0;
-	} contents[1];
-} Q29;
-typedef struct Q28 {
-	uchar Qlen;	/* q_size */
-	uchar _t;	/* q_type */
-	struct {
-		uchar fld0;
-	} contents[1];
-} Q28;
-typedef struct Q27 {
-	uchar Qlen;	/* q_size */
-	uchar _t;	/* q_type */
-	struct {
-		uchar fld0;
-	} contents[1];
-} Q27;
-typedef struct Q26 {
-	uchar Qlen;	/* q_size */
-	uchar _t;	/* q_type */
-	struct {
-		uchar fld0;
-	} contents[1];
-} Q26;
-typedef struct Q25 {
-	uchar Qlen;	/* q_size */
-	uchar _t;	/* q_type */
-	struct {
-		uchar fld0;
-	} contents[1];
-} Q25;
+#define NQS	24
 typedef struct Q24 {
 	uchar Qlen;	/* q_size */
 	uchar _t;	/* q_type */
@@ -692,56 +632,56 @@ typedef struct Q8 {
 	uchar _t;	/* q_type */
 	struct {
 		uchar fld0;
-	} contents[2];
+	} contents[1];
 } Q8;
 typedef struct Q7 {
 	uchar Qlen;	/* q_size */
 	uchar _t;	/* q_type */
 	struct {
 		uchar fld0;
-	} contents[2];
+	} contents[1];
 } Q7;
 typedef struct Q6 {
 	uchar Qlen;	/* q_size */
 	uchar _t;	/* q_type */
 	struct {
 		uchar fld0;
-	} contents[2];
+	} contents[5];
 } Q6;
 typedef struct Q5 {
 	uchar Qlen;	/* q_size */
 	uchar _t;	/* q_type */
 	struct {
 		uchar fld0;
-	} contents[2];
+	} contents[5];
 } Q5;
 typedef struct Q4 {
 	uchar Qlen;	/* q_size */
 	uchar _t;	/* q_type */
 	struct {
 		uchar fld0;
-	} contents[2];
+	} contents[5];
 } Q4;
 typedef struct Q3 {
 	uchar Qlen;	/* q_size */
 	uchar _t;	/* q_type */
 	struct {
 		uchar fld0;
-	} contents[2];
+	} contents[5];
 } Q3;
 typedef struct Q2 {
 	uchar Qlen;	/* q_size */
 	uchar _t;	/* q_type */
 	struct {
 		uchar fld0;
-	} contents[2];
+	} contents[5];
 } Q2;
 typedef struct Q1 {
 	uchar Qlen;	/* q_size */
 	uchar _t;	/* q_type */
 	struct {
 		uchar fld0;
-	} contents[2];
+	} contents[5];
 } Q1;
 typedef struct Q0 {	/* generic q */
 	uchar Qlen;	/* q_size */

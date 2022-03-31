@@ -9,7 +9,7 @@
 */
 
 // The number of locks.
-#define N	4
+#define N	3
 // The number of ships.
 #define M	2
 // The maximum number of ships immediately at either side of a lock.
@@ -21,10 +21,10 @@
 
 #define i 0
 
-ltl e1 {[](request_low[i]?[true] -> <> (doors_status[i].lower == open))}
+//ltl e1 {[](request_low[i]?[true] -> <> (doors_status[i].lower == open))}
 //ltl e2 {[](request_high[i]?[true] -> <> (doors_status[i].higher == open))}
 
-ltl f1 {[] <>(request_high[N-1]?[true])}
+//ltl f1 {[] <>(request_high[N-1]?[true])}
 //ltl f2 {[] <>(request_low[0]?[true])}
 
 // Type for direction of ship.
@@ -243,8 +243,7 @@ proctype main_control() {
 	do
 	:: num < N ->
 		do
-		:: request_low[num]?true ->
-			atomic {
+		:: atomic{ request_low[num]?true ->
 			if
 			:: doors_status[num].higher == open -> change_doors_pos[num]!high; doors_pos_changed[num]?true;
 			:: else -> skip;
@@ -264,8 +263,7 @@ proctype main_control() {
 			fi;
 			observed_low[num]?true;
 			}
-		:: request_high[num]?true ->
-			atomic {
+		:: atomic{ request_high[num]?true ->
 			if
 			:: doors_status[num].lower == open -> change_doors_pos[num]!low; doors_pos_changed[num]?true;
 			:: else -> skip;
@@ -286,36 +284,19 @@ proctype main_control() {
 			observed_high[num]?true;
 			break;
 			}
-		:: else -> break;
+		::else -> break;
 		od;
 		num++;
 	:: num == N -> num = 0;
 	od;
 }
 
-//proctype monitor() {
-	//assert(true);
-	// an example assertion.
-	//assert(0 <= ship_pos[0] && ship_pos[0] <= N);
-	// property a
-	//assert(!(doors_status.lower == open && doors_status.higher == open));
-	// peoperty b1
-	//assert(!(doors_status.lower == open && slide_status.higher == open));
-	// peoperty b2
-	//assert(!(doors_status.higher == open && slide_status.lower == open));
-	//property c1
-	//assert(!(doors_status.lower == open && lock_water_level != low_level));
-	//property c2
-	//assert(!(doors_status.higher == open && lock_water_level != high_level));
-	
-//}
 
 // Initial process that instantiates all other processes and creates
 // the initial lock and ship situation.
 init {
 	byte proc;
 	atomic {
-		//run monitor();
 		run main_control();
 		// In the code below, the individual locks are initialised.
 		// The assumption here is that N == 1. When generalising the model for

@@ -1,11 +1,11 @@
-never f1 {    /* !([] (<> (request_high[(4-1)]?[1]))) */
+never d1 {    /* !([] ((! ((request_low?[1]) && ((ship_status[0]==3)))) || (<> ((ship_status[0]==2))))) */
 T0_init:
 	do
-	:: (! ((request_high[(4-1)]?[1]))) -> goto accept_S4
+	:: (! ((! ((request_low?[1]) && ((ship_status[0]==3))))) && ! (((ship_status[0]==2)))) -> goto accept_S4
 	:: (1) -> goto T0_init
 	od;
 accept_S4:
 	do
-	:: (! ((request_high[(4-1)]?[1]))) -> goto accept_S4
+	:: (! (((ship_status[0]==2)))) -> goto accept_S4
 	od;
 }

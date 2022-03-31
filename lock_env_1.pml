@@ -19,7 +19,10 @@
 // Formula p1 holds if the first ship can always eventually enter the lock when going up.
 //ltl p1 { []<> (ship_status[0] == go_up_in_lock) } /*  */
 
-ltl d1 {[] (request_low?[true] && ship_status[0] == go_up -> <> (ship_status[0] == go_up_in_lock))}
+//property d1, modelled as LTL formula
+//ltl d1 {[] (request_low?[true] && ship_status[0] == go_up -> <> (ship_status[0] == go_up_in_lock))}
+
+//property d2, modelled as LTL formula
 //ltl d2 {[] (request_high?[true] && ship_status[0] == go_down -> <> (lock_water_level == low_level))}
 
 // Type for direction of ship.
@@ -286,9 +289,9 @@ proctype main_control() {
 proctype monitor() {
 	// an example assertion.
 	assert(0 <= ship_pos[0] && ship_pos[0] <= N);
-	// property a
+	// property a, modelled as  an assertion
 	assert(!(doors_status.lower == open && doors_status.higher == open));
-	// peoperty b1
+	// property b1, modelled as an assertion
 	assert(!(doors_status.lower == open && slide_status.higher == open));
 	// peoperty b2
 	assert(!(doors_status.higher == open && slide_status.lower == open));
