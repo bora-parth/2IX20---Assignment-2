@@ -16,14 +16,21 @@
 #define MAX 2
 
 // LTL formulas to be verified
-// Formula p1 holds if the first ship can always eventually enter the lock when going up.
+// (Example LTL) Formula p1 holds if the first ship can always eventually enter the lock when going up.
 //ltl p1 { []<> (ship_status[0] == go_up_in_lock) } /*  */
 
+// Rubric LTLs
+//ltl p {[] <> (request_low?[true])}
+//ltl q {[] <> (request_high?[true])}
+//ltl r {[] <> (lock_water_level ==  high_level)}
+//ltl s {[] <> (lock_water_level ==  low_level)}
+
+// LTL formulas to be verified as asked in the assignment description
 //property d1, modelled as LTL formula
-//ltl d1 {[] (request_low?[true] && ship_status[0] == go_up -> <> (ship_status[0] == go_up_in_lock))}
+//ltl d1 {[] (request_low?[true] && ship_status[0] == go_up -> <> (lock_is_occupied == true))}
 
 //property d2, modelled as LTL formula
-//ltl d2 {[] (request_high?[true] && ship_status[0] == go_down -> <> (lock_water_level == low_level))}
+//ltl d2 {[] (request_high?[true] && ship_status[0] == go_down -> <> (lock_is_occupied == true))}
 
 // Type for direction of ship.
 mtype:direction = { go_down, go_down_in_lock, go_up, go_up_in_lock, goal_reached };
@@ -293,7 +300,7 @@ proctype monitor() {
 	assert(!(doors_status.lower == open && doors_status.higher == open));
 	// property b1, modelled as an assertion
 	assert(!(doors_status.lower == open && slide_status.higher == open));
-	// peoperty b2
+	// property b2
 	assert(!(doors_status.higher == open && slide_status.lower == open));
 	//property c1
 	assert(!(doors_status.lower == open && lock_water_level != low_level));

@@ -2,106 +2,153 @@
 	default: Uerror("bad return move");
 	case  0: goto R999; /* nothing to undo */
 
+		 /* CLAIM d2 */
+;
+		;
+		;
+		;
+		
+	case 5: // STATE 13
+		;
+		p_restor(II);
+		;
+		;
+		goto R999;
+
 		 /* PROC :init: */
 
-	case 3: // STATE 1
+	case 6: // STATE 1
 		;
 		;
 		delproc(0, now._nr_pr-1);
 		;
 		goto R999;
 
-	case 4: // STATE 2
+	case 7: // STATE 2
 		;
-		((P3 *)_this)->proc = trpt->bup.oval;
+		;
+		delproc(0, now._nr_pr-1);
 		;
 		goto R999;
 
-	case 5: // STATE 9
+	case 8: // STATE 3
 		;
-		now.lock_is_occupied[ Index(((P3 *)_this)->proc, 3) ] = trpt->bup.ovals[5];
-		now.lock_water_level[ Index(((P3 *)_this)->proc, 3) ] = trpt->bup.ovals[4];
-		now.slide_status[ Index(((P3 *)_this)->proc, 3) ].higher = trpt->bup.ovals[3];
-		now.slide_status[ Index(((P3 *)_this)->proc, 3) ].lower = trpt->bup.ovals[2];
-		now.doors_status[ Index(((P3 *)_this)->proc, 3) ].higher = trpt->bup.ovals[1];
-		now.doors_status[ Index(((P3 *)_this)->proc, 3) ].lower = trpt->bup.ovals[0];
+		((P4 *)_this)->proc = trpt->bup.oval;
+		;
+		goto R999;
+
+	case 9: // STATE 10
+		;
+		now.lock_is_occupied = trpt->bup.ovals[5];
+		now.lock_water_level = trpt->bup.ovals[4];
+		now.slide_status.higher = trpt->bup.ovals[3];
+		now.slide_status.lower = trpt->bup.ovals[2];
+		now.doors_status.higher = trpt->bup.ovals[1];
+		now.doors_status.lower = trpt->bup.ovals[0];
 		;
 		ungrab_ints(trpt->bup.ovals, 6);
 		goto R999;
 
-	case 6: // STATE 10
+	case 10: // STATE 11
 		;
 		;
 		delproc(0, now._nr_pr-1);
 		;
 		goto R999;
 
-	case 7: // STATE 11
+	case 11: // STATE 12
 		;
-		((P3 *)_this)->proc = trpt->bup.oval;
+		((P4 *)_this)->proc = trpt->bup.oval;
 		;
 		goto R999;
 
-	case 8: // STATE 17
+	case 12: // STATE 18
 		;
-		((P3 *)_this)->proc = trpt->bup.ovals[1];
-	/* 0 */	((P3 *)_this)->proc = trpt->bup.ovals[0];
+		((P4 *)_this)->proc = trpt->bup.ovals[1];
+	/* 0 */	((P4 *)_this)->proc = trpt->bup.ovals[0];
 		;
 		;
 		ungrab_ints(trpt->bup.ovals, 2);
 		goto R999;
 
-	case 9: // STATE 17
+	case 13: // STATE 18
 		;
-		((P3 *)_this)->proc = trpt->bup.oval;
+		((P4 *)_this)->proc = trpt->bup.oval;
 		;
 		goto R999;
 
-	case 10: // STATE 20
+	case 14: // STATE 21
 		;
-		now.ship_pos[ Index(((P3 *)_this)->proc, 5) ] = trpt->bup.ovals[1];
-		now.ship_status[ Index(((P3 *)_this)->proc, 5) ] = trpt->bup.ovals[0];
+		now.ship_pos[ Index(((P4 *)_this)->proc, 1) ] = trpt->bup.ovals[1];
+		now.ship_status[ Index(((P4 *)_this)->proc, 1) ] = trpt->bup.ovals[0];
 		;
 		ungrab_ints(trpt->bup.ovals, 2);
 		goto R999;
 
-	case 11: // STATE 21
+	case 15: // STATE 22
 		;
 		;
 		delproc(0, now._nr_pr-1);
 		;
 		goto R999;
 
-	case 12: // STATE 22
+	case 16: // STATE 23
 		;
-		((P3 *)_this)->proc = trpt->bup.oval;
+		((P4 *)_this)->proc = trpt->bup.oval;
 		;
 		goto R999;
 
-	case 13: // STATE 28
+	case 17: // STATE 25
 		;
-		((P3 *)_this)->proc = trpt->bup.ovals[1];
-	/* 0 */	((P3 *)_this)->proc = trpt->bup.ovals[0];
+		((P4 *)_this)->proc = trpt->bup.oval;
+		;
+		goto R999;
+
+	case 18: // STATE 31
+		;
+		((P4 *)_this)->proc = trpt->bup.ovals[1];
+	/* 0 */	((P4 *)_this)->proc = trpt->bup.ovals[0];
 		;
 		;
 		ungrab_ints(trpt->bup.ovals, 2);
 		goto R999;
 
-	case 14: // STATE 28
+	case 19: // STATE 31
 		;
-		((P3 *)_this)->proc = trpt->bup.oval;
+		((P4 *)_this)->proc = trpt->bup.oval;
 		;
 		goto R999;
 
-	case 15: // STATE 31
+	case 20: // STATE 34
 		;
-		((P3 *)_this)->proc = trpt->bup.ovals[1];
-		now.nr_of_ships_at_pos[ Index(now.ship_pos[ Index(((P3 *)_this)->proc, 5) ], 4) ] = trpt->bup.ovals[0];
+		((P4 *)_this)->proc = trpt->bup.ovals[1];
+		now.nr_of_ships_at_pos[ Index(now.ship_pos[ Index(((P4 *)_this)->proc, 1) ], 2) ] = trpt->bup.ovals[0];
 		;
 		ungrab_ints(trpt->bup.ovals, 2);
 		goto R999;
 
-	case 16: // STATE 38
+	case 21: // STATE 41
+		;
+		p_restor(II);
+		;
+		;
+		goto R999;
+
+		 /* PROC monitor */
+;
+		;
+		;
+		;
+		;
+		;
+		;
+		;
+		;
+		;
+		;
+		;
+		
+	case 28: // STATE 7
 		;
 		p_restor(II);
 		;
@@ -110,50 +157,42 @@
 
 		 /* PROC main_control */
 
-	case 17: // STATE 1
-		;
-		((P2 *)_this)->num = trpt->bup.oval;
-		;
-		goto R999;
-;
-		;
-		
-	case 19: // STATE 3
+	case 29: // STATE 1
 		;
 		XX = 1;
-		unrecv(now.request_low[ Index(((int)((P2 *)_this)->num), 3) ], XX-1, 0, 1, 1);
+		unrecv(now.request_low, XX-1, 0, 1, 1);
 		;
 		;
 		goto R999;
 ;
 		;
 		
-	case 21: // STATE 5
+	case 31: // STATE 3
 		;
-		_m = unsend(now.change_doors_pos[ Index(((int)((P2 *)_this)->num), 3) ]);
+		_m = unsend(now.change_doors_pos);
 		;
 		goto R999;
 
-	case 22: // STATE 6
+	case 32: // STATE 4
 		;
 		XX = 1;
-		unrecv(now.doors_pos_changed[ Index(((int)((P2 *)_this)->num), 3) ], XX-1, 0, 1, 1);
+		unrecv(now.doors_pos_changed, XX-1, 0, 1, 1);
 		;
 		;
 		goto R999;
 ;
 		;
 		
-	case 24: // STATE 12
+	case 34: // STATE 10
 		;
-		_m = unsend(now.change_slide_pos[ Index(((int)((P2 *)_this)->num), 3) ]);
+		_m = unsend(now.change_slide_pos);
 		;
 		goto R999;
 
-	case 25: // STATE 13
+	case 35: // STATE 11
 		;
 		XX = 1;
-		unrecv(now.slide_pos_changed[ Index(((int)((P2 *)_this)->num), 3) ], XX-1, 0, 1, 1);
+		unrecv(now.slide_pos_changed, XX-1, 0, 1, 1);
 		;
 		;
 		goto R999;
@@ -162,104 +201,96 @@
 		;
 		;
 		
-	case 28: // STATE 20
+	case 38: // STATE 18
 		;
-		_m = unsend(now.change_slide_pos[ Index(((int)((P2 *)_this)->num), 3) ]);
+		_m = unsend(now.change_slide_pos);
 		;
 		goto R999;
 
-	case 29: // STATE 21
+	case 39: // STATE 19
 		;
 		XX = 1;
-		unrecv(now.slide_pos_changed[ Index(((int)((P2 *)_this)->num), 3) ], XX-1, 0, 1, 1);
+		unrecv(now.slide_pos_changed, XX-1, 0, 1, 1);
 		;
 		;
 		goto R999;
 
-	case 30: // STATE 22
+	case 40: // STATE 20
 		;
-		_m = unsend(now.change_doors_pos[ Index(((int)((P2 *)_this)->num), 3) ]);
+		_m = unsend(now.change_doors_pos);
 		;
 		goto R999;
 
-	case 31: // STATE 23
+	case 41: // STATE 21
 		;
 		XX = 1;
-		unrecv(now.doors_pos_changed[ Index(((int)((P2 *)_this)->num), 3) ], XX-1, 0, 1, 1);
+		unrecv(now.doors_pos_changed, XX-1, 0, 1, 1);
 		;
 		;
 		goto R999;
 ;
 		;
 		
-	case 33: // STATE 25
+	case 43: // STATE 23
 		;
-		_m = unsend(now.change_doors_pos[ Index(((int)((P2 *)_this)->num), 3) ]);
-		;
-		goto R999;
-
-	case 34: // STATE 26
-		;
-		XX = 1;
-		unrecv(now.doors_pos_changed[ Index(((int)((P2 *)_this)->num), 3) ], XX-1, 0, 1, 1);
-		;
-		;
-		goto R999;
-;
-		
-	case 35: // STATE 32
-		goto R999;
-;
-		;
-		;
-		
-	case 37: // STATE 30
-		goto R999;
-
-	case 38: // STATE 33
-		;
-		XX = 1;
-		unrecv(now.observed_low[ Index(((int)((P2 *)_this)->num), 3) ], XX-1, 0, 1, 1);
-		;
+		_m = unsend(now.change_doors_pos);
 		;
 		goto R999;
 
-	case 39: // STATE 35
+	case 44: // STATE 24
 		;
 		XX = 1;
-		unrecv(now.request_high[ Index(((int)((P2 *)_this)->num), 3) ], XX-1, 0, 1, 1);
+		unrecv(now.doors_pos_changed, XX-1, 0, 1, 1);
 		;
 		;
 		goto R999;
 ;
 		;
 		
-	case 41: // STATE 37
+	case 46: // STATE 31
 		;
-		_m = unsend(now.change_doors_pos[ Index(((int)((P2 *)_this)->num), 3) ]);
+		XX = 1;
+		unrecv(now.observed_low[0], XX-1, 0, 1, 1);
+		;
 		;
 		goto R999;
 
-	case 42: // STATE 38
+	case 47: // STATE 32
 		;
 		XX = 1;
-		unrecv(now.doors_pos_changed[ Index(((int)((P2 *)_this)->num), 3) ], XX-1, 0, 1, 1);
+		unrecv(now.request_high, XX-1, 0, 1, 1);
 		;
 		;
 		goto R999;
 ;
 		;
 		
-	case 44: // STATE 44
+	case 49: // STATE 34
 		;
-		_m = unsend(now.change_slide_pos[ Index(((int)((P2 *)_this)->num), 3) ]);
+		_m = unsend(now.change_doors_pos);
 		;
 		goto R999;
 
-	case 45: // STATE 45
+	case 50: // STATE 35
 		;
 		XX = 1;
-		unrecv(now.slide_pos_changed[ Index(((int)((P2 *)_this)->num), 3) ], XX-1, 0, 1, 1);
+		unrecv(now.doors_pos_changed, XX-1, 0, 1, 1);
+		;
+		;
+		goto R999;
+;
+		;
+		
+	case 52: // STATE 41
+		;
+		_m = unsend(now.change_slide_pos);
+		;
+		goto R999;
+
+	case 53: // STATE 42
+		;
+		XX = 1;
+		unrecv(now.slide_pos_changed, XX-1, 0, 1, 1);
 		;
 		;
 		goto R999;
@@ -268,77 +299,61 @@
 		;
 		;
 		
-	case 48: // STATE 52
+	case 56: // STATE 49
 		;
-		_m = unsend(now.change_slide_pos[ Index(((int)((P2 *)_this)->num), 3) ]);
+		_m = unsend(now.change_slide_pos);
 		;
 		goto R999;
 
-	case 49: // STATE 53
+	case 57: // STATE 50
 		;
 		XX = 1;
-		unrecv(now.slide_pos_changed[ Index(((int)((P2 *)_this)->num), 3) ], XX-1, 0, 1, 1);
+		unrecv(now.slide_pos_changed, XX-1, 0, 1, 1);
 		;
 		;
 		goto R999;
 
-	case 50: // STATE 54
+	case 58: // STATE 51
 		;
-		_m = unsend(now.change_doors_pos[ Index(((int)((P2 *)_this)->num), 3) ]);
+		_m = unsend(now.change_doors_pos);
 		;
 		goto R999;
 
-	case 51: // STATE 55
+	case 59: // STATE 52
 		;
 		XX = 1;
-		unrecv(now.doors_pos_changed[ Index(((int)((P2 *)_this)->num), 3) ], XX-1, 0, 1, 1);
+		unrecv(now.doors_pos_changed, XX-1, 0, 1, 1);
 		;
 		;
 		goto R999;
 ;
 		;
 		
-	case 53: // STATE 57
+	case 61: // STATE 54
 		;
-		_m = unsend(now.change_doors_pos[ Index(((int)((P2 *)_this)->num), 3) ]);
+		_m = unsend(now.change_doors_pos);
 		;
 		goto R999;
 
-	case 54: // STATE 58
+	case 62: // STATE 55
 		;
 		XX = 1;
-		unrecv(now.doors_pos_changed[ Index(((int)((P2 *)_this)->num), 3) ], XX-1, 0, 1, 1);
+		unrecv(now.doors_pos_changed, XX-1, 0, 1, 1);
 		;
 		;
 		goto R999;
 ;
 		;
 		
-	case 56: // STATE 73
+	case 64: // STATE 62
 		;
-		((P2 *)_this)->num = trpt->bup.oval;
 		XX = 1;
-		unrecv(now.observed_high[ Index(((int)((P2 *)_this)->num), 3) ], XX-1, 0, 1, 1);
+		unrecv(now.observed_high[0], XX-1, 0, 1, 1);
 		;
 		;
 		goto R999;
 
-	case 57: // STATE 73
-		;
-		((P2 *)_this)->num = trpt->bup.oval;
-		;
-		goto R999;
-
-	case 58: // STATE 75
-		;
-		((P2 *)_this)->num = trpt->bup.ovals[1];
-	/* 0 */	((P2 *)_this)->num = trpt->bup.ovals[0];
-		;
-		;
-		ungrab_ints(trpt->bup.ovals, 2);
-		goto R999;
-
-	case 59: // STATE 79
+	case 65: // STATE 66
 		;
 		p_restor(II);
 		;
@@ -351,132 +366,42 @@
 		;
 		;
 		
-	case 62: // STATE 3
+	case 68: // STATE 3
 		;
-		_m = unsend(now.request_high[ Index((((int)now.ship_pos[ Index(((int)((P1 *)_this)->shipid), 5) ])-1), 3) ]);
+		_m = unsend(now.request_high);
 		;
 		goto R999;
 ;
 		;
 		
-	case 64: // STATE 8
+	case 70: // STATE 8
 		;
-		now.nr_of_ships_at_pos[ Index(now.ship_pos[ Index(((P1 *)_this)->shipid, 5) ], 4) ] = trpt->bup.ovals[2];
-		now.lock_is_occupied[ Index((now.ship_pos[ Index(((P1 *)_this)->shipid, 5) ]-1), 3) ] = trpt->bup.ovals[1];
-		now.ship_status[ Index(((P1 *)_this)->shipid, 5) ] = trpt->bup.ovals[0];
+		now.nr_of_ships_at_pos[ Index(now.ship_pos[ Index(((P1 *)_this)->shipid, 1) ], 2) ] = trpt->bup.ovals[2];
+		now.lock_is_occupied = trpt->bup.ovals[1];
+		now.ship_status[ Index(((P1 *)_this)->shipid, 1) ] = trpt->bup.ovals[0];
 		;
 		ungrab_ints(trpt->bup.ovals, 3);
 		goto R999;
 
-	case 65: // STATE 9
+	case 71: // STATE 9
 		;
-		_m = unsend(now.observed_high[ Index((((int)now.ship_pos[ Index(((int)((P1 *)_this)->shipid), 5) ])-1), 3) ]);
+		_m = unsend(now.observed_high[0]);
 		;
 		goto R999;
 ;
 		;
 		
-	case 67: // STATE 12
+	case 73: // STATE 12
 		;
-		_m = unsend(now.observed_high[ Index((((int)now.ship_pos[ Index(((int)((P1 *)_this)->shipid), 5) ])-1), 3) ]);
+		_m = unsend(now.observed_high[0]);
 		;
 		goto R999;
 
-	case 68: // STATE 19
+	case 74: // STATE 19
 		;
-		now.nr_of_ships_at_pos[ Index(now.ship_pos[ Index(((P1 *)_this)->shipid, 5) ], 4) ] = trpt->bup.ovals[2];
-		now.lock_is_occupied[ Index((now.ship_pos[ Index(((P1 *)_this)->shipid, 5) ]-1), 3) ] = trpt->bup.ovals[1];
-		now.ship_status[ Index(((P1 *)_this)->shipid, 5) ] = trpt->bup.ovals[0];
-		;
-		ungrab_ints(trpt->bup.ovals, 3);
-		goto R999;
-;
-		;
-		;
-		;
-		
-	case 71: // STATE 27
-		;
-		_m = unsend(now.request_low[ Index((((int)now.ship_pos[ Index(((int)((P1 *)_this)->shipid), 5) ])-1), 3) ]);
-		;
-		goto R999;
-;
-		;
-		
-	case 73: // STATE 33
-		;
-		now.nr_of_ships_at_pos[ Index(now.ship_pos[ Index(((P1 *)_this)->shipid, 5) ], 4) ] = trpt->bup.ovals[3];
-		now.ship_pos[ Index(((P1 *)_this)->shipid, 5) ] = trpt->bup.ovals[2];
-		now.lock_is_occupied[ Index((now.ship_pos[ Index(((P1 *)_this)->shipid, 5) ]-1), 3) ] = trpt->bup.ovals[1];
-		now.ship_status[ Index(((P1 *)_this)->shipid, 5) ] = trpt->bup.ovals[0];
-		;
-		ungrab_ints(trpt->bup.ovals, 4);
-		goto R999;
-
-	case 74: // STATE 34
-		;
-		_m = unsend(now.observed_low[ Index(((int)now.ship_pos[ Index(((int)((P1 *)_this)->shipid), 5) ]), 3) ]);
-		;
-		goto R999;
-;
-		;
-		
-	case 76: // STATE 37
-		;
-		_m = unsend(now.observed_low[ Index((((int)now.ship_pos[ Index(((int)((P1 *)_this)->shipid), 5) ])-1), 3) ]);
-		;
-		goto R999;
-
-	case 77: // STATE 45
-		;
-		now.nr_of_ships_at_pos[ Index(now.ship_pos[ Index(((P1 *)_this)->shipid, 5) ], 4) ] = trpt->bup.ovals[3];
-		now.ship_pos[ Index(((P1 *)_this)->shipid, 5) ] = trpt->bup.ovals[2];
-		now.lock_is_occupied[ Index((now.ship_pos[ Index(((P1 *)_this)->shipid, 5) ]-1), 3) ] = trpt->bup.ovals[1];
-		now.ship_status[ Index(((P1 *)_this)->shipid, 5) ] = trpt->bup.ovals[0];
-		;
-		ungrab_ints(trpt->bup.ovals, 4);
-		goto R999;
-;
-		;
-		;
-		;
-		
-	case 80: // STATE 53
-		;
-		_m = unsend(now.request_low[ Index(((int)now.ship_pos[ Index(((int)((P1 *)_this)->shipid), 5) ]), 3) ]);
-		;
-		goto R999;
-;
-		;
-		
-	case 82: // STATE 58
-		;
-		now.nr_of_ships_at_pos[ Index(now.ship_pos[ Index(((P1 *)_this)->shipid, 5) ], 4) ] = trpt->bup.ovals[2];
-		now.lock_is_occupied[ Index(now.ship_pos[ Index(((P1 *)_this)->shipid, 5) ], 3) ] = trpt->bup.ovals[1];
-		now.ship_status[ Index(((P1 *)_this)->shipid, 5) ] = trpt->bup.ovals[0];
-		;
-		ungrab_ints(trpt->bup.ovals, 3);
-		goto R999;
-
-	case 83: // STATE 59
-		;
-		_m = unsend(now.observed_low[ Index(((int)now.ship_pos[ Index(((int)((P1 *)_this)->shipid), 5) ]), 3) ]);
-		;
-		goto R999;
-;
-		;
-		
-	case 85: // STATE 62
-		;
-		_m = unsend(now.observed_low[ Index(((int)now.ship_pos[ Index(((int)((P1 *)_this)->shipid), 5) ]), 3) ]);
-		;
-		goto R999;
-
-	case 86: // STATE 69
-		;
-		now.nr_of_ships_at_pos[ Index(now.ship_pos[ Index(((P1 *)_this)->shipid, 5) ], 4) ] = trpt->bup.ovals[2];
-		now.lock_is_occupied[ Index(now.ship_pos[ Index(((P1 *)_this)->shipid, 5) ], 3) ] = trpt->bup.ovals[1];
-		now.ship_status[ Index(((P1 *)_this)->shipid, 5) ] = trpt->bup.ovals[0];
+		now.nr_of_ships_at_pos[ Index(now.ship_pos[ Index(((P1 *)_this)->shipid, 1) ], 2) ] = trpt->bup.ovals[2];
+		now.lock_is_occupied = trpt->bup.ovals[1];
+		now.ship_status[ Index(((P1 *)_this)->shipid, 1) ] = trpt->bup.ovals[0];
 		;
 		ungrab_ints(trpt->bup.ovals, 3);
 		goto R999;
@@ -485,77 +410,167 @@
 		;
 		;
 		
-	case 89: // STATE 77
+	case 77: // STATE 27
 		;
-		_m = unsend(now.request_high[ Index(((int)now.ship_pos[ Index(((int)((P1 *)_this)->shipid), 5) ]), 3) ]);
+		_m = unsend(now.request_low);
 		;
 		goto R999;
 ;
 		;
 		
-	case 91: // STATE 83
+	case 79: // STATE 33
 		;
-		now.nr_of_ships_at_pos[ Index(now.ship_pos[ Index(((P1 *)_this)->shipid, 5) ], 4) ] = trpt->bup.ovals[3];
-		now.ship_pos[ Index(((P1 *)_this)->shipid, 5) ] = trpt->bup.ovals[2];
-		now.lock_is_occupied[ Index(now.ship_pos[ Index(((P1 *)_this)->shipid, 5) ], 3) ] = trpt->bup.ovals[1];
-		now.ship_status[ Index(((P1 *)_this)->shipid, 5) ] = trpt->bup.ovals[0];
+		now.nr_of_ships_at_pos[ Index(now.ship_pos[ Index(((P1 *)_this)->shipid, 1) ], 2) ] = trpt->bup.ovals[3];
+		now.ship_pos[ Index(((P1 *)_this)->shipid, 1) ] = trpt->bup.ovals[2];
+		now.lock_is_occupied = trpt->bup.ovals[1];
+		now.ship_status[ Index(((P1 *)_this)->shipid, 1) ] = trpt->bup.ovals[0];
 		;
 		ungrab_ints(trpt->bup.ovals, 4);
 		goto R999;
 
-	case 92: // STATE 84
+	case 80: // STATE 34
 		;
-		_m = unsend(now.observed_high[ Index((((int)now.ship_pos[ Index(((int)((P1 *)_this)->shipid), 5) ])-1), 3) ]);
+		_m = unsend(now.observed_low[0]);
 		;
 		goto R999;
 ;
 		;
 		
-	case 94: // STATE 87
+	case 82: // STATE 37
 		;
-		_m = unsend(now.observed_high[ Index(((int)now.ship_pos[ Index(((int)((P1 *)_this)->shipid), 5) ]), 3) ]);
+		_m = unsend(now.observed_low[0]);
 		;
 		goto R999;
 
-	case 95: // STATE 95
+	case 83: // STATE 45
 		;
-		now.nr_of_ships_at_pos[ Index(now.ship_pos[ Index(((P1 *)_this)->shipid, 5) ], 4) ] = trpt->bup.ovals[3];
-		now.ship_pos[ Index(((P1 *)_this)->shipid, 5) ] = trpt->bup.ovals[2];
-		now.lock_is_occupied[ Index(now.ship_pos[ Index(((P1 *)_this)->shipid, 5) ], 3) ] = trpt->bup.ovals[1];
-		now.ship_status[ Index(((P1 *)_this)->shipid, 5) ] = trpt->bup.ovals[0];
+		now.nr_of_ships_at_pos[ Index(now.ship_pos[ Index(((P1 *)_this)->shipid, 1) ], 2) ] = trpt->bup.ovals[3];
+		now.ship_pos[ Index(((P1 *)_this)->shipid, 1) ] = trpt->bup.ovals[2];
+		now.lock_is_occupied = trpt->bup.ovals[1];
+		now.ship_status[ Index(((P1 *)_this)->shipid, 1) ] = trpt->bup.ovals[0];
+		;
+		ungrab_ints(trpt->bup.ovals, 4);
+		goto R999;
+;
+		;
+		;
+		;
+		
+	case 86: // STATE 53
+		;
+		_m = unsend(now.request_low);
+		;
+		goto R999;
+;
+		;
+		
+	case 88: // STATE 58
+		;
+		now.nr_of_ships_at_pos[ Index(now.ship_pos[ Index(((P1 *)_this)->shipid, 1) ], 2) ] = trpt->bup.ovals[2];
+		now.lock_is_occupied = trpt->bup.ovals[1];
+		now.ship_status[ Index(((P1 *)_this)->shipid, 1) ] = trpt->bup.ovals[0];
+		;
+		ungrab_ints(trpt->bup.ovals, 3);
+		goto R999;
+
+	case 89: // STATE 59
+		;
+		_m = unsend(now.observed_low[0]);
+		;
+		goto R999;
+;
+		;
+		
+	case 91: // STATE 62
+		;
+		_m = unsend(now.observed_low[0]);
+		;
+		goto R999;
+
+	case 92: // STATE 69
+		;
+		now.nr_of_ships_at_pos[ Index(now.ship_pos[ Index(((P1 *)_this)->shipid, 1) ], 2) ] = trpt->bup.ovals[2];
+		now.lock_is_occupied = trpt->bup.ovals[1];
+		now.ship_status[ Index(((P1 *)_this)->shipid, 1) ] = trpt->bup.ovals[0];
+		;
+		ungrab_ints(trpt->bup.ovals, 3);
+		goto R999;
+;
+		;
+		;
+		;
+		
+	case 95: // STATE 77
+		;
+		_m = unsend(now.request_high);
+		;
+		goto R999;
+;
+		;
+		
+	case 97: // STATE 83
+		;
+		now.nr_of_ships_at_pos[ Index(now.ship_pos[ Index(((P1 *)_this)->shipid, 1) ], 2) ] = trpt->bup.ovals[3];
+		now.ship_pos[ Index(((P1 *)_this)->shipid, 1) ] = trpt->bup.ovals[2];
+		now.lock_is_occupied = trpt->bup.ovals[1];
+		now.ship_status[ Index(((P1 *)_this)->shipid, 1) ] = trpt->bup.ovals[0];
+		;
+		ungrab_ints(trpt->bup.ovals, 4);
+		goto R999;
+
+	case 98: // STATE 84
+		;
+		_m = unsend(now.observed_high[0]);
+		;
+		goto R999;
+;
+		;
+		
+	case 100: // STATE 87
+		;
+		_m = unsend(now.observed_high[0]);
+		;
+		goto R999;
+
+	case 101: // STATE 95
+		;
+		now.nr_of_ships_at_pos[ Index(now.ship_pos[ Index(((P1 *)_this)->shipid, 1) ], 2) ] = trpt->bup.ovals[3];
+		now.ship_pos[ Index(((P1 *)_this)->shipid, 1) ] = trpt->bup.ovals[2];
+		now.lock_is_occupied = trpt->bup.ovals[1];
+		now.ship_status[ Index(((P1 *)_this)->shipid, 1) ] = trpt->bup.ovals[0];
 		;
 		ungrab_ints(trpt->bup.ovals, 4);
 		goto R999;
 ;
 		;
 		
-	case 97: // STATE 102
+	case 103: // STATE 102
 		;
-		now.ship_status[ Index(((P1 *)_this)->shipid, 5) ] = trpt->bup.oval;
+		now.ship_status[ Index(((P1 *)_this)->shipid, 1) ] = trpt->bup.oval;
 		;
 		goto R999;
 
-	case 98: // STATE 103
+	case 104: // STATE 103
 		;
-		now.ship_status[ Index(((P1 *)_this)->shipid, 5) ] = trpt->bup.oval;
+		now.ship_status[ Index(((P1 *)_this)->shipid, 1) ] = trpt->bup.oval;
 		;
 		goto R999;
 ;
 		;
 		
-	case 100: // STATE 105
+	case 106: // STATE 105
 		;
-		now.ship_status[ Index(((P1 *)_this)->shipid, 5) ] = trpt->bup.oval;
-		;
-		goto R999;
-
-	case 101: // STATE 106
-		;
-		now.ship_status[ Index(((P1 *)_this)->shipid, 5) ] = trpt->bup.oval;
+		now.ship_status[ Index(((P1 *)_this)->shipid, 1) ] = trpt->bup.oval;
 		;
 		goto R999;
 
-	case 102: // STATE 110
+	case 107: // STATE 106
+		;
+		now.ship_status[ Index(((P1 *)_this)->shipid, 1) ] = trpt->bup.oval;
+		;
+		goto R999;
+
+	case 108: // STATE 110
 		;
 		p_restor(II);
 		;
@@ -564,63 +579,63 @@
 
 		 /* PROC lock */
 
-	case 103: // STATE 1
+	case 109: // STATE 1
 		;
 		XX = 1;
-		unrecv(now.change_doors_pos[ Index(((int)((P0 *)_this)->lockid), 3) ], XX-1, 0, 2, 1);
+		unrecv(now.change_doors_pos, XX-1, 0, 2, 1);
 		;
 		;
 		goto R999;
 ;
 		;
 		
-	case 105: // STATE 3
+	case 111: // STATE 3
 		;
-		now.doors_status[ Index(((P0 *)_this)->lockid, 3) ].lower = trpt->bup.oval;
+		now.doors_status.lower = trpt->bup.oval;
 		;
 		goto R999;
 
-	case 106: // STATE 4
+	case 112: // STATE 4
 		;
-		now.lock_water_level[ Index(((P0 *)_this)->lockid, 3) ] = trpt->bup.oval;
+		now.lock_water_level = trpt->bup.oval;
 		;
 		goto R999;
 ;
 		;
 		
-	case 108: // STATE 6
+	case 114: // STATE 6
 		;
-		now.doors_status[ Index(((P0 *)_this)->lockid, 3) ].lower = trpt->bup.oval;
-		;
-		goto R999;
-
-	case 109: // STATE 9
-		;
-		_m = unsend(now.doors_pos_changed[ Index(((int)((P0 *)_this)->lockid), 3) ]);
+		now.doors_status.lower = trpt->bup.oval;
 		;
 		goto R999;
 
-	case 110: // STATE 10
+	case 115: // STATE 9
+		;
+		_m = unsend(now.doors_pos_changed);
+		;
+		goto R999;
+
+	case 116: // STATE 10
 		;
 		XX = 1;
-		unrecv(now.change_doors_pos[ Index(((int)((P0 *)_this)->lockid), 3) ], XX-1, 0, 1, 1);
+		unrecv(now.change_doors_pos, XX-1, 0, 1, 1);
 		;
 		;
 		goto R999;
 ;
 		;
 		
-	case 112: // STATE 12
+	case 118: // STATE 12
 		;
-		now.doors_status[ Index(((P0 *)_this)->lockid, 3) ].higher = trpt->bup.oval;
+		now.doors_status.higher = trpt->bup.oval;
 		;
 		goto R999;
 ;
 		;
 		
-	case 114: // STATE 14
+	case 120: // STATE 14
 		;
-		now.lock_water_level[ Index(((P0 *)_this)->lockid, 3) ] = trpt->bup.oval;
+		now.lock_water_level = trpt->bup.oval;
 		;
 		goto R999;
 ;
@@ -628,75 +643,75 @@
 		;
 		;
 		
-	case 117: // STATE 20
+	case 123: // STATE 20
 		;
-		now.doors_status[ Index(((P0 *)_this)->lockid, 3) ].higher = trpt->bup.oval;
+		now.doors_status.higher = trpt->bup.oval;
 		;
 		goto R999;
 
-	case 118: // STATE 23
+	case 124: // STATE 23
 		;
-		_m = unsend(now.doors_pos_changed[ Index(((int)((P0 *)_this)->lockid), 3) ]);
+		_m = unsend(now.doors_pos_changed);
 		;
 		goto R999;
 
-	case 119: // STATE 24
+	case 125: // STATE 24
 		;
 		XX = 1;
-		unrecv(now.change_slide_pos[ Index(((int)((P0 *)_this)->lockid), 3) ], XX-1, 0, 2, 1);
+		unrecv(now.change_slide_pos, XX-1, 0, 2, 1);
 		;
 		;
 		goto R999;
 ;
 		;
 		
-	case 121: // STATE 26
+	case 127: // STATE 26
 		;
-		now.slide_status[ Index(((P0 *)_this)->lockid, 3) ].lower = trpt->bup.oval;
+		now.slide_status.lower = trpt->bup.oval;
 		;
 		goto R999;
 
-	case 122: // STATE 27
+	case 128: // STATE 27
 		;
-		now.lock_water_level[ Index(((P0 *)_this)->lockid, 3) ] = trpt->bup.oval;
+		now.lock_water_level = trpt->bup.oval;
 		;
 		goto R999;
 ;
 		;
 		
-	case 124: // STATE 29
+	case 130: // STATE 29
 		;
-		now.slide_status[ Index(((P0 *)_this)->lockid, 3) ].lower = trpt->bup.oval;
-		;
-		goto R999;
-
-	case 125: // STATE 32
-		;
-		_m = unsend(now.slide_pos_changed[ Index(((int)((P0 *)_this)->lockid), 3) ]);
+		now.slide_status.lower = trpt->bup.oval;
 		;
 		goto R999;
 
-	case 126: // STATE 33
+	case 131: // STATE 32
+		;
+		_m = unsend(now.slide_pos_changed);
+		;
+		goto R999;
+
+	case 132: // STATE 33
 		;
 		XX = 1;
-		unrecv(now.change_slide_pos[ Index(((int)((P0 *)_this)->lockid), 3) ], XX-1, 0, 1, 1);
+		unrecv(now.change_slide_pos, XX-1, 0, 1, 1);
 		;
 		;
 		goto R999;
 ;
 		;
 		
-	case 128: // STATE 35
+	case 134: // STATE 35
 		;
-		now.slide_status[ Index(((P0 *)_this)->lockid, 3) ].higher = trpt->bup.oval;
+		now.slide_status.higher = trpt->bup.oval;
 		;
 		goto R999;
 ;
 		;
 		
-	case 130: // STATE 37
+	case 136: // STATE 37
 		;
-		now.lock_water_level[ Index(((P0 *)_this)->lockid, 3) ] = trpt->bup.oval;
+		now.lock_water_level = trpt->bup.oval;
 		;
 		goto R999;
 ;
@@ -704,19 +719,19 @@
 		;
 		;
 		
-	case 133: // STATE 43
+	case 139: // STATE 43
 		;
-		now.slide_status[ Index(((P0 *)_this)->lockid, 3) ].higher = trpt->bup.oval;
+		now.slide_status.higher = trpt->bup.oval;
 		;
 		goto R999;
 
-	case 134: // STATE 46
+	case 140: // STATE 46
 		;
-		_m = unsend(now.slide_pos_changed[ Index(((int)((P0 *)_this)->lockid), 3) ]);
+		_m = unsend(now.slide_pos_changed);
 		;
 		goto R999;
 
-	case 135: // STATE 50
+	case 141: // STATE 50
 		;
 		p_restor(II);
 		;
